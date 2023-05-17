@@ -9,11 +9,8 @@ export default function Navbar() {
         <li><Link href='' className={style.containerFont}>BLOG </Link></li>
         <li><Link href='' className={style.containerFont}>RESOURCES </Link></li>
         <li><Link href='' className={style.containerFont}>CONTACT </Link></li>
-
-
-
     </>
-    return <>
+    return <div className={style.Container}>
         <div className="navbar bg-white mx-auto" style={{ height: '100px', width: '90%', margin: 'auto' }}>
             <div className="navbar-start">
                 <div className="dropdown">
@@ -35,5 +32,5 @@ export default function Navbar() {
                 <a className="btn uppercase" color="#18299D">DONATE</a>
             </div>
         </div>
-    </>
+    </div>
 }
