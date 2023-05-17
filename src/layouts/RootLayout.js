@@ -1,15 +1,15 @@
-import Footer from '@/component/Footer';
-import Header from '@/component/Header/Header';
-import React from 'react';
+import Footer from "@/components/Footer";
+import Header from "@/components/Header/Header";
+import React from "react";
 
 const RootLayout = ({ children }) => {
-    return (
-        <div>
-            <Header></Header>
-            {children}
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      <Header></Header>
+      {children}
+      <Footer></Footer>
+    </div>
+  );
 };
 
 export default RootLayout;
