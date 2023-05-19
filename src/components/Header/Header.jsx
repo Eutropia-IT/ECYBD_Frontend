@@ -11,7 +11,7 @@ export default function Navbar() {
         <li><Link href='' className={style.containerFont}>CONTACT </Link></li>
     </>
     return <div className={style.Container}>
-        <div className="navbar bg-white mx-auto" style={{ height: '100px', width: '90%', margin: 'auto' }}>
+        <div className="navbar mx-auto" style={{ height: '100px', width: '90%', margin: 'auto' }}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -21,7 +21,9 @@ export default function Navbar() {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a className=" normal-case text-xl">
+                    <img style={{height: "100px", width:"110px"}} src={"https://i.ibb.co/wpwXr0W/Logo-1.png"} alt="logo" />
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,7 +31,7 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn uppercase" color="#18299D">DONATE</a>
+                <a className="btn uppercase text-white bg-red-600 border-r-0">DONATE</a>
             </div>
         </div>
     </div>
