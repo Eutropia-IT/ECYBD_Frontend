@@ -3,13 +3,13 @@ import style from './Header.module.css'
 
 export default function Navbar() {
     const menuItems = <>
-        <li><Link href='' className={style.containerFont}>Home</Link></li>
-        <li><Link href='' className={style.containerFont}>About</Link></li>
+        <li><Link href='/' className={style.containerFont}>Home</Link></li>
+        <li><Link href='/abouts' className={style.containerFont}>About</Link></li>
         <li><Link href='' className={style.containerFont}>DIOCESEN COMMISSIONS</Link></li>
         <li><Link href='' className={style.containerFont}>Movements</Link></li>
-        <li><Link href='' className={style.containerFont}>BLOG </Link></li>
+        <li><Link href='/blog' className={style.containerFont}>BLOG </Link></li>
         <li><Link href='' className={style.containerFont}>RESOURCES </Link></li>
-        <li><Link href='' className={style.containerFont}>CONTACT </Link></li>
+        <li><Link href='/contact' className={style.containerFont}>CONTACT </Link></li>
     </>
     return <div className={style.Container}>
         <div className="navbar mx-auto" style={{ height: '100px', width: '90%', margin: 'auto' }}>

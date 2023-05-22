@@ -36,7 +36,7 @@ export default function Banner() {
                     <h1 className='text-white font-extrabold mx-auto text-4xl md:text-6xl w-4/6'>Sharing the God’s Love <br />
                         with Everyone</h1>
 
-                    <p className='text-white mx-auto mt-12 w-3/6 text-lg '>Our parishioners and members of our community are always ready to support new members and share the God’s love with them.</p>
+                    <p className='text-white mx-auto mt-12 w-3/6 '>Our parishioners and members of our community are always ready to support new members and share the God’s love with them.</p>
                 </div>
             </SwiperSlide>
             <SwiperSlide >
@@ -53,7 +53,7 @@ export default function Banner() {
                     <h1 className='text-white font-extrabold mx-auto text-4xl md:text-6xl w-4/6'>Sharing the God’s Love <br />
                         with Everyone</h1>
 
-                    <p className='text-white mx-auto mt-12 w-3/6 text-lg '>Our parishioners and members of our community are always ready to support new members and share the God’s love with them.</p>
+                    <p className='text-white mx-auto mt-12 w-3/6  '>Our parishioners and members of our community are always ready to support new members and share the God’s love with them.</p>
                 </div>
             </SwiperSlide>
             <SwiperSlide >
@@ -70,7 +70,7 @@ export default function Banner() {
                     <h1 className='text-white font-extrabold mx-auto text-4xl md:text-6xl w-4/6'>Sharing the God’s Love <br />
                         with Everyone</h1>
 
-                    <p className='text-white mx-auto mt-12 w-3/6 text-lg '>Our parishioners and members of our community are always ready to support new members and share the God’s love with them.</p>
+                    <p className='text-white mx-auto mt-12 w-3/6  '>Our parishioners and members of our community are always ready to support new members and share the God’s love with them.</p>
                 </div>
             </SwiperSlide>
 
