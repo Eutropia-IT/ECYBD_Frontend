@@ -1,9 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.custom-underline {
-  @apply relative after:contents after:absolute after:left-0 after:-bottom-2 after:w-full after:h-[1px] after:bg-red-600;
-}
+
+
+
+
 
 /* :root {
    --foreground-rgb: 0, 0, 0;
@@ -18,16 +23,16 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+*/
+
+h1 {
+  font-family: 'Playfair Display', serif;
+}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
+  font-family: 'Montserrat', sans-serif;
+                                                
+}
 
 
 .swiper-pagination-bullet {
@@ -36,8 +41,8 @@ body {
   width: 20px;
   height: 10px;
   border-radius: 50%;
-  margin: 50px 5px  !important;
-  
+  margin: 50px 5px !important;
+
 }
 
 /* .swiper-pagination-bullet:active{
