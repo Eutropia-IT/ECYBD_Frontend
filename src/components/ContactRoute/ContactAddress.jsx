@@ -1,6 +1,6 @@
 export default function ContactAddress() {
-    return <div>
-        <div className="py-20">
+    return <div style={{ backgroundColor: "#F3F3F3" }}>
+        <div className="py-20 text-black">
             <div className="grid gap-6 grid-cols-12">
                 <div className="col-span-1"></div>
                 {/* left side */}

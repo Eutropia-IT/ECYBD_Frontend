@@ -6,9 +6,9 @@ const containerStyle = {
     height: '400px'
 };
 
-const position = {
-    lat: 23.810331,
-    lng: 90.412521
+const center = {
+    lat: 23.807250118712297,
+    lng: 90.36897335207053
 };
 
 function ContactGoogleMap() {
@@ -19,17 +19,13 @@ function ContactGoogleMap() {
             >
                 <GoogleMap
                     mapContainerStyle={containerStyle}
-                    center={position}
+                    center={center}
                     zoom={10}
                 >
-                    { /* Child components, such as markers, info windows, etc. */}
-                    <></>
+                    <Marker
+                        position={center}
+                    />
                 </GoogleMap>
-                <Marker
-                    position={position}
-                >
-
-                </Marker>
             </LoadScript>
         </div>
     )

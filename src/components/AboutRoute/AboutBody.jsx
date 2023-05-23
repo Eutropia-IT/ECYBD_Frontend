@@ -1,8 +1,8 @@
 import { AiFillCaretRight } from "react-icons/ai";
 export default function AboutBody() {
-    return <div>
-        <div className="py-10">
-            <div className="grid gap-4 lg:grid-cols-12 px-20 text-black ">
+    return <div style={{ backgroundColor: "#F3F3F3" }}>
+        <div className="py-10 text-black">
+            <div className="grid gap-4 lg:grid-cols-12 px-20 lg:px-0 text-black">
                 <div className="col-span-1"></div>
 
                 {/* Left side */}

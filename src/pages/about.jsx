@@ -3,7 +3,7 @@ import AboutBody from "@/components/AboutRoute/AboutBody";
 import AboutOurTeam from "@/components/AboutRoute/AboutOurTeam";
 import RootLayout from "@/layouts/RootLayout";
 
-export default function Abouts(){
+export default function About(){
     return <>
         <AboutBanner></AboutBanner>
         <AboutBody></AboutBody>
@@ -11,7 +11,7 @@ export default function Abouts(){
     </>
 }
 
-Abouts.getLayout = (page) => {
+About.getLayout = (page) => {
     return <RootLayout>{page}</RootLayout>
   };
   
