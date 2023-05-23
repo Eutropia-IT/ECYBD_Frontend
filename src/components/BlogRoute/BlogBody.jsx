@@ -1,7 +1,8 @@
+import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 export default function BlogBody() {
     return <div style={{ backgroundColor: "#F3F3F3" }}>
-        <div className="grid gap-4 grid-cols-12 text-black mt-12 mb-20 px-12 md:px-0">
+        <div className="grid gap-4 grid-cols-12 text-black pt-12 pb-20 px-12 md:px-0">
             <div className="col-span-1"></div>
 
             {/* left side */}
@@ -15,7 +16,7 @@ export default function BlogBody() {
                             <h2 className="text-xl font-bold">Perseverance of the Saints</h2>
                             <p className="my-2">on 17th June 2014</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2">Read article &#10141; </button>
+                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2"><Link href='/blog/slug'>Read article &#10141;</Link></button>
                         </div>
                     </div>
                     <div className="w-full lg:flex mt-8">
@@ -26,7 +27,7 @@ export default function BlogBody() {
                             <h2 className="text-xl font-bold">Lord is Sufficient for all of our needs</h2>
                             <p className="my-2">on 17th June 2014</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2">Read article &#10141; </button>
+                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2"><Link href='/blog/slug'>Read article &#10141;</Link> </button>
                         </div>
                     </div>
                     <div className="w-full lg:flex mt-8">
@@ -37,7 +38,7 @@ export default function BlogBody() {
                             <h2 className="text-xl font-bold">Perseverance of the Saints</h2>
                             <p className="my-2">on 17th June 2014</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2">Read article &#10141; </button>
+                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2"><Link href='/blog/slug'>Read article &#10141;</Link> </button>
                         </div>
                     </div>
                     <div className="w-full lg:flex mt-8">
@@ -48,7 +49,7 @@ export default function BlogBody() {
                             <h2 className="text-xl font-bold">Lord is Sufficient for all of our needs</h2>
                             <p className="my-2">on 17th June 2014</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...</p>
-                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2">Read article &#10141; </button>
+                            <button className="btn btn-sm btn-warning font-semibold text-lg mt-2"><Link href='/blog/slug'>Read article &#10141;</Link></button>
                         </div>
                     </div>
 

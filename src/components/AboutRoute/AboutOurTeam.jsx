@@ -1,7 +1,7 @@
 export default function AboutOurTeam() {
     return <>
         <div style={{ backgroundColor: "#F3F3F3" }}>
-            <div className="text-black mt-18 mx-20 mb-20">
+            <div className="text-black mt-18 mx-20 pb-20">
                 <h1 className="mb-12 text-2xl font-bold text-center uppercase underline underline-offset-4 decoration-4 decoration-red-600" style={{ color: "#18299D" }}>Executive & Commission Members</h1>
 
                 <div className="grid gap-14 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">

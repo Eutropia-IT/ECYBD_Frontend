@@ -28,10 +28,10 @@ export default function ContactAddress() {
                         <label className="label">
                             <span className="label-text">message</span>
                         </label>
-                        <textarea className="textarea textarea-bordered h-32 w-full max-w-lg" placeholder="Bio"></textarea>
+                        <textarea className="textarea textarea-bordered h-32 w-full max-w-lg"></textarea>
                     </div>
                     <div className=" ">
-                        <input className="btn btn-warning font-bold text-lg mt-8" type="submit" value="SEND MESSAGE" />
+                        <input className="btn btn-sm btn-warning font-bold text-lg mt-8" type="submit" value="SEND MESSAGE" />
                     </div>
                 </div>
                 {/* right side */}
