@@ -1,6 +1,6 @@
 export default function Objective() {
     return <>
-        <div className="grid grid-cols-1 lg:grid-cols-2" style={{ backgroundColor: "#FEF0F8" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 text-black" style={{ backgroundColor: "#FEF0F8" }}>
 
             <div style={{ backgroundColor: " #F3F3F3" }}>
                 <div className="text-start p-5 w-5/6 ml-auto">

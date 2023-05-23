@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 export default function Quotes() {
-    return <div>
+    return <div className='text-black'>
         <Swiper
             // install Swiper modules
             modules={[Autoplay, Navigation, Pagination, A11y]}

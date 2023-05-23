@@ -1,6 +1,6 @@
 export default function About() {
     return <>
-        <div className="grid grid-cols-1 lg:grid-cols-2" style={{ backgroundColor: "#F3F3F3" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 text-black" style={{ backgroundColor: "#F3F3F3" }}>
             <div className="relative">
                 <img className="w-full object-scale-down h-auto px-20 lg:px-0" src={'https://i.ibb.co/jrPkCrp/div-bg-image.png'} alt="img" />
             </div>
