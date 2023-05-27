@@ -15,3 +15,27 @@
     color: red;
     background-color: none;
 }
+
+
+.drop {
+    background-color: #F3F3F3;
+}
+
+.drops {
+    display: none;
+    position: relative;
+    background-color: #F3F3F3;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.drop:hover>ul {
+    display: block;
+    z-index: 20;
+    padding-top: 30px;
+}
+
+.drop>ul>li {
+    padding: 10px;
+    padding-left: 20px;
+}

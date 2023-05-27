@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 export default function Banner() {
     
 
-    return <>
+    return <div className='z-10'>
 
         <Swiper
             // install Swiper modules
@@ -75,5 +75,5 @@ export default function Banner() {
             </SwiperSlide>
 
         </Swiper>
-    </>
+    </div>
 }
