@@ -1,4 +1,4 @@
-// import styles from './Header.module.css'
+import style from './Header.module.css'
 import Link from "next/link";
 import { useState } from "react";
 import { BsList, BsXLg } from "react-icons/bs";
@@ -10,28 +10,99 @@ export default function Navbar() {
     return <div>
 
 
-        {/* drawer button */}
-        <div onClick={() => setOpen(!open)} className="lg:hidden drawer-content bg-gray-100">
-            <label htmlFor="my-drawer" className="drawer-button">
+
+        {/* <div onClick={() => setOpen(!open)} className="lg:hidden drawer-content bg-gray-100">
+            <label>
                 {
                     open ? <BsList className=" h-8 w-8 cursor-pointer" /> : <BsList className=" h-8 w-8 cursor-pointer" />
                 }
             </label>
         </div>
 
+        <div onClick={() => setOpen(!open)} className="lg:hidden">
+            <label>
+                {
+                    open ? <BsXLg className=" h-8 w-8 -mt-6 cursor-pointer" /> : <BsXLg className="h-8 w-8 hidden" />
+                }
+            </label>
+        </div> */}
 
 
-        {/* main navbar large device */}
-        <nav className="hidden lg:block">
+
+        <nav className="flex items-center justify-around text-blue-700">
+
+            {/* logo */}
+            <div className="avatar">
+                <div className="w-14 lg:w-24 mb-5 lg:mb-0">
+                    <img src={`https://i.ibb.co/wpwXr0W/Logo-1.png`} alt="" />
+                </div>
+            </div>
+
+            {/* menu */}
+            <div className={style.fontColor}>
+                <menu className="text-sm font-bold uppercase">
+                    <ul className="flex items-center space-x-4">
+                        <li><Link href=''>Home</Link></li>
+                        <li><Link href=''>About</Link></li>
+                        <li className={style.drops}><Link href=''>Diocesen Commissions  &#10095;</Link>
+                            <ul className={style.drop}>
+                                <li><Link href=''>Barishal</Link></li>
+                                <li><Link href=''>Chattogram</Link></li>
+                                <li><Link href=''>Dhaka</Link></li>
+                                <li><Link href=''>Dinajpur</Link></li>
+                                <li><Link href=''>Khulna</Link></li>
+                                <li><Link href=''>Mymensingh</Link></li>
+                                <li><Link href=''>Rajshahi</Link></li>
+                                <li><Link href=''>Sylhet</Link></li>
+                            </ul>
+                        </li>
+                        <li className={style.drops}><Link href=''>Movements &#10095;</Link>
+                            <ul className={style.drop2}>
+                                <li><Link href=''>Bangladesh Catholic Students’ Movement (BCSM)</Link></li>
+                                <li><Link href=''>Young Christian Students (YCS) & Young Students Movement (YSM)</Link></li>
+                                <li><Link href=''>Jesus Youth </Link></li>
+                            </ul>
+                        </li>
+                        <li><Link href=''>Blog</Link></li>
+                        <li className={style.drops}><Link href=''>RESOURCES &#10095;</Link>
+                        <ul className={style.drop}>
+                                <li><Link href=''>Gallery</Link></li>
+                                <li className={style.dropLast}><Link href=''>Publications  &#10095;</Link>
+                                    <ul className={style.drop3}>
+                                        <li><Link href=''>Newsletter</Link></li>
+                                        <li><Link href=''>Nobokollol</Link></li>
+                                        <li><Link href=''>BCSM BARTA</Link></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><Link href=''>Contact</Link></li>
+                    </ul>
+                </menu>
+            </div>
+
+            {/* button */}
+            <div>
+                <button className="btn btn-sm bg-red-500">Contact Us</button>
+            </div>
+        </nav>
+
+
+
+
+
+
+
+        {/* <nav className="hidden lg:block">
             <div className="lg:flex items-center justify-around ">
-                {/* logo section */}
+               
                 <div className="avatar">
                     <div className="w-14 lg:w-24 mb-5 lg:mb-0">
                         <img src={`https://i.ibb.co/wpwXr0W/Logo-1.png`} alt="" />
                     </div>
                 </div>
 
-                {/* main section */}
+              
                 <div>
                     <ul className="lg:flex items-center lg:space-x-4 text-sm font-bold">
                         <li className="border-b-2 border-gray-600 lg:border-0"><Link href=''>Home</Link></li>
@@ -76,16 +147,13 @@ export default function Navbar() {
                     </ul>
                 </div>
 
-                {/* button section */}
+              
                 <div className="btn btn-sm bg-red-600">Contact us</div>
             </div>
-        </nav>
+        </nav> */}
 
 
-
-
-        {/* drawer section */}
-        <div className="absolute z-50 lg:hidden">
+        {/* <div className="absolute z-50 lg:hidden">
 
             <div className="drawer">
                 <input id="my-drawer" type="checkbox" className="drawer-toggle" />
@@ -96,7 +164,7 @@ export default function Navbar() {
                         <nav className="">
                             <div className="lg:flex items-center justify-around ">
 
-                                {/* logo section */}
+                                
                                 <div className="flex justify-between items-center">
                                     <div className="avatar">
                                         <div className="w-14 lg:w-24 mb-5 lg:mb-0">
@@ -113,7 +181,7 @@ export default function Navbar() {
                                 </div>
 
 
-                                {/* main section */}
+                               
                                 <div>
                                     <ul className="lg:flex items-center lg:space-x-4 text-sm font-bold">
                                         <li className="border-b-2 border-gray-600 lg:border-0"><Link href=''>Home</Link></li>
@@ -156,7 +224,6 @@ export default function Navbar() {
                                 </div>
 
 
-                                {/* button section */}
                                 <div className="btn btn-sm bg-red-600 mt-2">Contact us</div>
                             </div>
                         </nav>
@@ -164,6 +231,6 @@ export default function Navbar() {
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> */}
     </div >
 }

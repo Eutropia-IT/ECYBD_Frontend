@@ -1,41 +1,61 @@
-.Container {
-    background: #F3F3F3;
-    box-shadow: 0px 0.848323px 0.848323px -0.424161px rgba(0, 0, 0, 0.043);
-}
 
-.containerFont {
+.fontColor{
     color: #18299D;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-
 }
 
-.containerFont:hover {
-    color: red;
-    background-color: none;
-}
 
+.drops:hover>ul {
+    display: block;
+    padding-top: 40px;
+    z-index: 10;
+}
 
 .drop {
+    display: none;
+    position: absolute;
     background-color: #F3F3F3;
+    width: 180px;
+    border-radius: 5px;
 }
 
-.drops {
+.drop li{
+    padding: 10px 0px;
+    padding-left: 20px;
+}
+
+
+.drop2{
     display: none;
-    position: relative;
+    position: absolute;
     background-color: #F3F3F3;
     width: 200px;
     border-radius: 5px;
 }
 
-.drop:hover>ul {
-    display: block;
-    z-index: 20;
-    padding-top: 30px;
+.drop2 li{
+    padding: 10px 0px;
+    padding-left: 20px;
 }
 
-.drop>ul>li {
-    padding: 10px;
+
+/* submenu last */
+.dropLast:hover>ul {
+    display: block;
+    z-index: 10;
+    padding-top: 5px;
+}
+
+.drop3{
+    display: none;
+    position: absolute;
+    left: 99%;
+    top: 70%;
+    background-color: #F3F3F3;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.drop3 li{
+    padding: 10px 0px;
     padding-left: 20px;
 }
