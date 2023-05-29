@@ -59,3 +59,25 @@
     padding: 10px 0px;
     padding-left: 20px;
 }
+
+/* mobile device css start here */
+.dropsMobile:hover ul{
+    display: block;
+    z-index: 20;
+    margin-left: 20px;
+    background-color: none;
+}
+
+.dropMobile{
+    display: none;
+}
+
+.dropMobile2{
+    display: none;
+    background-color: #F3F3F3;
+}
+
+.dropsMobile2:hover div{
+    display: block;
+    z-index: 30;
+}
