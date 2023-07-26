@@ -3,7 +3,7 @@ import { FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap">
           <div className="w-full md:w-1/4 lg:w-1/6 mb-8 ml-10">
@@ -16,27 +16,27 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">QUICK LINKS</h4>
             <ul className="text-sm">
               <li className="mb-2">
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="hover:text-white">
                 Upcoming events
                 </a>
                 <hr/>
               </li>
               
               <li className="mb-2">
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="hover:text-white">
                 Ministries
                 </a>
                 <hr/>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="hover:text-white">
                 Recent Sermons
 
                 </a>
                 <hr/>
               </li>
               <li className="mb-2">
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="#" className="hover:text-white">
                 Contact us
                 </a>
                 <hr/>
@@ -58,13 +58,13 @@ const Footer = () => {
           <div className="w-full md:w-1/2 lg:w-1/4 mb-8 ml-16">
             <h4 className="text-lg font-bold mb-4">Connect</h4>
             <div className="flex items-center">
-              <a href="#" className="text-gray-300 hover:text-white mr-4">
+              <a href="#" className="text-gray-300 hover:text-black mr-4">
                 <FaFacebook />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white mr-4">
+              <a href="#" className="text-gray-300 hover:text-black mr-4">
                 <FaLinkedin />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white">
+              <a href="#" className="text-gray-300 hover:text-black">
                 <FaTwitter />
               </a>
             </div>
