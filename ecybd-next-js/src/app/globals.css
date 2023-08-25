@@ -7,3 +7,84 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+
+
+
+
+/* Custom styles for carousel arrows */
+.slick-prev,
+.slick-next {
+    font-size: 0;
+    /* Hide default arrow content */
+    line-height: 0;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0.207) !important;
+    /* Arrow background color */
+    /* color: #fff; */
+    color: black !important;
+    /* Arrow color */
+    border-radius: 50%;
+    /* Make it circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slick-next:hover {
+    background-color: gray;
+}
+
+.slick-prev:hover {
+    background-color: gray;
+}
+
+.slick-prev {
+    left: -20px;
+    z-index: 5;
+
+}
+
+.slick-next {
+    right: -20px;
+}
+
+
+@media only screen and (min-width: 640px) {
+    .slick-prev {
+        left: -100px;
+
+    }
+
+    .slick-next {
+        right: -100px;
+    }
+}
+
+
+.objectivesOption {
+    list-style: none;
+    position: relative;
+    margin-left: 22px;
+
+
+}
+
+.objectivesOption::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #4c8488;
+
+}

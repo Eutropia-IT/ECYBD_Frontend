@@ -2,40 +2,41 @@
 
 import Image from "next/image";
 import React from "react";
-import shortId from "shortid";
+
 import logo from "../../../assets/logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiOutlineBars } from "react-icons/ai";
+import shortid from "shortid";
 
 const linkData = [
   {
-    id: shortId.generate(),
+    id: shortid.generate(),
     text: "HOME",
     path: "/",
   },
   {
-    id: shortId.generate(),
+    id: shortid.generate(),
     text: "DICOCESEN COMMISSIONS",
     path: "/diocesen-commissions",
   },
   {
-    id: shortId.generate(),
+    id: shortid.generate(),
     text: "MOVEMENTS",
     path: "/movements",
   },
   {
-    id: shortId.generate(),
+    id: shortid.generate(),
     text: "BLOG",
     path: "/blog",
   },
   {
-    id: shortId.generate(),
+    id: shortid.generate(),
     text: "RESOURCES",
     path: "/resources",
   },
   {
-    id: shortId.generate(),
+    id: shortid.generate(),
     text: "CONTACT",
     path: "/contact",
   },
@@ -98,7 +99,10 @@ const Header = () => {
             DONATE
           </Link>
 
-          <button onClick={handleSidebar} className="ml-6 text-4xl">
+          <button
+            onClick={handleSidebar}
+            className="ml-2 text-4xl  p-3 block xl:hidden"
+          >
             <AiOutlineBars />
           </button>
         </div>
