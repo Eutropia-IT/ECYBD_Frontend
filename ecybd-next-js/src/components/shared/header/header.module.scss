@@ -1,0 +1,33 @@
+.rootLinks1 {
+  position: relative;
+
+  .rootLinks3 {
+    display: none;
+  }
+
+  .rootLinks2 {
+    display: none;
+
+    // &:hover {
+    //   .rootLinks3 {
+    //     display: block;
+    //   }
+    // }
+
+    .rootSubLinks2:hover {
+      .rootLinks3 {
+        display: block;
+      }
+    }
+  }
+
+  &:hover {
+    .rootLinks2 {
+      display: block;
+    }
+
+    .rootLinks3 {
+      display: none;
+    }
+  }
+}
