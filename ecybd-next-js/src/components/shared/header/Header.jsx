@@ -2,7 +2,7 @@
 
 import styles from "./header.module.scss";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 import logo from "../../../assets/logo.png";
 import Link from "next/link";
@@ -10,6 +10,7 @@ import { usePathname } from "next/navigation";
 import { AiOutlineBars } from "react-icons/ai";
 import { FaAngleDown } from "react-icons/fa6";
 import shortid from "shortid";
+import SideNavbar from "../sideNavbar/SideNavbar";
 
 const linkData = [
   {
@@ -128,16 +129,21 @@ const linkData = [
 
 const Header = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSidebar = () => {
-    alert("Sidebar with menu links will appear and its under development");
+    setIsOpen(!isOpen);
   };
 
   return (
-    <div className="py-2">
-      <div className="px-5 sm:px-0 container mx-auto grid grid-cols-12 items-center">
+    <div className="">
+      <SideNavbar handleSidebar={handleSidebar} isOpen={isOpen} />
+
+      <div className="px-5 py-1 2xl:px-0 container mx-auto grid grid-cols-12 items-center">
         <div className="col-span-2 ">
-          <Image className="w-20" src={logo} alt="logo" />
+          <Link href="/">
+            <Image className="w-20" src={logo} alt="logo" />
+          </Link>
         </div>
         <div className="col-span-8  gap-1 2xl:gap-3 hidden xl:flex justify-between 2xl:justify-start">
           {linkData.map((link) => {
@@ -151,8 +157,6 @@ const Header = () => {
                 flex items-center justify-center
                 
                 hover:bg-teal-600 hover:text-white
-                
-                ${styles.test}
 
                 ${
                   pathname === link.path
@@ -176,13 +180,13 @@ const Header = () => {
                       {link.subRoutes.map((subLink) => {
                         return (
                           <div
+                            key={subLink.id}
                             className={`relative ${
                               subLink.subRoutes?.length > 0 &&
                               styles.rootSubLinks2
                             }`}
                           >
                             <Link
-                              key={subLink.id}
                               className={`
                               px-2 2xl:px-3 py-2  rounded
                               font-normal text-base
@@ -248,7 +252,7 @@ const Header = () => {
             "
             href={"/donate"}
           >
-            DONATE
+            SUPPORT
           </Link>
 
           <button
