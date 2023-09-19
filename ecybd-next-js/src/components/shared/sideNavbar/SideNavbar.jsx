@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import shortid from "shortid";
 import styles from "../header/header.module.scss";
 import Link from "next/link";
@@ -126,6 +126,19 @@ const linkData = [
 const SideNavbar = ({ isOpen, handleSidebar }) => {
   const pathname = usePathname();
 
+  const [subRouteId, setSubRouteId] = useState(null);
+  const [subSubRouteId, setSubSubRouteId] = useState(null);
+
+  const handleSubRoute = (id) => {
+    if (subRouteId === id) return setSubRouteId(null);
+    else setSubRouteId(id);
+  };
+
+  const handleSubSubRoute = (id) => {
+    if (subSubRouteId === id) return setSubSubRouteId(null);
+    else setSubSubRouteId(id);
+  };
+
   return (
     <div
       className={
@@ -149,15 +162,19 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
           </button>
         </div>
       </div>
-      {linkData.map((link) => {
-        return (
-          <div key={link.id} className={styles.rootLinks1}>
-            <Link
-              className={`
+
+      <div className="mt-5">
+        {linkData.map((link) => {
+          return (
+            <div key={link.id} className={`${styles.rootLinks1} mb-2`}>
+              <div className="flex justify-start items-center px-5">
+                <Link
+                  onClick={handleSidebar}
+                  className={`
                  px-2 2xl:px-3 py-2  rounded
-                font-semibold text-base
+                font-semibold text-base w-full
                 transition duration-200 ease-in-
-                flex items-center justify-center
+                flex items-center justify-start
                 
                 hover:bg-teal-600 hover:text-white
 
@@ -167,18 +184,83 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                     : "text-black"
                 } 
                 `}
-              href={link.path}
-            >
-              {link.text}
+                  href={link.path}
+                >
+                  {link.text}
+                </Link>
+
+                {link?.subRoutes && (
+                  <button
+                    onClick={() => handleSubRoute(link.id)}
+                    className=" w-12 flex justify-center"
+                  >
+                    <FaAngleDown />
+                  </button>
+                )}
+              </div>
+
               {link?.subRoutes && (
-                <span className="pl-1">
-                  <FaAngleDown />
-                </span>
+                <div
+                  className={
+                    link.id == subRouteId
+                      ? `flex flex-col items-center bg-gray-100 py-2 px-5`
+                      : `hidden`
+                  }
+                >
+                  {link.subRoutes.map((subLink) => {
+                    return (
+                      <div className="w-full">
+                        <div className="flex justify-center items-center">
+                          <Link
+                            onClick={handleSidebar}
+                            className="py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded"
+                            key={subLink.id}
+                            href={subLink.path}
+                          >
+                            {subLink.text}
+                          </Link>
+
+                          {subLink?.subRoutes && (
+                            <button
+                              onClick={() => handleSubSubRoute(subLink.id)}
+                              className=" w-12   flex justify-center"
+                            >
+                              <FaAngleDown />
+                            </button>
+                          )}
+                        </div>
+
+                        {subLink?.subRoutes && (
+                          <div
+                            className={
+                              subSubRouteId == subLink.id
+                                ? `block items-center bg-gray-200 w-12/12 py-2 px-5`
+                                : `hidden`
+                            }
+                          >
+                            {subLink.subRoutes.map((subSubLink) => {
+                              return (
+                                <Link
+                                  onClick={handleSidebar}
+                                  className="py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded"
+                                  key={subSubLink.id}
+                                  href={subSubLink.path}
+                                >
+                                  {subSubLink.text}
+                                </Link>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
               )}
-            </Link>
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

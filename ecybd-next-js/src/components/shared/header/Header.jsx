@@ -203,6 +203,12 @@ const Header = () => {
                               href={subLink.path}
                             >
                               {subLink.text}
+
+                              {subLink?.subRoutes && (
+                                <span className="pl-1">
+                                  <FaAngleDown />
+                                </span>
+                              )}
                             </Link>
 
                             <div className={styles.rootLinks3}>
