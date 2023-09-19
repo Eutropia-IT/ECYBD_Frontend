@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../../assets/logo.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -8,7 +9,9 @@ const Footer = () => {
       <div className="w-11/12 mx-auto border-b border-gray-800 pb-8 ">
         <div className="px-8 sm:px-0 container mx-auto grid  grid-cols-1 lg:grid-cols-3 py-4 pt-8">
           <div>
-            <Image className="w-28 mx-auto lg:ml-0" src={logo} alt="logo" />
+            <Link href="/">
+              <Image className="w-28 mx-auto lg:ml-0" src={logo} alt="logo" />
+            </Link>
             <div className="mt-5 flex flex-col gap-3 items-center lg:items-start mb-5 lg:mb-0">
               <a href="telto:0174345800">Phone: 01743452800</a>
 
@@ -44,9 +47,9 @@ const Footer = () => {
                   height="220"
                   src="https://www.youtube.com/embed/-ph4mykFp9I?si=2W8i5Gaoj4rcaA2I"
                   title="YouTube video player"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>

@@ -124,7 +124,7 @@ const Home = () => {
       {/* our  objectives part */}
       <div className="w-11/12 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 ">
         <div>
-          <Image className="w-full" src={collage} alt="objective"/>
+          <Image className="w-full" src={collage} alt="collage" />
         </div>
         <div className="flex flex-col items-center justify-center">
           <div>
@@ -157,7 +157,7 @@ const Home = () => {
         <div className="px-5 sm:px-0 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-20 gap-8">
           {demoData.map((data) => {
             return (
-              <div key={Math.random()}>
+              <div key={data}>
                 <Image className="w-full" src={menImage} alt="men" />
                 <h3 className="font-semibold px-5 mt-2 text-lg text-center">
                   {" "}
