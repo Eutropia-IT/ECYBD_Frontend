@@ -31,3 +31,16 @@
     }
   }
 }
+
+.showSidebar {
+  transform: translateX(0);
+  transition: all ease-in 0.1s;
+}
+
+.hideSidebar {
+  transform: translateX(-100%);
+  transition: all ease-in 0.1s;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}

@@ -3,7 +3,7 @@ import shortid from "shortid";
 import styles from "../header/header.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaAngleDown } from "react-icons/fa6";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa6";
 import { IoCloseOutline } from "react-icons/io5";
 import Image from "next/image";
 import logo from "../../../assets/logo.png";
@@ -26,42 +26,42 @@ const linkData = [
     subRoutes: [
       {
         id: shortid.generate(),
-        text: "Barishal",
+        text: "BARISHAL",
         path: "/diocesen-commissions/barishal",
       },
       {
         id: shortid.generate(),
-        text: "Chittagong",
+        text: "CHITTAGONG",
         path: "/diocesen-commissions/chittagong",
       },
       {
         id: shortid.generate(),
-        text: "Dhaka",
+        text: "DHAKA",
         path: "/diocesen-commissions/dhaka",
       },
       {
         id: shortid.generate(),
-        text: "Dinajpur",
+        text: "DINJAPUR",
         path: "/diocesen-commissions/dinajpur",
       },
       {
         id: shortid.generate(),
-        text: "Khulna",
+        text: "KHULNA",
         path: "/diocesen-commissions/khulna",
       },
       {
         id: shortid.generate(),
-        text: "Mymensingh",
+        text: "MYMENSINGH",
         path: "/diocesen-commissions/mymensingh",
       },
       {
         id: shortid.generate(),
-        text: "Rajshahi",
+        text: "RAJSHAHI",
         path: "/diocesen-commissions/rajshahi",
       },
       {
         id: shortid.generate(),
-        text: "Sylhet",
+        text: "SYLHET",
         path: "/diocesen-commissions/sylhet",
       },
     ],
@@ -84,27 +84,27 @@ const linkData = [
     subRoutes: [
       {
         id: shortid.generate(),
-        text: "Gallery",
+        text: "GALLERY",
         path: "/resources/gallery",
       },
       {
         id: shortid.generate(),
-        text: "Publications",
+        text: "PUBLICATIONS",
         path: "/resources/publications",
         subRoutes: [
           {
             id: shortid.generate(),
-            text: "Newsletters",
+            text: "NEWSLETTERS",
             path: "/resources/publications/newsletters",
           },
           {
             id: shortid.generate(),
-            text: "Jubodrishty",
+            text: "JUBODRISHTY",
             path: "/resources/publications/jubodrishty",
           },
           {
             id: shortid.generate(),
-            text: "Nobokollol",
+            text: "NOBOKOLLOL",
             path: "/resources/publications/nobokollol",
           },
           {
@@ -143,13 +143,13 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
     <div
       className={
         isOpen
-          ? `fixed w-full py-3 sm:w-96 block xl:hidden bottom-0 top-0 z-10 bg-white`
-          : "hidden"
+          ? `fixed w-full py-3 sm:w-96 block xl:hidden bottom-0 top-0 z-10 bg-white  ${styles.showSidebar}`
+          : `${styles.hideSidebar}`
       }
     >
       <div className="flex justify-between px-5">
         <div>
-          <Link href="/">
+          <Link onClick={handleSidebar} href="/">
             <Image className="w-12" src={logo} alt="logo" />
           </Link>
         </div>
@@ -192,9 +192,9 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                 {link?.subRoutes && (
                   <button
                     onClick={() => handleSubRoute(link.id)}
-                    className=" w-12 flex justify-center"
+                    className=" w-10 flex justify-center hover:bg-gray-100 h-10 items-center rounded-full"
                   >
-                    <FaAngleDown />
+                    {link.id == subRouteId ? <FaAngleUp /> : <FaAngleDown />}
                   </button>
                 )}
               </div>
@@ -213,7 +213,16 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                         <div className="flex justify-center items-center">
                           <Link
                             onClick={handleSidebar}
-                            className="py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded"
+                            className={`py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded
+                            
+                            
+                             ${
+                               pathname === subLink.path
+                                 ? "bg-teal-600 text-white"
+                                 : "text-black"
+                             } 
+
+                            `}
                             key={subLink.id}
                             href={subLink.path}
                           >
@@ -223,9 +232,13 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                           {subLink?.subRoutes && (
                             <button
                               onClick={() => handleSubSubRoute(subLink.id)}
-                              className=" w-12   flex justify-center"
+                              className=" w-10 flex justify-center hover:bg-gray-200 h-10 items-center rounded-full"
                             >
-                              <FaAngleDown />
+                              {subLink.id == subSubRouteId ? (
+                                <FaAngleUp />
+                              ) : (
+                                <FaAngleDown />
+                              )}
                             </button>
                           )}
                         </div>
@@ -242,7 +255,16 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                               return (
                                 <Link
                                   onClick={handleSidebar}
-                                  className="py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded"
+                                  className={`py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded
+                                  
+                                   
+                             ${
+                               pathname === subSubLink.path
+                                 ? "bg-teal-600 text-white"
+                                 : "text-black"
+                             } 
+                                  
+                                  `}
                                   key={subSubLink.id}
                                   href={subSubLink.path}
                                 >
