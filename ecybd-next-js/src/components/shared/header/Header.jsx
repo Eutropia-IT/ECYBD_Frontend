@@ -30,42 +30,42 @@ const linkData = [
     subRoutes: [
       {
         id: shortid.generate(),
-        text: "Barishal",
+        text: "BARISHAL",
         path: "/diocesen-commissions/barishal",
       },
       {
         id: shortid.generate(),
-        text: "Chittagong",
+        text: "CHITTAGONG",
         path: "/diocesen-commissions/chittagong",
       },
       {
         id: shortid.generate(),
-        text: "Dhaka",
+        text: "DHAKA",
         path: "/diocesen-commissions/dhaka",
       },
       {
         id: shortid.generate(),
-        text: "Dinajpur",
+        text: "DINJAPUR",
         path: "/diocesen-commissions/dinajpur",
       },
       {
         id: shortid.generate(),
-        text: "Khulna",
+        text: "KHULNA",
         path: "/diocesen-commissions/khulna",
       },
       {
         id: shortid.generate(),
-        text: "Mymensingh",
+        text: "MYMENSINGH",
         path: "/diocesen-commissions/mymensingh",
       },
       {
         id: shortid.generate(),
-        text: "Rajshahi",
+        text: "RAJSHAHI",
         path: "/diocesen-commissions/rajshahi",
       },
       {
         id: shortid.generate(),
-        text: "Sylhet",
+        text: "SYLHET",
         path: "/diocesen-commissions/sylhet",
       },
     ],
@@ -88,27 +88,27 @@ const linkData = [
     subRoutes: [
       {
         id: shortid.generate(),
-        text: "Gallery",
+        text: "GALLERY",
         path: "/resources/gallery",
       },
       {
         id: shortid.generate(),
-        text: "Publications",
+        text: "PUBLICATIONS",
         path: "/resources/publications",
         subRoutes: [
           {
             id: shortid.generate(),
-            text: "Newsletters",
+            text: "NEWSLETTERS",
             path: "/resources/publications/newsletters",
           },
           {
             id: shortid.generate(),
-            text: "Jubodrishty",
+            text: "JUBODRISHTY",
             path: "/resources/publications/jubodrishty",
           },
           {
             id: shortid.generate(),
-            text: "Nobokollol",
+            text: "NOBOKOLLOL",
             path: "/resources/publications/nobokollol",
           },
           {
@@ -136,21 +136,21 @@ const Header = () => {
   };
 
   return (
-    <div className="">
+    <div>
       <SideNavbar handleSidebar={handleSidebar} isOpen={isOpen} />
-
-      <div className="px-5 py-1 2xl:px-0 container mx-auto grid grid-cols-12 items-center">
-        <div className="col-span-2 ">
-          <Link href="/">
-            <Image className="w-20" src={logo} alt="logo" />
-          </Link>
-        </div>
-        <div className="col-span-8  gap-1 2xl:gap-3 hidden xl:flex justify-between 2xl:justify-start">
-          {linkData.map((link) => {
-            return (
-              <div key={link.id} className={styles.rootLinks1}>
-                <Link
-                  className={`
+      <div>
+        <div className="px-5 py-1 2xl:px-0 container mx-auto grid grid-cols-12 items-center">
+          <div className="col-span-2 ">
+            <Link href="/">
+              <Image className="w-20" src={logo} alt="logo" />
+            </Link>
+          </div>
+          <div className="col-span-8  gap-1 2xl:gap-3 hidden xl:flex justify-between 2xl:justify-start">
+            {linkData.map((link) => {
+              return (
+                <div key={link.id} className={styles.rootLinks1}>
+                  <Link
+                    className={`
                  px-2 2xl:px-3 py-2  rounded
                 font-semibold text-base
                 transition duration-200 ease-in-
@@ -164,30 +164,30 @@ const Header = () => {
                     : "text-black"
                 } 
                 `}
-                  href={link.path}
-                >
-                  {link.text}{" "}
-                  {link?.subRoutes && (
-                    <span className="pl-1">
-                      <FaAngleDown />
-                    </span>
-                  )}
-                </Link>
+                    href={link.path}
+                  >
+                    {link.text}{" "}
+                    {link?.subRoutes && (
+                      <span className="pl-1">
+                        <FaAngleDown />
+                      </span>
+                    )}
+                  </Link>
 
-                <div className={styles.rootLinks2}>
-                  {link?.subRoutes && (
-                    <div className="absolute right-0 left-0  bg-white shadow-lg rounded-lg mt-0">
-                      {link.subRoutes.map((subLink) => {
-                        return (
-                          <div
-                            key={subLink.id}
-                            className={`relative ${
-                              subLink.subRoutes?.length > 0 &&
-                              styles.rootSubLinks2
-                            }`}
-                          >
-                            <Link
-                              className={`
+                  <div className={styles.rootLinks2}>
+                    {link?.subRoutes && (
+                      <div className="absolute right-0 left-0  bg-white shadow-lg rounded-lg mt-0">
+                        {link.subRoutes.map((subLink) => {
+                          return (
+                            <div
+                              key={subLink.id}
+                              className={`relative ${
+                                subLink.subRoutes?.length > 0 &&
+                                styles.rootSubLinks2
+                              }`}
+                            >
+                              <Link
+                                className={`
                               px-2 2xl:px-3 py-2  rounded
                               font-normal text-base
                               transition duration-200 ease-in-
@@ -200,19 +200,25 @@ const Header = () => {
                                   : "text-black"
                               } 
                               `}
-                              href={subLink.path}
-                            >
-                              {subLink.text}
-                            </Link>
+                                href={subLink.path}
+                              >
+                                {subLink.text}
 
-                            <div className={styles.rootLinks3}>
-                              {subLink?.subRoutes && (
-                                <div className="absolute top-0 left-full   bg-white rounded-lg shadow-lg w-full mt-0">
-                                  {subLink.subRoutes.map((subSubLink) => {
-                                    return (
-                                      <Link
-                                        key={subSubLink.id}
-                                        className={`
+                                {subLink?.subRoutes && (
+                                  <span className="pl-1">
+                                    <FaAngleDown />
+                                  </span>
+                                )}
+                              </Link>
+
+                              <div className={styles.rootLinks3}>
+                                {subLink?.subRoutes && (
+                                  <div className="absolute top-0 left-full   bg-white rounded-lg shadow-lg w-full mt-0">
+                                    {subLink.subRoutes.map((subSubLink) => {
+                                      return (
+                                        <Link
+                                          key={subSubLink.id}
+                                          className={`
                               px-2 2xl:px-3 py-2  rounded
                               font-normal text-base
                               transition duration-200 ease-in-
@@ -227,40 +233,41 @@ const Header = () => {
                                   : "text-black"
                               } 
                               `}
-                                        href={subSubLink.path}
-                                      >
-                                        {subSubLink.text}
-                                      </Link>
-                                    );
-                                  })}
-                                </div>
-                              )}
+                                          href={subSubLink.path}
+                                        >
+                                          {subSubLink.text}
+                                        </Link>
+                                      );
+                                    })}
+                                  </div>
+                                )}
+                              </div>
                             </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-        <div className="col-span-10 xl:col-span-2 flex justify-end  items-center">
-          <Link
-            className="font-semibold bg-teal-700 px-7 py-2 text-white text-base
+              );
+            })}
+          </div>
+          <div className="col-span-10 xl:col-span-2 flex justify-end  items-center">
+            <Link
+              className="font-semibold bg-teal-700 px-7 py-2 text-white text-base
             "
-            href={"/donate"}
-          >
-            SUPPORT
-          </Link>
+              href={"/donate"}
+            >
+              SUPPORT
+            </Link>
 
-          <button
-            onClick={handleSidebar}
-            className="ml-2 text-4xl  p-3 block xl:hidden"
-          >
-            <AiOutlineBars />
-          </button>
+            <button
+              onClick={handleSidebar}
+              className="ml-2 text-4xl  p-3 block xl:hidden"
+            >
+              <AiOutlineBars />
+            </button>
+          </div>
         </div>
       </div>
     </div>
