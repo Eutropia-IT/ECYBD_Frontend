@@ -14,6 +14,7 @@ import sponsor1 from "../../assets/sponsors/sponsor1.png";
 import sponsor2 from "../../assets/sponsors/sponsor2.png";
 import sponsor3 from "../../assets/sponsors/sponsor3.png";
 import sponsor4 from "../../assets/sponsors/sponsor4.png";
+import HeroSlider from "./HeroSlider";
 
 const demoData = [1, 2, 3, 4, 5, 6];
 
@@ -30,7 +31,8 @@ const Home = () => {
     <div>
       {/* banner part */}
       <div>
-        <Image className="w-full" src={banner} alt="banner" />
+        <HeroSlider />
+        {/* <Image className="w-full" src={banner} alt="banner" /> */}
       </div>
 
       {/* slider */}

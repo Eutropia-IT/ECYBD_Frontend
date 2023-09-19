@@ -145,7 +145,7 @@ const Header = () => {
               <Image className="w-20" src={logo} alt="logo" />
             </Link>
           </div>
-          <div className="col-span-8  gap-1 2xl:gap-3 hidden xl:flex justify-between 2xl:justify-start">
+          <div className="col-span-8  gap-1 2xl:gap-3 hidden xl:flex justify-between 2xl:justify-start z-10">
             {linkData.map((link) => {
               return (
                 <div key={link.id} className={styles.rootLinks1}>
