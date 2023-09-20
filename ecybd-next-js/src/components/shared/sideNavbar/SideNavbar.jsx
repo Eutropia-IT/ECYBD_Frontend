@@ -209,7 +209,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                 >
                   {link.subRoutes.map((subLink) => {
                     return (
-                      <div className="w-full">
+                      <div key={Math.random()} className="w-full">
                         <div className="flex justify-center items-center">
                           <Link
                             onClick={handleSidebar}
@@ -253,7 +253,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                           >
                             {subLink.subRoutes.map((subSubLink) => {
                               return (
-                                <Link
+                                <Link key={Math.random()}
                                   onClick={handleSidebar}
                                   className={`py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded
                                   
