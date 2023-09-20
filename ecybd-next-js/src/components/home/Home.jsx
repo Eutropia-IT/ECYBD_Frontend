@@ -78,7 +78,7 @@ const Home = () => {
 
       {/* first content part */}
 
-      <div className="w-11/12 mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="container px-8 2xl:px-0 mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div className="flex flex-col justify-between gap-10">
           <div>
             <h1 className="text-3xl  font-semibold mb-3">
@@ -124,7 +124,7 @@ const Home = () => {
       </div>
 
       {/* our  objectives part */}
-      <div className="w-11/12 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 ">
+      <div className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 ">
         <div>
           <Image className="w-full" src={collage} alt="collage" />
         </div>
@@ -156,7 +156,7 @@ const Home = () => {
           Executive & Commision Members
         </h1>
 
-        <div className="px-5 sm:px-0 container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-20 gap-8">
+        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-20 gap-8">
           {demoData.map((data) => {
             return (
               <div key={data}>
@@ -187,7 +187,7 @@ const Home = () => {
           We Are Recognised By
         </h1>
 
-        <div className="px-5 sm:px-0 container mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-10 gap-8">
+        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-10 gap-8">
           <div>
             <Image className="w-full" src={sponsor1} alt="sponsor1" />
           </div>
