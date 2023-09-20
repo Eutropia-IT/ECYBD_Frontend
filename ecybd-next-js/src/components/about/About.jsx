@@ -3,21 +3,18 @@ import TeamCard from "./TeamCard";
 import { FaAngleRight } from "react-icons/fa6";
 import picture from "../../assets/banner1.jpg";
 import Image from "next/image";
+import PageTop from "../shared/PageTop";
 
 const About = () => {
   return (
     <>
       {/* header section */}
-      <div className=" bg-teal-50 py-6">
-        <div className="container px-8 2xl:px-0 mx-auto">
-          <h1 className="text-3xl text-gray-700 md:text-4xl font-bold">
-            About us
-          </h1>
-          <p className="mt-2 text-base text-gray-700">
-            Write something about your church here. Keep it simple though.
-          </p>
-        </div>
-      </div>
+      <PageTop
+        title={"About us"}
+        description={
+          "Write something about your church here. Keep it simple though."
+        }
+      />
 
       {/* content section */}
       <div className="container px-8 2xl:px-0 mx-auto grid gap-10 grid-cols-12">
