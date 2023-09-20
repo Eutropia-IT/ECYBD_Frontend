@@ -253,7 +253,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                           >
                             {subLink.subRoutes.map((subSubLink) => {
                               return (
-                                <Link key={Math.random()}
+                                <Link
                                   onClick={handleSidebar}
                                   className={`py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded
                                   
