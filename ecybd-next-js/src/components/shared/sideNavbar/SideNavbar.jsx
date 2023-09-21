@@ -75,7 +75,7 @@ const linkData = [
   {
     id: shortid.generate(),
     text: "BLOGS",
-    path: "/blog",
+    path: "/blogs",
   },
   {
     id: shortid.generate(),
