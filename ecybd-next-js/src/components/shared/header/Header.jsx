@@ -174,9 +174,11 @@ const Header = () => {
                     )}
                   </Link>
 
-                  <div className={styles.rootLinks2}>
+                  <div>
                     {link?.subRoutes && (
-                      <div className="absolute right-0 left-0  bg-white shadow-lg rounded-lg mt-0">
+                      <div
+                        className={`${styles.rootLinks2}  absolute right-0 left-0  bg-white  shadow-lg rounded-lg mt-0 `}
+                      >
                         {link.subRoutes.map((subLink) => {
                           return (
                             <div

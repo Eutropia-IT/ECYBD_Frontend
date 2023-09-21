@@ -213,7 +213,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                         <div className="flex justify-center items-center">
                           <Link
                             onClick={handleSidebar}
-                            className={`py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded
+                            className={`py-1 w-full text-center   flex items-center justify-start px-5 hover:bg-teal-600 hover:text-white rounded
                             
                             
                              ${
@@ -255,7 +255,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                               return (
                                 <Link
                                   onClick={handleSidebar}
-                                  className={`py-1 w-full text-center   flex items-center justify-center hover:bg-teal-600 hover:text-white rounded
+                                  className={`py-1 w-full text-center   flex items-center justify-start px-5 hover:bg-teal-600 hover:text-white rounded
                                   
                                    
                              ${

@@ -1,5 +1,6 @@
 .rootLinks1 {
   position: relative;
+  // padding: 0 1rem;
 
   .rootLinks3 {
     display: none;
@@ -7,6 +8,10 @@
 
   .rootLinks2 {
     display: none;
+    position: absolute;
+    min-width: max-content;
+    left: 0;
+    right: 0;
 
     // &:hover {
     //   .rootLinks3 {

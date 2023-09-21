@@ -15,8 +15,55 @@ import sponsor2 from "../../assets/sponsors/sponsor2.png";
 import sponsor3 from "../../assets/sponsors/sponsor3.png";
 import sponsor4 from "../../assets/sponsors/sponsor4.png";
 import HeroSlider from "./HeroSlider";
+import shortid from "shortid";
+import Link from "next/link";
 
 const demoData = [1, 2, 3, 4, 5, 6];
+
+// 01) ;
+// 02) ;
+// 03);
+// 04) ;
+// 05);
+// 06) ;
+// 07) ;
+// 08) ;
+
+const aimObjective = [
+  {
+    id: shortid.generate(),
+    text: "Facilitating the Catholic youth in their understanding of Christian vocation, faith-life and personal commitment to Christian values",
+  },
+  {
+    id: shortid.generate(),
+    text: "Accompanying and journeying to share the experience of faith-life with the youth to assist in their growth and maturity as followers of Christ",
+  },
+
+  {
+    id: shortid.generate(),
+    text: " Helping them to become aware of society and the Church by understanding the social, political, cultural, economic and religious situations",
+  },
+  {
+    id: shortid.generate(),
+    text: "Helping them to understand their responsibility towards self, family, Church, society and world",
+  },
+  {
+    id: shortid.generate(),
+    text: " Helping them to develop their personality and give “Sheba” (service) for communion and community building",
+  },
+  {
+    id: shortid.generate(),
+    text: "Helping them to become aware of the social realities, the signs of the time, especially of injustices, oppressions, the misery of their brothers and sisters, and healing and solidarity in their struggle for liberation",
+  },
+  {
+    id: shortid.generate(),
+    text: "Enabling them to build friendly relationship with national and international youth organizations and movements and give witness to them of their own faith, culture and experience of God",
+  },
+  {
+    id: shortid.generate(),
+    text: "Educating them to contribute to the life and ministry of the Church in order to become a greater sign of the Kingdom",
+  },
+];
 
 const Home = () => {
   var settings = {
@@ -32,10 +79,9 @@ const Home = () => {
       {/* banner part */}
       <div>
         <HeroSlider />
-        {/* <Image className="w-full" src={banner} alt="banner" /> */}
       </div>
 
-      {/* slider */}
+      {/* slider for quotes (second slider)*/}
 
       <div className="relative  w-full mx-auto  bg-gray-100">
         <Slider
@@ -85,72 +131,117 @@ const Home = () => {
               About ECY Bangladesh
             </h1>
             <p className="text-justify text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              nisi ipsam, saepe, accusamus eligendi nam consequatur praesentium
-              iure at blanditiis quidem corrupti tempora expedita illum
-              obcaecati dolor ullam sequi ab rerum inventore quis! Rerum
-              excepturi, deleniti, laudantium ex at beatae saepe incidunt
-              praesentium neque distinctio animi aliquam natus totam. Totam
-              possimus hic error asperiores, nesciunt obcaecati. Corporis
-              reprehenderit tempora quod libero saepe at quas iste. Dolorem
-              possimus eaque fugiat nemo est sit corporis velit, illo, vel
-              accusantium, cumque fuga et molestiae? Cum, eos temporibus! Libero
-              expedita mollitia, voluptatum nostrum voluptates exercitationem
-              similique illum neque nisi enim ab molestias reiciendis quod?
-            </p>
-          </div>
-
-          <div>
-            <h1 className="text-3xl  font-semibold mb-3">Mission & Vison</h1>
-            <p className="text-justify text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-              nisi ipsam, saepe, accusamus eligendi nam consequatur praesentium
-              iure at blanditiis quidem corrupti tempora expedita illum
-              obcaecati dolor ullam sequi ab rerum inventore quis! Rerum
-              excepturi, deleniti, laudantium ex at beatae saepe incidunt
-              praesentium neque distinctio animi aliquam natus totam. Totam
-              possimus hic error asperiores, nesciunt obcaecati. Corporis
-              reprehenderit tempora quod libero saepe at quas iste. Dolorem
-              possimus eaque fugiat nemo est sit corporis velit, illo, vel
-              accusantium, cumque fuga et molestiae? Cum, eos temporibus! Libero
-              expedita mollitia, voluptatum nostrum voluptates exercitationem
-              similique illum neque nisi enim ab molestias reiciendis quod?
+              The youth apostolate of the Catholic Bishops’ Conference of
+              Bangladesh (CBCB) was officially launched in 1977, under the name
+              “Catholic Jubo Sebadol” and later on officially, Episcopal
+              Commission for Youth (ECY). Its function was to direct and
+              coordinate the various youth activities and to assist the
+              formation of the youth and the students. The pastoral plans for
+              the Church in Bangladesh have also given a special emphasis on the
+              youth. These look at the youth as a special resource, since they
+              constitute a major percentage of the population of the country.
+              The Catholic Jubo Sebadol (later the National Youth Commission or,
+              জাতীয় যুব কমিশন) has been offering different programmes for this
+              important section of the Church. Its programmes integrated the
+              needs and priorities of youth activities as mentioned in the
+              pastoral plan and aimed at the following impact: The youth: a)
+              become aware of the misery, oppression and injustices among the
+              people and are urged to take steps to heal these evils; b) develop
+              their personality and form a deeper spirit of communion among
+              themselves and others and also learn to pray, share and open
+              themselves for dialogue and collaboration; c) become aware of
+              their religiosity and spiritual values and learn to share the
+              experience of faith as the followers of Christ; d) become aware of
+              their aim in life, vocation-mission, and responsibility towards
+              the family, the Church, society and the country. During the past
+              25 years, the youth programmes of Bangladesh have grown
+              appreciably and these have made commendable impact on the Church
+              in Bangladesh and have contributed a great deal for the growth of
+              the individual Catholics. The impact of these programmes is
+              clearly visible in the life and attitude of the younger generation
+              of Catholics.
             </p>
           </div>
         </div>
-        <div>
-          <Image className="w-full" src={mensImage} alt="mens" />
+        <div className=" flex justify-end">
+          <Image className="w-full " src={mensImage} alt="mens" />
         </div>
       </div>
 
-      {/* our  objectives part */}
+      {/* mission and vission part */}
       <div className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 ">
         <div>
           <Image className="w-full" src={collage} alt="collage" />
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <div>
-            <h1 className="text-3xl  font-semibold mb-3">Our Objectives </h1>
+        <div>
+          <h1 className="text-3xl  font-semibold mb-3">
+            Vision, Mission and Objectives of the Youth Commission
+          </h1>
+          <p className="text-justify text-base">
+            The Youth Commission of Bangladesh has defined its own vision,
+            mission and objectives. These have been taken basically from the
+            vision and mission of the Pastoral Plan of the Bangladesh Church
+            (1985 & 1996). Through these, it is expected to serve the youth of
+            the country who are faced with the challenges listed in the previous
+            section. The following are the vision, mission and objectives of the
+            Youth Commission: Vision: Integral human development of the youth
+            who will be imbued with faith commitment, love and Sheba (service).
+          </p>
 
-            <div className=" flex flex-col items-start">
-              <ul className="list-disc ">
-                <li className="objectivesOption">List item </li>
-                <li className="objectivesOption">List item </li>
-                <li className="objectivesOption">List item </li>
-                <li className="objectivesOption">List item </li>
-                <li className="objectivesOption">List item </li>
-              </ul>
+          <p className="text-justify text-base mt-3">
+            <span className="font-bold">Mission:</span> The following is the
+            Mission of the National Youth Commission, according to its
+            <span className="font-bold"> Constitution: </span>
+            With openness to the uniqueness of persons created in the image of
+            God and docility (to) God’s movements in the life of persons, the
+            CBCB Commission for youth commits itself to the holistic human
+            growth and maturity of the youth imbued with living faith to witness
+            the Gospel values of life service and with knowledge and competence
+            of mind and heart to bring transformation in themselves and in the
+            community.
+          </p>
+        </div>{" "}
+      </div>
 
-              <button className="px-8 py-2 text-teal-800 rounded-full border border-teal-700 mt-8">
-                View Gallery
-              </button>
-            </div>
+      {/* aims and objective part */}
+      <div className=" mt-12">
+        <div>
+          <h1 className="text-3xl text-center font-semibold">
+            Our Objectives{" "}
+          </h1>
+
+          {/* slider for objectives (third slider)*/}
+
+          <div className="relative  w-full mx-auto ">
+            <Slider
+              className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
+              {...settings}
+            >
+              {aimObjective.map((aim) => {
+                return (
+                  <div
+                    key={aim.id}
+                    className="p-5 sm:p-10 bg-white w-1/2 rounded-lg"
+                  >
+                    <p className=" text-center">{aim.text}</p>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+
+          <div className="text-center">
+            <Link
+              href={"/resources/gallery"}
+              className="px-8 py-2  text-teal-800 rounded-full border border-teal-700 "
+            >
+              View Gallery
+            </Link>
           </div>
         </div>
       </div>
 
       {/* ececutive & commmision members part */}
-
       <div className="w-full bg-gray-100 py-8 mt-12">
         <h1 className="text-3xl  text-center font-semibold py-8">
           Executive & Commision Members
