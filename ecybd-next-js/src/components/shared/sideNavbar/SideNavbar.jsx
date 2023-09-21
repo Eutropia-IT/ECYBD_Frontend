@@ -209,7 +209,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                 >
                   {link.subRoutes.map((subLink) => {
                     return (
-                      <div className="w-full">
+                      <div key={subLink.id} className="w-full">
                         <div className="flex justify-center items-center">
                           <Link
                             onClick={handleSidebar}
@@ -254,6 +254,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                             {subLink.subRoutes.map((subSubLink) => {
                               return (
                                 <Link
+                                  key={subSubLink.id}
                                   onClick={handleSidebar}
                                   className={`py-1 w-full text-center   flex items-center justify-start px-5 hover:bg-teal-600 hover:text-white rounded
                                   
@@ -265,7 +266,6 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                              } 
                                   
                                   `}
-                                  key={subSubLink.id}
                                   href={subSubLink.path}
                                 >
                                   {subSubLink.text}
