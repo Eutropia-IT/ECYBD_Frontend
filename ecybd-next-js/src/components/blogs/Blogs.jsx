@@ -43,7 +43,7 @@ const Blogs = () => {
         }
       />
 
-      <div className="grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
+      <div className="block lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
         <div className="col-span-12 grid gap-8 lg:col-span-9">
           <BlogCard />
           <BlogCard />
@@ -55,13 +55,13 @@ const Blogs = () => {
             <ReactPaginate
               className="flex items-center justify-center"
               pageClassName="  rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
-              pageLinkClassName="w-10 h-9 grid place-items-center"
+              pageLinkClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center"
               activeClassName="bg-teal-600 text-white"
-              breakClassName="w-10 h-9 grid place-items-center rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
+              breakClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
               previousClassName="rounded  border font-bold text-xs cursor-pointer hover:bg-teal-700 hover:text-white duration-100"
-              previousLinkClassName="w-10 h-9 grid place-items-center "
+              previousLinkClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center "
               nextClassName=" rounded  border font-bold text-xs cursor-pointer hover:bg-teal-700 hover:text-white duration-100"
-              nextLinkClassName="w-10 h-9 grid place-items-center "
+              nextLinkClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center "
               disabledClassName="opacity-50 cursor-not-allowed"
               disabledLinkClassName="cursor-not-allowed"
               breakLabel="..."
@@ -107,7 +107,10 @@ const Blogs = () => {
             <div>
               {[1, 2, 3, 4, 5].map((item) => {
                 return (
-                  <div className="mb-3 cursor-pointer hover:font-semibold duration-100">
+                  <div
+                    key={item}
+                    className="mb-3 cursor-pointer hover:font-semibold duration-100"
+                  >
                     <div className="flex justify-between mb-2">
                       <p className="text-sm">March 2014</p>{" "}
                       <span className="px-2 py-1 rounded-full bg-teal-100 font-bold text-xs">

@@ -6,12 +6,12 @@ import { BsArrowRight } from "react-icons/bs";
 
 const BlogCard = () => {
   return (
-    <div className="grid grid-cols-12 gap-8">
+    <div className=" sm:grid grid-cols-12 gap-8">
       <div className="col-span-12 md:col-span-3">
-        <Image src={blogImg} className="w-full" />
+        <Image src={blogImg} className="w-full" alt="blog image" />
       </div>
       <div className="col-span-12 md:col-span-9 text-gray-600">
-        <h1 className="text-gray-700 font-bold text-xl">
+        <h1 className="text-gray-700 font-bold text-xl mt-4 sm:mt-0">
           Perseverance of the Saints
         </h1>
 

@@ -1,7 +1,15 @@
+"use client";
+
+import Blog from "@/components/blog/Blog";
+
 import React from "react";
 
 const page = ({ params }) => {
-  return <div>blog : {params.blogId} </div>;
+  return (
+    <>
+      <Blog blogId={params.blogId} />
+    </>
+  );
 };
 
 export default page;
