@@ -1,9 +1,39 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import PageTop from "../shared/PageTop";
 import BlogCard from "./BlogCard";
 import { AiOutlineSearch } from "react-icons/ai";
+import ReactPaginate from "react-paginate";
 
 const Blogs = () => {
+  const itemsPerPage = 5;
+  const items = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 7, 18, 19, 20, 21,
+    22, 23, 24,
+  ];
+
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
+  const [itemOffset, setItemOffset] = useState(0);
+
+  // Simulate fetching items from another resources.
+  // (This could be items from props; or items loaded in a local state
+  // from an API endpoint with useEffect and useState)
+  const endOffset = itemOffset + itemsPerPage;
+  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  const currentItems = items.slice(itemOffset, endOffset);
+  const pageCount = Math.ceil(items.length / itemsPerPage);
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event) => {
+    const newOffset = (event.selected * itemsPerPage) % items.length;
+    console.log(
+      `User requested page number ${event.selected}, which is offset ${newOffset}`
+    );
+    setItemOffset(newOffset);
+  };
+
   return (
     <>
       <PageTop
@@ -20,6 +50,29 @@ const Blogs = () => {
           <BlogCard />
           <BlogCard />
           <BlogCard />
+
+          <div className="mb-10">
+            <ReactPaginate
+              className="flex items-center justify-center"
+              pageClassName="  rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
+              pageLinkClassName="w-10 h-9 grid place-items-center"
+              activeClassName="bg-teal-600 text-white"
+              breakClassName="w-10 h-9 grid place-items-center rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
+              previousClassName="rounded  border font-bold text-xs cursor-pointer hover:bg-teal-700 hover:text-white duration-100"
+              previousLinkClassName="w-10 h-9 grid place-items-center "
+              nextClassName=" rounded  border font-bold text-xs cursor-pointer hover:bg-teal-700 hover:text-white duration-100"
+              nextLinkClassName="w-10 h-9 grid place-items-center "
+              disabledClassName="opacity-50 cursor-not-allowed"
+              disabledLinkClassName="cursor-not-allowed"
+              breakLabel="..."
+              nextLabel=" >"
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={5}
+              pageCount={pageCount}
+              previousLabel="< "
+              renderOnZeroPageCount={null}
+            />
+          </div>
         </div>
 
         <div className="col-span-12 lg:col-span-3">
