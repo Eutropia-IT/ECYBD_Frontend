@@ -53,9 +53,7 @@ const Gallery = () => {
     <div>
       <PageTop
         title={"Gallery"}
-        description={
-          "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, ea!"
-        }
+        description={"Curated images of our church programs and events."}
       />
 
       <div className=" container mx-auto px-8 2xl:px-0 mt-10 pb-12">
