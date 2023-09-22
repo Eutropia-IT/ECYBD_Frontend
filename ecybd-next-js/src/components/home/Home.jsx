@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import banner from "../../assets/banner.png";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
@@ -17,17 +17,9 @@ import sponsor4 from "../../assets/sponsors/sponsor4.png";
 import HeroSlider, { MissionSlider } from "./HeroSlider";
 import shortid from "shortid";
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const demoData = [1, 2, 3, 4, 5, 6];
-
-// 01) ;
-// 02) ;
-// 03);
-// 04) ;
-// 05);
-// 06) ;
-// 07) ;
-// 08) ;
 
 const aimObjective = [
   {
@@ -73,6 +65,21 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  const aboutRef = useRef(null);
+  const missionRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: aboutRef,
+    offset: ["0 1", "0.3 1"],
+  });
+  const { scrollYProgress: missionYProgress } = useScroll({
+    target: missionRef,
+    offset: ["0 1", "0.4 1"],
+  });
+
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const missionScaleProgress = useTransform(missionYProgress, [0, 1], [0.5, 1]);
 
   return (
     <div>
@@ -124,7 +131,11 @@ const Home = () => {
 
       {/* first content part */}
 
-      <div className="container px-8 2xl:px-0 mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <motion.div
+        ref={aboutRef}
+        style={{ scale: scaleProgress, opacity: scaleProgress }}
+        className="container px-8 2xl:px-0 mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-16"
+      >
         <div className="flex flex-col justify-between gap-10">
           <div>
             <h1 className="text-3xl  font-semibold mb-3">
@@ -166,10 +177,14 @@ const Home = () => {
         <div className=" flex justify-end">
           <Image className="w-full object-contain" src={mensImage} alt="mens" />
         </div>
-      </div>
+      </motion.div>
 
       {/* mission and vission part */}
-      <div className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 ">
+      <motion.div
+        ref={missionRef}
+        style={{ scale: missionScaleProgress, opacity: missionScaleProgress }}
+        className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 "
+      >
         <div>
           {/* <Image className="w-full" src={collage} alt="collage" />
            */}
@@ -204,7 +219,7 @@ const Home = () => {
             community.
           </p>
         </div>{" "}
-      </div>
+      </motion.div>
 
       {/* aims and objective part */}
       <div className=" mt-12">
