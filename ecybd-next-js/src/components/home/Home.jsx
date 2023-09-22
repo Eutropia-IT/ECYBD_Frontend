@@ -164,7 +164,7 @@ const Home = () => {
           </div>
         </div>
         <div className=" flex justify-end">
-          <Image className="w-full " src={mensImage} alt="mens" />
+          <Image className="w-full object-contain" src={mensImage} alt="mens" />
         </div>
       </div>
 
@@ -212,18 +212,17 @@ const Home = () => {
 
           {/* slider for objectives (third slider)*/}
 
-          <div className="relative  w-full mx-auto ">
+          <div className="relative  w-full mx-auto  ">
             <Slider
-              className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
+              className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto  shadow-md bg-white mb-8 mt-5 rounded-lg"
               {...settings}
             >
               {aimObjective.map((aim) => {
                 return (
-                  <div
-                    key={aim.id}
-                    className="p-5 sm:p-10 bg-white w-1/2 rounded-lg"
-                  >
-                    <p className=" text-center">{aim.text}</p>
+                  <div key={aim.id} className="   rounded-lg h-36  ">
+                    <p className=" text-center h-36 grid  px-5 place-items-center ">
+                      {aim.text}
+                    </p>
                   </div>
                 );
               })}
