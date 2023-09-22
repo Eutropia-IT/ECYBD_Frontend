@@ -10,7 +10,7 @@ const Blog = ({ blogId }) => {
         description={"on 17th June 2014 by Vincent John"}
       />
 
-      <div className="block lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
+      <div className="block lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8 pb-12">
         <div className="col-span-12  text-base text-gray-800 lg:col-span-9 text-justify">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
@@ -69,7 +69,7 @@ const Blog = ({ blogId }) => {
           </p>
         </div>
 
-        <div className="col-span-12 lg:col-span-3">
+        <div className="mt-6 lg:mt-0 col-span-12 lg:col-span-3">
           {/* about */}
           <div className="text-gray-700 rounded bg-teal-50  px-8 lg:px-4 2xl:px-8  py-8">
             <h1 className="text-gray-800 font-bold text-xl">About</h1>

@@ -70,7 +70,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="hidden xl:flex py-5 col-span-3">
+        <div className="hidden xl:flex lg:mt-10 col-span-3">
           <div className="w-full bg-teal-50 rounded-lg px-6">
             <h1 className="text-center mt-8 text-xl font-bold text-gray-700">
               RECENT SERMONS
