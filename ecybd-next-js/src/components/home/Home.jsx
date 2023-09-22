@@ -14,7 +14,7 @@ import sponsor1 from "../../assets/sponsors/sponsor1.png";
 import sponsor2 from "../../assets/sponsors/sponsor2.png";
 import sponsor3 from "../../assets/sponsors/sponsor3.png";
 import sponsor4 from "../../assets/sponsors/sponsor4.png";
-import HeroSlider from "./HeroSlider";
+import HeroSlider, { MissionSlider } from "./HeroSlider";
 import shortid from "shortid";
 import Link from "next/link";
 
@@ -169,9 +169,12 @@ const Home = () => {
       </div>
 
       {/* mission and vission part */}
-      <div className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-16 ">
+      <div className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 ">
         <div>
-          <Image className="w-full" src={collage} alt="collage" />
+          {/* <Image className="w-full" src={collage} alt="collage" />
+           */}
+
+          <MissionSlider />
         </div>
         <div>
           <h1 className="text-3xl  font-semibold mb-3">

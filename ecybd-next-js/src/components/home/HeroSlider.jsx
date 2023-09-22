@@ -19,14 +19,10 @@ import banner1 from "../../assets/banner1.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
-const generateSliders = () => {
+const generateSliders = (slider) => {
   let array = [];
   for (let i = 0; i < 5; i++) {
-    array.push(
-      <SwiperSlide key={i}>
-        <Slider />
-      </SwiperSlide>
-    );
+    array.push(<SwiperSlide key={i}>{slider}</SwiperSlide>);
   }
   return array;
 };
@@ -38,7 +34,9 @@ const HeroSlider = () => {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={{
+          clickable: true,
+        }}
         modules={[Pagination, Navigation, Autoplay]}
         // autoplay={{
         //   delay: 2000,
@@ -46,13 +44,34 @@ const HeroSlider = () => {
         // }}
         className="mySwiper"
       >
-        {generateSliders()}
+        {generateSliders(<Slider />)}
       </Swiper>
     </div>
   );
 };
 
 export default HeroSlider;
+
+export const MissionSlider = () => {
+  return (
+    <div>
+      <Swiper
+        pagination={{
+          clickable: true,
+        }}
+        navigation={false}
+        modules={[Pagination, Navigation, Autoplay]}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: true,
+        }}
+        className="mySwiper "
+      >
+        {generateSliders(<MissionSlide />)}
+      </Swiper>
+    </div>
+  );
+};
 
 const Slider = () => {
   return (
@@ -64,22 +83,21 @@ const Slider = () => {
         className="hidden sm:block absolute bottom-0 left-0 w-10/12 md:w-10/12 lg:w-7/12  px-8 text-left rounded-sm  py-5 md:py-8 lg:py-12"
       >
         <p className="font-bold text-white">Lorem, ipsum dolor</p>
-        <h1 className="text-2xl md:text-4xl font-bold mt-1 md:mt-3 text-white">
+        <h1 className="text-2xl md:text-4xl font-bold mt-1 md:mt-3 text-white mb-10">
           {" "}
           Lorem, ipsum dolor{" "}
         </h1>
 
-        <button className=" px-8 md:px-12 py-2 md:py-3 mt-4 md:mt-6 rounded-full bg-teal-600 text-white font-bold">
-          {" "}
+        <Link
+          href={"/about"}
+          className=" px-8 md:px-12 py-2 md:py-3  md:mt-6 rounded-full bg-teal-700 shadow-xl text-white font-bold"
+        >
           About Us
-        </button>
+        </Link>
       </div>
 
       {/* for small screen */}
-      <div
-        // style={{ backgroundColor: "#a8a7a79c" }}
-        className="block sm:hidden w-full px-8 text-left bg-teal-900  py-5 "
-      >
+      <div className="block sm:hidden w-full px-8 text-left bg-teal-900  py-6 pb-10 ">
         <p className="font-bold text-base text-white">Lorem, ipsum dolor</p>
         <h1 className="text-xl font-bold mb-3 text-white">
           {" "}
@@ -88,12 +106,19 @@ const Slider = () => {
 
         <Link
           href={"/about"}
-          className=" px-8  py-2 rounded-full bg-teal-800 text-white font-bold text-base"
+          className=" px-8  py-2 rounded-full bg-teal-800 text-white font-bold text-base shadow-md"
         >
-          {" "}
           About Us
         </Link>
       </div>
+    </div>
+  );
+};
+
+const MissionSlide = () => {
+  return (
+    <div className="h-72 sm:h-96 rounded">
+      <Image className="rounded" src={banner1} alt="banner image" />
     </div>
   );
 };
