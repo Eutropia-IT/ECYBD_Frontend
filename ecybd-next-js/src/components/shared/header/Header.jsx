@@ -149,8 +149,26 @@ const Header = () => {
             {linkData.map((link) => {
               return (
                 <div key={link.id} className={styles.rootLinks1}>
-                  <Link
-                    className={`
+                  {link?.subRoutes?.length > 0 ? (
+                    <div
+                      className={`
+                 px-2 2xl:px-3 py-2  rounded
+                font-semibold text-base
+                transition duration-200 ease-in-
+                flex items-center justify-center
+                cursor-pointer select-none
+                hover:bg-teal-600 hover:text-white `}
+                    >
+                      {link.text}{" "}
+                      {link?.subRoutes && (
+                        <span className="pl-1">
+                          <FaAngleDown />
+                        </span>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      className={`
                  px-2 2xl:px-3 py-2  rounded
                 font-semibold text-base
                 transition duration-200 ease-in-
@@ -164,15 +182,16 @@ const Header = () => {
                     : "text-black"
                 } 
                 `}
-                    href={link.path}
-                  >
-                    {link.text}{" "}
-                    {link?.subRoutes && (
-                      <span className="pl-1">
-                        <FaAngleDown />
-                      </span>
-                    )}
-                  </Link>
+                      href={link.path}
+                    >
+                      {link.text}{" "}
+                      {link?.subRoutes && (
+                        <span className="pl-1">
+                          <FaAngleDown />
+                        </span>
+                      )}
+                    </Link>
+                  )}
 
                   <div>
                     {link?.subRoutes && (
@@ -188,7 +207,57 @@ const Header = () => {
                                 styles.rootSubLinks2
                               }`}
                             >
-                              <Link
+                              {subLink?.subRoutes?.length > 0 ? (
+                                <div
+                                  className={`
+                              px-2 2xl:px-3 py-2  rounded
+                              font-normal text-base
+                              transition duration-200 ease-in-
+                              flex items-center justify-center cursor-pointer select-none   hover:bg-teal-600 hover:text-white
+                              ${
+                                pathname === subLink.path
+                                  ? "bg-teal-600 text-white"
+                                  : "text-black"
+                              } 
+                              `}
+                                  // href={subLink.path}
+                                >
+                                  {subLink.text}
+
+                                  {subLink?.subRoutes && (
+                                    <span className="pl-1">
+                                      <FaAngleDown />
+                                    </span>
+                                  )}
+                                </div>
+                              ) : (
+                                <Link
+                                  className={`
+                              px-2 2xl:px-3 py-2  rounded
+                              font-normal text-base
+                              transition duration-200 ease-in-
+                              flex items-center justify-center
+                              
+                              hover:bg-teal-600 hover:text-white
+                              ${
+                                pathname === subLink.path
+                                  ? "bg-teal-600 text-white"
+                                  : "text-black"
+                              } 
+                              `}
+                                  href={subLink.path}
+                                >
+                                  {subLink.text}
+
+                                  {subLink?.subRoutes && (
+                                    <span className="pl-1">
+                                      <FaAngleDown />
+                                    </span>
+                                  )}
+                                </Link>
+                              )}
+
+                              {/* <Link
                                 className={`
                               px-2 2xl:px-3 py-2  rounded
                               font-normal text-base
@@ -211,7 +280,7 @@ const Header = () => {
                                     <FaAngleDown />
                                   </span>
                                 )}
-                              </Link>
+                              </Link> */}
 
                               <div className={styles.rootLinks3}>
                                 {subLink?.subRoutes && (

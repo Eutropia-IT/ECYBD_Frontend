@@ -4,6 +4,7 @@ import { useState } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
+import CustomSkeleton from "@/components/shared/CustomSkeleton";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -15,8 +16,11 @@ const options = {
   standardFontDataUrl: "/standard_fonts/",
 };
 
-export default function PdfViewer() {
-  const [file, setFile] = useState("/Economics.pdf");
+export default function PdfViewer({ pdfUrl }) {
+  // TODO: pdf url will be set in file useState
+  const [file, setFile] = useState({
+    url: pdfUrl || "https://cdn.filestackcontent.com/wcrjf9qPTCKXV3hMXDwK",
+  });
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -52,7 +56,7 @@ export default function PdfViewer() {
       </header> */}
       <div className="Example__container ">
         {/* <div className="Example__container__load">
-          <label htmlFor="file">Load from file:</label>{" "}
+          <label htmlFor="file">Load from file:</label>
           <input onChange={onFileChange} type="file" />
         </div> */}
         <div className="bg-gray-50 w-full">
@@ -61,16 +65,13 @@ export default function PdfViewer() {
             className="Example__container__document drop-shadow-lg rounded relative "
           >
             <div>
-              {" "}
               <Document
                 file={file}
                 onLoadSuccess={onDocumentLoadSuccess}
                 options={options}
+                loading={<h1 className="text-2xl text-center "> Loading </h1>}
               >
                 <Page className="pdf-page" pageNumber={pageNumber} />
-                {/* {Array.from(new Array(numPages), (el, index) => (
-              <Page key={`page_${index + 1}`} pageNumber={index + 1} />
-            ))} */}
               </Document>
             </div>
           </div>

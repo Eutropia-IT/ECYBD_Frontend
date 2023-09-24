@@ -146,7 +146,7 @@
     background-color: #323639;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
     padding: 20px;
-    color: white;
+    /* color: white; */
 }
 
 .Example header h1 {
@@ -166,7 +166,7 @@
 
 .Example__container__load {
     margin-top: 1em;
-    color: white;
+    /* color: white; */
 
 }
 
@@ -211,7 +211,7 @@
 
 .Example__container__document .react-pdf__message {
     padding: 20px;
-    color: white;
+    /* color: white; */
 }
 
 /* .textLayer {

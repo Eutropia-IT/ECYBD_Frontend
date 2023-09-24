@@ -168,9 +168,25 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
           return (
             <div key={link.id} className={`${styles.rootLinks1} mb-2`}>
               <div className="flex justify-start items-center px-5">
-                <Link
-                  onClick={handleSidebar}
-                  className={`
+                {link?.subRoutes?.length > 0 ? (
+                  <div
+                    // onClick={handleSidebar}
+                    className={`
+                 px-2 2xl:px-3 py-2  rounded
+                font-semibold text-base w-full
+                transition duration-200 ease-in-
+                flex items-center justify-start
+                cursor-pointer select-none
+                hover:bg-teal-600 hover:text-white
+                `}
+                    onClick={() => handleSubRoute(link.id)}
+                  >
+                    {link.text}
+                  </div>
+                ) : (
+                  <Link
+                    onClick={handleSidebar}
+                    className={`
                  px-2 2xl:px-3 py-2  rounded
                 font-semibold text-base w-full
                 transition duration-200 ease-in-
@@ -184,10 +200,11 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                     : "text-black"
                 } 
                 `}
-                  href={link.path}
-                >
-                  {link.text}
-                </Link>
+                    href={link.path}
+                  >
+                    {link.text}
+                  </Link>
+                )}
 
                 {link?.subRoutes && (
                   <button
@@ -211,7 +228,36 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                     return (
                       <div key={subLink.id} className="w-full">
                         <div className="flex justify-center items-center">
-                          <Link
+                          {subLink?.subRoutes?.length > 0 ? (
+                            <div
+                              onClick={() => handleSubSubRoute(subLink.id)}
+                              className={`py-1 w-full text-center   flex items-center justify-start px-5 hover:bg-teal-600 hover:text-white rounded
+                              cursor-pointer select-none
+                            
+                            `}
+                            >
+                              {subLink.text}
+                            </div>
+                          ) : (
+                            <Link
+                              onClick={handleSidebar}
+                              className={`py-1 w-full text-center   flex items-center justify-start px-5 hover:bg-teal-600 hover:text-white rounded
+                            
+                            
+                             ${
+                               pathname === subLink.path
+                                 ? "bg-teal-600 text-white"
+                                 : "text-black"
+                             } 
+
+                            `}
+                              href={subLink.path}
+                            >
+                              {subLink.text}
+                            </Link>
+                          )}
+
+                          {/* <Link
                             onClick={handleSidebar}
                             className={`py-1 w-full text-center   flex items-center justify-start px-5 hover:bg-teal-600 hover:text-white rounded
                             
@@ -227,7 +273,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
                             href={subLink.path}
                           >
                             {subLink.text}
-                          </Link>
+                          </Link> */}
 
                           {subLink?.subRoutes && (
                             <button

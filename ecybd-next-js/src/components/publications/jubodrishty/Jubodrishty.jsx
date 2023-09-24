@@ -2,20 +2,20 @@ import PageTop from "@/components/shared/PageTop";
 import React from "react";
 import PdfCardContainer from "../shared/PdfCardContainer";
 
-const Newsletters = () => {
-  const allNewsletters = [];
+const Jubodrishty = () => {
+  const allData = [];
   return (
     <div>
       <PageTop
-        title="Newsletters"
+        title="Jubodrishty"
         description={
           "  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, sunt!"
         }
       />
 
-      <PdfCardContainer allPdf={allNewsletters} containerFor={"Newsletter"} />
+      <PdfCardContainer allPdf={allData} containerFor={"Jubodrishty"} />
     </div>
   );
 };
 
-export default Newsletters;
+export default Jubodrishty;
