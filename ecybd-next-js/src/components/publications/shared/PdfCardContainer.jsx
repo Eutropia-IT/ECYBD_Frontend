@@ -12,7 +12,9 @@ const PdfCardContainer = ({ containerFor, allPdf }) => {
 
   return (
     <div className="container px-8 2xl:px-0 mx-auto pb-12">
-      <PdfViewer pdfUrl={pdfUrl} />
+      <div>
+        <PdfViewer pdfUrl={pdfUrl} />
+      </div>
       <div className="mt-12">
         <h1 className="mb-8 text-xl md:text-3xl text-gray-700 font-bold text-center">
           All {containerFor}

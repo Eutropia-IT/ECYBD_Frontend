@@ -2,6 +2,7 @@ import Header from "@/components/shared/header/Header";
 import "./globals.css";
 import { Inter, Poppins } from "next/font/google";
 import Footer from "@/components/shared/footer/Footer";
+import QueryProvider from "@/providers/QueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({
@@ -19,7 +20,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={poppins.className}>
         <Header />
-        {children}
+
+        <QueryProvider>{children}</QueryProvider>
         <Footer />
       </body>
     </html>

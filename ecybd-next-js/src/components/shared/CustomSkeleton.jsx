@@ -15,15 +15,13 @@ export default function CustomSkeleton({
         }}
         key={index}
       >
-        <div
-          className={`flex flex-row  bg-white shadow-lg  items-center py-1  `}
-        >
+        <div className={`flex flex-row mb-1 items-center py-1  `}>
           <span
             style={{
               height: `${height}px`,
               borderRadius: `${borderRadius}px`,
             }}
-            className="w-full bg-gray-200   animate-pulse"
+            className="w-full bg-gray-200    animate-pulse"
           ></span>
         </div>
       </div>
