@@ -1,7 +1,7 @@
 import React from "react";
 import CustomSkeleton from "../CustomSkeleton";
 
-const RequestStatusUI = ({ isError, isLoading, Skeleton }) => {
+const RequestStatusUI = ({ isError, isLoading, Skeleton, count = 1 }) => {
   return (
     <div>
       {isError && (
@@ -17,21 +17,19 @@ const RequestStatusUI = ({ isError, isLoading, Skeleton }) => {
             <Skeleton />
           ) : (
             <>
-              <CustomSkeleton height={20} borderRadius={5} />
-              <CustomSkeleton height={30} />
-              <CustomSkeleton height={20} borderRadius={5} />
-              <CustomSkeleton height={15} />
-              <CustomSkeleton height={15} borderRadius={5} />
-              <CustomSkeleton height={20} borderRadius={5} />
-              <CustomSkeleton height={30} />
-              <CustomSkeleton height={20} borderRadius={5} />
-              <CustomSkeleton height={15} />
-              <CustomSkeleton height={15} borderRadius={5} />{" "}
-              <CustomSkeleton height={20} borderRadius={5} />
-              <CustomSkeleton height={30} />
-              <CustomSkeleton height={20} borderRadius={5} />
-              <CustomSkeleton height={15} />
-              <CustomSkeleton height={15} borderRadius={5} />
+              {Array(Math.ceil(count / 5))
+                .fill(0)
+                .map((el) => {
+                  return (
+                    <div className="">
+                      <CustomSkeleton height={20} borderRadius={5} />
+                      <CustomSkeleton height={30} />
+                      <CustomSkeleton height={20} borderRadius={5} />
+                      <CustomSkeleton height={15} />
+                      <CustomSkeleton height={15} borderRadius={5} />
+                    </div>
+                  );
+                })}
             </>
           )}
         </div>

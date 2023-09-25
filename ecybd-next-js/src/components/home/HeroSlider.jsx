@@ -14,10 +14,14 @@ import {
   EffectFade,
   EffectFlip,
 } from "swiper/modules";
-import banner from "../../assets/banner.png";
+
 import banner1 from "../../assets/banner1.jpg";
 import Image from "next/image";
 import Link from "next/link";
+
+import { useRequestProcessor } from "@/hooks/useRequestProcessor";
+import { getSlider } from "@/apiRequestHandlers/home";
+import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 
 const generateSliders = (slider) => {
   let array = [];
@@ -28,8 +32,18 @@ const generateSliders = (slider) => {
 };
 
 const HeroSlider = () => {
+  const { query } = useRequestProcessor();
+  const {
+    data: homeBannerSliders,
+    isLoading,
+    isError,
+  } = query(["homeBannerSlider"], getSlider);
+
+  console.log(homeBannerSliders);
+
   return (
     <div>
+      {/* <RequestStatusUI isLoading={true} /> */}
       <Swiper
         pagination={{
           clickable: true,
@@ -38,10 +52,10 @@ const HeroSlider = () => {
           clickable: true,
         }}
         modules={[Pagination, Navigation, Autoplay]}
-        // autoplay={{
-        //   delay: 2000,
-        //   disableOnInteraction: true,
-        // }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: true,
+        }}
         className="mySwiper"
       >
         {generateSliders(<Slider />)}
@@ -76,7 +90,26 @@ export const MissionSlider = () => {
 const Slider = () => {
   return (
     <div className={styles.sliderRoot}>
-      <Image src={banner1} alt="banner image" />
+      {/* <div className="h-full">
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+      </div> */}
+      <Image
+        className="w-full"
+        width={400}
+        height={300}
+        src={banner1}
+        // src={"https://ecybd.eutropia-it.com/media/slider_images/5616.webp"}
+        alt="banner image"
+      />
 
       <div
         style={{ backgroundColor: "#efeeee42" }}

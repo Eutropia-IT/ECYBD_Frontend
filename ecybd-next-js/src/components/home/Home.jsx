@@ -18,6 +18,9 @@ import HeroSlider, { MissionSlider } from "./HeroSlider";
 import shortid from "shortid";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRequestProcessor } from "@/hooks/useRequestProcessor";
+import { getVerses } from "@/apiRequestHandlers/home";
+import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 
 const demoData = [1, 2, 3, 4, 5, 6];
 
@@ -81,6 +84,11 @@ const Home = () => {
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   const missionScaleProgress = useTransform(missionYProgress, [0, 1], [0.5, 1]);
 
+  const { query } = useRequestProcessor();
+  // const { data: verses, isLoading, isError } = query(["verses"], getVerses);
+
+  // console.log("verses= ", verses);
+
   return (
     <div>
       {/* banner part */}
@@ -88,9 +96,11 @@ const Home = () => {
         <HeroSlider />
       </div>
 
-      {/* slider for quotes (second slider)*/}
+      {/* slider for verses (second slider)*/}
 
       <div className="relative  w-full mx-auto  bg-gray-100">
+        {/* <RequestStatusUI isLoading={true} count={5} /> */}
+
         <Slider
           className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
           {...settings}
