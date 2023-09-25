@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import TeamCard from "./TeamCard";
 import { FaAngleRight } from "react-icons/fa6";
@@ -5,7 +7,16 @@ import picture from "../../assets/banner1.jpg";
 import Image from "next/image";
 import PageTop from "../shared/PageTop";
 
+import { useRequestProcessor } from "@/hooks/useRequestProcessor";
+import { getTodo } from "@/apiRequestHandlers/about";
+import CustomSkeleton from "../shared/CustomSkeleton";
+import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
+
 const About = () => {
+  const { query } = useRequestProcessor();
+
+  const { data, isLoading, isError } = query(["about"], getTodo);
+
   return (
     <>
       {/* header section */}
@@ -15,6 +26,18 @@ const About = () => {
           "Write something about your church here. Keep it simple though."
         }
       />
+
+      {/* <RequestStatusUI
+        isError={isError}
+        isLoading={isLoading}
+        Skeleton={AboutSkeleton}
+      />
+      <div className="container mx-auto">
+        {data?.length > 0 &&
+          data.map((item) => {
+            return <h2> {item.title} </h2>;
+          })}
+      </div> */}
 
       {/* content section */}
       <div className="container px-8 2xl:px-0 mx-auto grid gap-10 grid-cols-12">
@@ -150,3 +173,15 @@ const About = () => {
 };
 
 export default About;
+
+const AboutSkeleton = () => {
+  return (
+    <>
+      <CustomSkeleton height={20} borderRadius={5} />
+      <CustomSkeleton height={30} />
+      <CustomSkeleton height={20} borderRadius={5} />
+      <CustomSkeleton height={15} />
+      <CustomSkeleton height={15} borderRadius={5} />
+    </>
+  );
+};
