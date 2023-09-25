@@ -69,14 +69,15 @@ export default function PdfViewer({ pdfUrl }) {
                 file={file}
                 onLoadSuccess={onDocumentLoadSuccess}
                 options={options}
-                loading={
-                  <h1
-                    // style={{ height: "100vh" }}
-                    className="text-2xl text-center"
-                  >
-                    Loading
+                error={
+                  <h1 className="text-xl text-center text-red-500">
+                    <span className="text-black">Failed to load PDF file.</span>
+                    <br />
+                    Please disable IDM or other Download Manager and refresh the
+                    page
                   </h1>
                 }
+                loading={<h1 className="text-2xl text-center">Loading</h1>}
               >
                 <Page className="pdf-page" pageNumber={pageNumber} />
               </Document>
