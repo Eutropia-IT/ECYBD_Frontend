@@ -15,7 +15,7 @@ import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 const About = () => {
   const { query } = useRequestProcessor();
 
-  const { data, isLoading, isError } = query(["about"], getTodo);
+  // const { data, isLoading, isError } = query(["about"], getTodo);
 
   return (
     <>

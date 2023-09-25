@@ -1,7 +1,7 @@
 .sliderRoot {
-  height: auto;
+  height: 60vh;
   position: relative;
-
+  overflow: hidden;
   img {
     height: 45vh;
 
@@ -22,5 +22,23 @@
     @media (min-width: 1200px) {
       height: 90vh;
     }
+  }
+
+  @media (min-width: 640px) {
+    height: 50vh;
+  }
+
+  @media (min-width: 768px) {
+    height: 70vh;
+  }
+
+  @media (min-width: 1024px) {
+    height: 70vh;
+  }
+  @media (min-width: 1150) {
+    height: 70vh;
+  }
+  @media (min-width: 1200px) {
+    height: 90vh;
   }
 }

@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["ecybd.eutropia-it.com"],
+  },
+
   webpack: (config) => {
     /**
      * Critical: prevents " ⨯ ./node_modules/canvas/build/Release/canvas.node
