@@ -1,8 +1,15 @@
 import React from "react";
 import PageTop from "../shared/PageTop";
+import blogImg from "../../assets/blog-thumb-1.jpg";
+import Image from "next/image";
 
 const Blog = ({ blogId }) => {
   console.log("blog ID= ", blogId);
+
+  const content = `<p style=\"text-align:center\"><strong>Test Title</strong></p>\r\n\r\n<p><em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!</em></p>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!</p>`;
+
+  const content2 = `<p><strong>This is bold title</strong><br />\r\n<br />\r\n<em>This is normal Italic</em></p>`;
+
   return (
     <>
       <PageTop
@@ -12,6 +19,13 @@ const Blog = ({ blogId }) => {
 
       <div className="block lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8 pb-12">
         <div className="col-span-12  text-base text-gray-800 lg:col-span-9 text-justify">
+          <div className="w-full h-72 sm:h-96 mb-5">
+            <Image
+              src={blogImg}
+              className="w-full object-cover h-full"
+              alt="blog image"
+            />
+          </div>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
             placeat mollitia eum velit natus nam sed, ipsam accusamus, culpa
@@ -106,6 +120,8 @@ const Blog = ({ blogId }) => {
           </div>
         </div>
       </div>
+
+      {/* <p dangerouslySetInnerHTML={{ __html: content }}></p> */}
     </>
   );
 };
