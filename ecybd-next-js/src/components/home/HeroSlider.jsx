@@ -22,6 +22,7 @@ import Link from "next/link";
 import { useRequestProcessor } from "@/hooks/useRequestProcessor";
 import { getSlider } from "@/apiRequestHandlers/home";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
+import { sortArrayByKey } from "@/utils/helper";
 
 const generateSliders = (slider) => {
   let array = [];
@@ -32,15 +33,6 @@ const generateSliders = (slider) => {
 };
 
 const HeroSlider = () => {
-  const { query } = useRequestProcessor();
-  const {
-    data: homeBannerSliders,
-    isLoading,
-    isError,
-  } = query(["homeBannerSlider"], getSlider);
-
-  console.log(homeBannerSliders);
-
   return (
     <div>
       {/* <RequestStatusUI isLoading={true} /> */}
@@ -66,7 +58,11 @@ const HeroSlider = () => {
 
 export default HeroSlider;
 
-export const MissionSlider = () => {
+export const MissionSlider = ({ vissionSliderImages }) => {
+  const sortedVissionSliderImages = sortArrayByKey(
+    vissionSliderImages,
+    "order"
+  );
   return (
     <div>
       <Swiper
@@ -81,7 +77,13 @@ export const MissionSlider = () => {
         }}
         className="mySwiper "
       >
-        {generateSliders(<MissionSlide />)}
+        {sortedVissionSliderImages.map((slide) => {
+          return (
+            <SwiperSlide>
+              <MissionSlide key={slide.id} imageSrc={slide.image} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
@@ -148,10 +150,16 @@ const Slider = () => {
   );
 };
 
-const MissionSlide = () => {
+const MissionSlide = ({ imageSrc }) => {
   return (
     <div className="h-72 sm:h-96 rounded">
-      <Image className="rounded" src={banner1} alt="banner image" />
+      <Image
+        height={200}
+        width={200}
+        className="rounded w-full"
+        src={imageSrc || banner1}
+        alt="banner image"
+      />
     </div>
   );
 };

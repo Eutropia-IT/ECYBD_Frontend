@@ -4,31 +4,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { BsArrowRight } from "react-icons/bs";
 
-const BlogCard = () => {
+const BlogCard = ({ blog }) => {
   return (
     <div className=" sm:grid grid-cols-12 gap-8">
       <div className="col-span-12 md:col-span-3">
-        <Image src={blogImg} className="w-full" alt="blog image" />
+        <Image
+          src={blog.feature_img}
+          width={200}
+          height={200}
+          className="w-full h-full object-cover"
+          alt="blog image"
+        />
       </div>
       <div className="col-span-12 md:col-span-9 text-gray-600">
         <h1 className="text-gray-700 font-bold text-xl mt-4 sm:mt-0">
-          Perseverance of the Saints
+          {blog.title}
         </h1>
 
         <p className="text-sm py-2">
-          on 17th June 2014 by
-          <span className="text-teal-900 font-bold ms-1">Vincent John</span>
+          {blog.upload_date}
+          <span className="text-teal-900 font-bold ms-2">{blog.author} </span>
         </p>
-        <p className="text-sm text-justify">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          convallis egestas rhoncus. Donec facilisis fermentum sem, ac viverra
-          ante luctus vel. Donec vel mauris quam. Lorem ipsum dolor sit amet...
-        </p>
+        <p
+          dangerouslySetInnerHTML={{
+            __html:
+              blog.content.length > 200
+                ? `${blog.content.slice(0, 200)}...`
+                : blog.content,
+          }}
+          className="text-sm text-justify"
+        ></p>
 
         <Link
           className="
         bg-teal-600 hover:bg-teal-700 duration-100 text-white font-bold py-2 text-sm px-3 rounded inline-flex items-center mt-2"
-          href="/blogs/1"
+          href={`/blogs/${blog.id}`}
         >
           READ ARTICLE
           <span className="ms-2">
