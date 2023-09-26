@@ -8,6 +8,6 @@ export const getBlogs = async (pageNumber = 0, limit = 10) => {
 };
 
 export const getBlog = async (id) => {
-  const res = await api.get(`/blog/${id}/fd`);
+  const res = await api.get(`/blog/${id}/`);
   return res.data;
 };
