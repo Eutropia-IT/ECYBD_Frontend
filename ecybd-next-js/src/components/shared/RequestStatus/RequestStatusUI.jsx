@@ -1,18 +1,24 @@
 import React from "react";
 import CustomSkeleton from "../CustomSkeleton";
 
-const RequestStatusUI = ({ isError, isLoading, Skeleton, count = 1 }) => {
+const RequestStatusUI = ({
+  isError,
+  isLoading,
+  Skeleton,
+  error,
+  count = 1,
+}) => {
   return (
     <div>
       {isError && (
         <div className="container mx-auto py-5">
-          <h1 className="text-2xl text-red-400 text-center">
-            Something went wrong!
+          <h1 className="text-lg text-red-600 text-center">
+            {error?.message || "Something went wrong!"}
           </h1>
         </div>
       )}
       {isLoading && (
-        <div className="container mx-auto py-5">
+        <div className="container mx-auto py-1">
           {Skeleton ? (
             <Skeleton />
           ) : (

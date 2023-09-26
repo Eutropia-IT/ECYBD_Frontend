@@ -5,33 +5,28 @@ import PageTop from "../shared/PageTop";
 import BlogCard from "./BlogCard";
 import { AiOutlineSearch } from "react-icons/ai";
 import ReactPaginate from "react-paginate";
+import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
+import { useRequestProcessor } from "@/hooks/useRequestProcessor";
+import { getBlogs } from "@/apiRequestHandlers/blogs";
 
 const Blogs = () => {
-  const itemsPerPage = 5;
-  const items = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 1, 7, 18, 19, 20, 21,
-    22, 23, 24,
-  ];
+  const itemsPerPage = 10;
+  const [pageNumber, setPageNumber] = useState(0);
 
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
-  const [itemOffset, setItemOffset] = useState(0);
+  const { query } = useRequestProcessor();
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
-  const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = items.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(items.length / itemsPerPage);
+  const {
+    data: blogs,
+    isLoading: isBlogsLoading,
+    isError: isBlogsError,
+    error: blogError,
+  } = query(["blogs", pageNumber], () => getBlogs(pageNumber, itemsPerPage));
+
+  const pageCount = Math.ceil(blogs?.count / itemsPerPage);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % items.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
-    setItemOffset(newOffset);
+    setPageNumber(event.selected);
   };
 
   return (
@@ -43,15 +38,35 @@ const Blogs = () => {
         }
       />
 
-      <div className="block lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
-        <div className="col-span-12 grid gap-8 lg:col-span-9">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+      <div className="block  lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
+        <div className="col-span-12 grid gap-5 lg:col-span-9">
+          <div className={`${isBlogsLoading ? "grid gap-5" : "hidden"}`}>
+            <RequestStatusUI
+              isError={isBlogsError}
+              error={blogError}
+              isLoading={isBlogsLoading}
+              count={5}
+            />
+            <RequestStatusUI
+              isError={isBlogsError}
+              error={blogError}
+              isLoading={isBlogsLoading}
+              count={5}
+            />
+            <RequestStatusUI
+              isError={isBlogsError}
+              error={blogError}
+              isLoading={isBlogsLoading}
+              count={5}
+            />
+          </div>
 
-          <div className="mb-10">
+          {blogs?.results?.length > 0 &&
+            blogs?.results?.map((item) => {
+              return <BlogCard key={item.id} blog={item} />;
+            })}
+          {/* {blogs?.results?.length > 0 && ( */}
+          <div className={`mb-10  ${blogs?.count > 0 ? "block" : "hidden"}`}>
             <ReactPaginate
               className="flex items-center justify-center"
               pageClassName="  rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
@@ -73,6 +88,7 @@ const Blogs = () => {
               renderOnZeroPageCount={null}
             />
           </div>
+          {/* )} */}
         </div>
 
         <div className="col-span-12 lg:col-span-3">

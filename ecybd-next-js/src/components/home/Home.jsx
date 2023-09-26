@@ -19,7 +19,7 @@ import shortid from "shortid";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRequestProcessor } from "@/hooks/useRequestProcessor";
-import { getVerses } from "@/apiRequestHandlers/home";
+import { getVerses, getVissionSlider } from "@/apiRequestHandlers/home";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 
 const demoData = [1, 2, 3, 4, 5, 6];
@@ -85,9 +85,22 @@ const Home = () => {
   const missionScaleProgress = useTransform(missionYProgress, [0, 1], [0.5, 1]);
 
   const { query } = useRequestProcessor();
-  // const { data: verses, isLoading, isError } = query(["verses"], getVerses);
+  const {
+    data: verses,
+    isLoading: isVersesLoading,
+    isError: isVersesError,
+    error: versesError,
+  } = query(["verses"], getVerses);
 
-  // console.log("verses= ", verses);
+  const {
+    data: vissionSliderImages,
+    isLoading: isVissionLoading,
+    isError: isVissionError,
+    error: vissionError,
+  } = query(["homeBannerSlider"], getVissionSlider);
+
+  console.log(vissionSliderImages);
+  console.log("verses= ", verses?.active_verses);
 
   return (
     <div>
@@ -98,45 +111,38 @@ const Home = () => {
 
       {/* slider for verses (second slider)*/}
 
-      <div className="relative  w-full mx-auto  bg-gray-100">
-        {/* <RequestStatusUI isLoading={true} count={5} /> */}
+      <div
+        style={{ minHeight: "200px" }}
+        className="relative  w-full mx-auto   bg-gray-100"
+      >
+        {
+          <RequestStatusUI
+            isLoading={isVersesLoading}
+            isError={isVersesError}
+            error={versesError}
+          />
+        }
 
-        <Slider
-          className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
-          {...settings}
-        >
-          <div className="p-5 sm:p-10 bg-white w-1/2 rounded-lg">
-            <p className="text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              animi consectetur debitis perspiciatis quam eveniet fuga expedita
-              repudiandae saepe suscipit.
-            </p>
-            <h1 className="mt-8 font-semibold text-lg text-center ">
-              John 3:16 (KJV)
-            </h1>
-          </div>
-          <div className="p-5 sm:p-10 bg-white w-1/2 rounded-lg">
-            <p className="text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              animi consectetur debitis perspiciatis quam eveniet fuga expedita
-              repudiandae saepe suscipit.
-            </p>
-            <h1 className="mt-8 font-semibold text-lg text-center ">
-              John 3:16 (KJV)
-            </h1>
-          </div>
-
-          <div className="p-5 sm:p-10 bg-white w-1/2 rounded-lg">
-            <p className="text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde
-              animi consectetur debitis perspiciatis quam eveniet fuga expedita
-              repudiandae saepe suscipit.
-            </p>
-            <h1 className="mt-8 font-semibold text-lg text-center ">
-              John 3:16 (KJV)
-            </h1>
-          </div>
-        </Slider>
+        {verses?.active_verses.length > 0 && (
+          <Slider
+            className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
+            {...settings}
+          >
+            {verses.active_verses.map((verse) => {
+              return (
+                <div
+                  key={shortid.generate()}
+                  className="p-5 sm:p-10 bg-white w-1/2 rounded-lg"
+                >
+                  <p className="text-center">{verse.text}</p>
+                  <h1 className="mt-8 font-semibold text-lg text-center ">
+                    {verse.bookname} {verse.chapter} : {verse.verse}
+                  </h1>
+                </div>
+              );
+            })}
+          </Slider>
+        )}
       </div>
 
       {/* first content part */}
@@ -198,8 +204,17 @@ const Home = () => {
         <div>
           {/* <Image className="w-full" src={collage} alt="collage" />
            */}
-
-          <MissionSlider />
+          {
+            <RequestStatusUI
+              isLoading={isVissionLoading}
+              isError={isVissionError}
+              error={vissionError}
+              count={10}
+            />
+          }
+          {vissionSliderImages?.length > 0 && (
+            <MissionSlider vissionSliderImages={vissionSliderImages} />
+          )}
         </div>
         <div>
           <h1 className="text-3xl  font-semibold mb-3">
