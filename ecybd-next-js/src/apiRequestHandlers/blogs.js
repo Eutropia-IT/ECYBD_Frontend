@@ -1,8 +1,6 @@
 import api from "@/axios/axiosInstance";
 
-export const getBlogs = async (pageNumber = 0, limit = 1) => {
-  console.log("pageNumber: ", pageNumber);
-
+export const getBlogs = async (pageNumber = 0, limit = 10) => {
   const res = await api.get(
     `/blog/?offset=${pageNumber}&limit=${limit}&ordering=publication_date&title=&month=09&year=2023`
   );
@@ -10,6 +8,6 @@ export const getBlogs = async (pageNumber = 0, limit = 1) => {
 };
 
 export const getBlog = async (id) => {
-  const res = await api.get(`/blog/${id}/`);
+  const res = await api.get(`/blog/${id}/fd`);
   return res.data;
 };
