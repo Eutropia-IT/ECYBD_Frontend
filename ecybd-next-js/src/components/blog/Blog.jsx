@@ -1,86 +1,70 @@
-import React from "react";
+import React, { use } from "react";
 import PageTop from "../shared/PageTop";
 import blogImg from "../../assets/blog-thumb-1.jpg";
 import Image from "next/image";
+import { useRequestProcessor } from "@/hooks/useRequestProcessor";
+import { getBlog } from "@/apiRequestHandlers/blogs";
+import CustomSkeleton from "../shared/CustomSkeleton";
 
 const Blog = ({ blogId }) => {
-  console.log("blog ID= ", blogId);
-
-  const content = `<p style=\"text-align:center\"><strong>Test Title</strong></p>\r\n\r\n<p><em>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!&nbsp;Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!</em></p>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, sint!</p>`;
-
-  const content2 = `<p><strong>This is bold title</strong><br />\r\n<br />\r\n<em>This is normal Italic</em></p>`;
+  const { query } = useRequestProcessor();
+  const {
+    data: blog,
+    isLoading,
+    isError,
+    error,
+  } = query(["blog", blogId], () => getBlog(blogId));
 
   return (
     <>
-      <PageTop
-        title={"Perseverance of the Saints"}
-        description={"on 17th June 2014 by Vincent John"}
-      />
-
+      {isLoading || isError ? (
+        <CustomSkeleton height={100} />
+      ) : (
+        <PageTop
+          title={blog?.title}
+          description={`${blog?.upload_date} by ${blog?.author}`}
+        />
+      )}
       <div className="block lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8 pb-12">
         <div className="col-span-12  text-base text-gray-800 lg:col-span-9 text-justify">
           <div className="w-full h-72 sm:h-96 mb-5">
-            <Image
-              src={blogImg}
-              className="w-full object-cover h-full"
-              alt="blog image"
-            />
+            {isLoading || isError ? (
+              <CustomSkeleton height={350} borderRadius={7} />
+            ) : (
+              <Image
+                src={blog?.feature_img}
+                width={400}
+                height={300}
+                className="w-full object-cover h-full"
+                alt="blog image"
+              />
+            )}
           </div>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi
-            placeat mollitia eum velit natus nam sed, ipsam accusamus, culpa
-            veritatis quia in dicta suscipit iusto voluptatibus corporis amet ad
-            perspiciatis corrupti quaerat. Optio laborum quaerat, libero tempore
-            ipsam adipisci fugit id, repudiandae modi quis veniam maiores? Amet,
-            ullam vitae exercitationem non quod quo dolorum? Harum
-            necessitatibus eligendi vero dolores, voluptatibus facilis
-            doloremque aspernatur accusantium ducimus. Sint quibusdam molestiae
-            aliquid adipisci molestias architecto ut nobis nesciunt error, unde
-            dolor quas natus cumque, esse atque vero autem non tenetur enim a
-            dolorum doloremque repudiandae sunt nulla! Maxime magni adipisci
-            nisi consectetur saepe!
-          </p>
-          <p className="mt-3">
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-            corporis nisi impedit in? Voluptate quod pariatur cum? Architecto
-            quis incidunt neque beatae sit labore qui vel odio delectus
-            provident, sunt iure voluptates tempora excepturi porro itaque cum
-            repellat, esse assumenda est. Cum deserunt, itaque architecto vitae
-            esse iste tempora, perspiciatis dolorum commodi labore voluptate
-            asperiores nihil maiores tempore. Eligendi ab adipisci in commodi
-            doloribus reprehenderit molestias deleniti earum! Rem mollitia
-            ducimus corporis maxime quas explicabo commodi similique iure,
-            delectus omnis!
-          </p>
-          <p className="mt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui commodi
-            eius nihil aut officia eaque eligendi esse quisquam cupiditate
-            dolore ex nam, eveniet quia perferendis nobis eos quo dolorum animi
-            pariatur, omnis modi repudiandae odit dolor? Voluptas numquam, quia
-            accusantium earum, sequi odio tempore, veritatis perferendis
-            officiis vitae possimus sed iure quasi cumque? Totam, quasi porro
-            laborum earum saepe aut, fugit, unde quo sapiente veniam quae iste
-            tempora! Rem totam similique asperiores ducimus exercitationem, qui
-            eum laudantium porro dolor obcaecati temporibus eos deleniti fugit
-            amet quaerat voluptatem. Modi architecto a sit nostrum vero ab
-            temporibus libero natus in laudantium officiis rem assumenda, nulla
-            voluptas! Sint, error totam nisi provident modi blanditiis id atque
-            molestias rerum nesciunt nostrum expedita non vel?
-          </p>
-          <p className="mt-3">
-            {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-            corporis nisi impedit in? Voluptate quod pariatur cum? Architecto
-            quis incidunt neque beatae sit labore qui vel odio delectus
-            provident, sunt iure voluptates tempora excepturi porro itaque cum
-            repellat, esse assumenda est. Cum deserunt, itaque architecto vitae
-            esse iste tempora, perspiciatis dolorum commodi labore voluptate
-            asperiores nihil maiores tempore. Eligendi ab adipisci in commodi
-            doloribus reprehenderit molestias deleniti earum! Rem mollitia
-            ducimus corporis maxime quas explicabo commodi similique iure,
-            delectus omnis!
-          </p>
+          {isLoading ? (
+            <div>
+              <CustomSkeleton height={30} borderRadius={5} />
+              <CustomSkeleton height={20} borderRadius={5} />
+              <CustomSkeleton height={30} borderRadius={5} />
+              <CustomSkeleton height={40} borderRadius={5} />
+              <CustomSkeleton height={30} borderRadius={5} />
+              <CustomSkeleton height={40} borderRadius={5} />
+              <CustomSkeleton height={30} borderRadius={5} />
+              <CustomSkeleton height={20} borderRadius={5} />
+              <CustomSkeleton height={30} borderRadius={5} />
+              <CustomSkeleton height={40} borderRadius={5} />
+              <CustomSkeleton height={30} borderRadius={5} />
+              <CustomSkeleton height={40} borderRadius={5} />
+            </div>
+          ) : (
+            <p dangerouslySetInnerHTML={{ __html: blog?.content }}></p>
+          )}
+
+          {isError && (
+            <h1 className="text-center text-xl text-red-600">
+              {" "}
+              {error.message}{" "}
+            </h1>
+          )}
         </div>
 
         <div className="mt-6 lg:mt-0 col-span-12 lg:col-span-3">

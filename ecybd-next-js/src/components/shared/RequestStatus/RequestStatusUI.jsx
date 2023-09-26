@@ -27,7 +27,7 @@ const RequestStatusUI = ({
                 .fill(0)
                 .map((el) => {
                   return (
-                    <div className="">
+                    <div key={el}>
                       <CustomSkeleton height={20} borderRadius={5} />
                       <CustomSkeleton height={30} />
                       <CustomSkeleton height={20} borderRadius={5} />
