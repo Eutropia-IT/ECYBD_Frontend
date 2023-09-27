@@ -1,5 +1,6 @@
 import React from "react";
 import CustomSkeleton from "../CustomSkeleton";
+import shortid from "shortid";
 
 const RequestStatusUI = ({
   isError,
@@ -27,7 +28,7 @@ const RequestStatusUI = ({
                 .fill(0)
                 .map((el) => {
                   return (
-                    <div key={el}>
+                    <div key={shortid.generate()}>
                       <CustomSkeleton height={20} borderRadius={5} />
                       <CustomSkeleton height={30} />
                       <CustomSkeleton height={20} borderRadius={5} />

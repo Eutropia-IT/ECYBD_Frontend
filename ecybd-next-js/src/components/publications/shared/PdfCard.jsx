@@ -4,7 +4,7 @@ import pdfImage from "../../../assets/pdfImage.jpg";
 import Image from "next/image";
 import styles from "./pdf.module.scss";
 
-const PdfCard = ({ cardFor }) => {
+const PdfCard = ({ cardFor, content }) => {
   const handlePdf = () => {
     window.scrollTo({
       top: 200,
@@ -16,7 +16,13 @@ const PdfCard = ({ cardFor }) => {
   return (
     <div onClick={handlePdf} className="cursor-pointer">
       <div className={styles.pdfParent}>
-        <Image src={pdfImage} alt="Pdf Image" className="w-full rounded-lg" />
+        <Image
+          src={content?.feature_img || pdfImage}
+          alt="Pdf Image"
+          width={400}
+          height={400}
+          className="w-full rounded-lg"
+        />
         <div className={styles.pdfChild}>
           <div>
             <h1
@@ -25,16 +31,19 @@ const PdfCard = ({ cardFor }) => {
               {cardFor}
             </h1>
 
-            <p className="px-5 text-justify"> Document Title</p>
+            <div className="grid place-items-center">
+              <p className="px-5 text-justify"> {content.name} </p>
+              <p className="px-5 text-justify"> Author: {content.author} </p>
+            </div>
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <p className=" mt-3 text-justify text-sm">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
           assumenda cupiditate iste deleniti laboriosam blanditiis quas magnam
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

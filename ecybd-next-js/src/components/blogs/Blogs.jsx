@@ -4,10 +4,10 @@ import React, { useState } from "react";
 import PageTop from "../shared/PageTop";
 import BlogCard from "./BlogCard";
 import { AiOutlineSearch } from "react-icons/ai";
-import ReactPaginate from "react-paginate";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import { useRequestProcessor } from "@/hooks/useRequestProcessor";
 import { getBlogs } from "@/apiRequestHandlers/blogs";
+import CustomPagination from "../shared/paginator/CustomPagination";
 
 const Blogs = () => {
   const itemsPerPage = 10;
@@ -22,11 +22,8 @@ const Blogs = () => {
     error: blogError,
   } = query(["blogs", pageNumber], () => getBlogs(pageNumber, itemsPerPage));
 
-  const pageCount = Math.ceil(blogs?.count / itemsPerPage);
-
-  // Invoke when user click to request another page.
-  const handlePageClick = (event) => {
-    setPageNumber(event.selected);
+  const handlePageNumber = (pageNumber) => {
+    setPageNumber(pageNumber);
   };
 
   return (
@@ -65,30 +62,12 @@ const Blogs = () => {
             blogs?.results?.map((item) => {
               return <BlogCard key={item.id} blog={item} />;
             })}
-          {/* {blogs?.results?.length > 0 && ( */}
-          <div className={`mb-10  ${blogs?.count > 0 ? "block" : "hidden"}`}>
-            <ReactPaginate
-              className="flex items-center justify-center"
-              pageClassName="  rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
-              pageLinkClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center"
-              activeClassName="bg-teal-600 text-white"
-              breakClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center rounded  border font-bold text-xs cursor-pointer hover:bg-teal-600 hover:text-white duration-100"
-              previousClassName="rounded  border font-bold text-xs cursor-pointer hover:bg-teal-700 hover:text-white duration-100 select-none"
-              previousLinkClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center "
-              nextClassName=" rounded  border font-bold text-xs cursor-pointer hover:bg-teal-700 hover:text-white duration-100 select-none"
-              nextLinkClassName="w-7 h-7 sm:w-10 sm:h-9 grid place-items-center "
-              disabledClassName="opacity-50 cursor-not-allowed"
-              disabledLinkClassName="cursor-not-allowed"
-              breakLabel="..."
-              nextLabel=" >"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={5}
-              pageCount={pageCount}
-              previousLabel="< "
-              renderOnZeroPageCount={null}
-            />
-          </div>
-          {/* )} */}
+
+          <CustomPagination
+            handlePageNumber={handlePageNumber}
+            dataLength={blogs?.count}
+            itemsPerPage={itemsPerPage}
+          />
         </div>
 
         <div className="col-span-12 lg:col-span-3">

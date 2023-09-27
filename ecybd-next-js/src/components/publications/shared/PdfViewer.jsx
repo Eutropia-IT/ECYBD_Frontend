@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import "react-pdf/dist/esm/Page/TextLayer.css";
@@ -17,10 +17,18 @@ const options = {
 };
 
 export default function PdfViewer({ pdfUrl }) {
-  // TODO: pdf url will be set in file useState
-  const [file, setFile] = useState({
-    url: pdfUrl || "https://cdn.filestackcontent.com/wcrjf9qPTCKXV3hMXDwK",
-  });
+  // const [file, setFile] = useState({
+  //   url: pdfUrl || "https://cdn.filestackcontent.com/wcrjf9qPTCKXV3hMXDwK",
+  // });
+  const [file, setFile] = useState(null);
+
+  useEffect(() => {
+    if (pdfUrl) {
+      // When pdfUrl changes, set the new PDF file
+      setFile({ url: pdfUrl });
+    }
+  }, [pdfUrl]);
+
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
 
@@ -51,36 +59,33 @@ export default function PdfViewer({ pdfUrl }) {
 
   return (
     <div className="Example w-full overflow-hidden">
-      {/* <header>
-        <h1>react-pdf sample page</h1>
-      </header> */}
       <div className="Example__container ">
-        {/* <div className="Example__container__load">
-          <label htmlFor="file">Load from file:</label>
-          <input onChange={onFileChange} type="file" />
-        </div> */}
         <div className="bg-gray-50 w-full">
           <div
             style={{ height: "max-content" }}
             className="Example__container__document drop-shadow-lg rounded relative "
           >
             <div>
-              <Document
-                file={file}
-                onLoadSuccess={onDocumentLoadSuccess}
-                options={options}
-                error={
-                  <h1 className="text-xl text-center text-red-500">
-                    <span className="text-black">Failed to load PDF file.</span>
-                    <br />
-                    Please disable IDM or other Download Manager and refresh the
-                    page
-                  </h1>
-                }
-                loading={<h1 className="text-2xl text-center">Loading</h1>}
-              >
-                <Page className="pdf-page" pageNumber={pageNumber} />
-              </Document>
+              {pdfUrl && (
+                <Document
+                  file={file}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  options={options}
+                  error={
+                    <h1 className="text-xl text-center text-red-500">
+                      <span className="text-black">
+                        Failed to load PDF file.
+                      </span>
+                      <br />
+                      Please disable IDM or other Download Manager and refresh
+                      the page
+                    </h1>
+                  }
+                  loading={<h1 className="text-2xl text-center">Loading</h1>}
+                >
+                  <Page className="pdf-page" pageNumber={pageNumber} />
+                </Document>
+              )}
             </div>
           </div>
         </div>
