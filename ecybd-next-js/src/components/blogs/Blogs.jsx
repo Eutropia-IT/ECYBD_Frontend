@@ -5,22 +5,24 @@ import PageTop from "../shared/PageTop";
 import BlogCard from "./BlogCard";
 import { AiOutlineSearch } from "react-icons/ai";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
-import { useRequestProcessor } from "@/hooks/useRequestProcessor";
+
 import { getBlogs } from "@/apiRequestHandlers/blogs";
 import CustomPagination from "../shared/paginator/CustomPagination";
+import { useQuery } from "@tanstack/react-query";
 
 const Blogs = () => {
   const itemsPerPage = 10;
   const [pageNumber, setPageNumber] = useState(0);
-
-  const { query } = useRequestProcessor();
 
   const {
     data: blogs,
     isLoading: isBlogsLoading,
     isError: isBlogsError,
     error: blogError,
-  } = query(["blogs", pageNumber], () => getBlogs(pageNumber, itemsPerPage));
+  } = useQuery({
+    queryKey: ["blogs", pageNumber],
+    queryFn: () => getBlogs(pageNumber, itemsPerPage),
+  });
 
   const handlePageNumber = (pageNumber) => {
     setPageNumber(pageNumber);

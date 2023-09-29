@@ -7,16 +7,7 @@ import picture from "../../assets/banner1.jpg";
 import Image from "next/image";
 import PageTop from "../shared/PageTop";
 
-import { useRequestProcessor } from "@/hooks/useRequestProcessor";
-import { getTodo } from "@/apiRequestHandlers/about";
-import CustomSkeleton from "../shared/CustomSkeleton";
-import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
-
 const About = () => {
-  const { query } = useRequestProcessor();
-
-  // const { data, isLoading, isError } = query(["about"], getTodo);
-
   return (
     <>
       {/* header section */}
@@ -26,18 +17,6 @@ const About = () => {
           "Write something about your church here. Keep it simple though."
         }
       />
-
-      {/* <RequestStatusUI
-        isError={isError}
-        isLoading={isLoading}
-        Skeleton={AboutSkeleton}
-      />
-      <div className="container mx-auto">
-        {data?.length > 0 &&
-          data.map((item) => {
-            return <h2> {item.title} </h2>;
-          })}
-      </div> */}
 
       {/* content section */}
       <div className="container px-8 2xl:px-0 mx-auto grid gap-10 grid-cols-12">
@@ -98,18 +77,6 @@ const About = () => {
             <h1 className="text-center mt-8 text-xl font-bold text-gray-700">
               RECENT SERMONS
             </h1>
-
-            {/* <div className="mt-5">
-              <iframe
-                width="auto"
-                height="auto"
-                src="https://www.youtube.com/embed/-ph4mykFp9I?si=2W8i5Gaoj4rcaA2I"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div> */}
 
             <div className="mt-5">
               <Image src={picture} alt="top image" className="w-full" />
@@ -173,15 +140,3 @@ const About = () => {
 };
 
 export default About;
-
-const AboutSkeleton = () => {
-  return (
-    <>
-      <CustomSkeleton height={20} borderRadius={5} />
-      <CustomSkeleton height={30} />
-      <CustomSkeleton height={20} borderRadius={5} />
-      <CustomSkeleton height={15} />
-      <CustomSkeleton height={15} borderRadius={5} />
-    </>
-  );
-};

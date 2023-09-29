@@ -18,13 +18,14 @@ import HeroSlider, { MissionSlider } from "./HeroSlider";
 import shortid from "shortid";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRequestProcessor } from "@/hooks/useRequestProcessor";
+
 import {
   getHomeBannerSlider,
   getVerses,
   getVissionSlider,
 } from "@/apiRequestHandlers/home";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
+import { useQuery } from "@tanstack/react-query";
 
 const demoData = [1, 2, 3, 4, 5, 6];
 
@@ -88,27 +89,29 @@ const Home = () => {
   const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   const missionScaleProgress = useTransform(missionYProgress, [0, 1], [0.5, 1]);
 
-  const { query } = useRequestProcessor();
   const {
     data: verses,
     isLoading: isVersesLoading,
     isError: isVersesError,
     error: versesError,
-  } = query(["verses"], getVerses);
+  } = useQuery({ queryKey: ["verses"], queryFn: getVerses });
 
   const {
     data: vissionSliderImages,
     isLoading: isVissionLoading,
     isError: isVissionError,
     error: vissionError,
-  } = query(["vissionSliders"], getVissionSlider);
+  } = useQuery({ queryKey: ["vissionSliders"], queryFn: getVissionSlider });
 
   const {
     data: bannerSliders,
     isLoading: isBannerLoading,
     isError: isBannerError,
     error: bannerError,
-  } = query(["homeBannerSliders"], getHomeBannerSlider);
+  } = useQuery({
+    queryKey: ["homeBannerSliders"],
+    queryFn: getHomeBannerSlider,
+  });
 
   return (
     <div>
