@@ -19,19 +19,9 @@ import banner1 from "../../assets/banner1.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
-import { useRequestProcessor } from "@/hooks/useRequestProcessor";
-import { getSlider } from "@/apiRequestHandlers/home";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import { sortArrayByKey } from "@/utils/helper";
 import shortid from "shortid";
-
-const generateSliders = (slider) => {
-  let array = [];
-  for (let i = 0; i < 5; i++) {
-    array.push(<SwiperSlide key={i}>{slider}</SwiperSlide>);
-  }
-  return array;
-};
 
 const HeroSlider = ({ data, isLoading, isError, error }) => {
   return (
@@ -60,8 +50,8 @@ const HeroSlider = ({ data, isLoading, isError, error }) => {
         >
           {data.map((slide) => {
             return (
-              <SwiperSlide>
-                <Slider slide={slide} key={shortid.generate()} />
+              <SwiperSlide key={shortid.generate()}>
+                <Slider slide={slide} />
               </SwiperSlide>
             );
           })}
@@ -170,8 +160,8 @@ export const MissionSlider = ({ vissionSliderImages }) => {
       >
         {sortedVissionSliderImages.map((slide) => {
           return (
-            <SwiperSlide>
-              <MissionSlide key={slide.id} imageSrc={slide.image} />
+            <SwiperSlide key={slide.id}>
+              <MissionSlide imageSrc={slide.image} />
             </SwiperSlide>
           );
         })}

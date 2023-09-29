@@ -1,19 +1,18 @@
-import React, { use } from "react";
+import React from "react";
 import PageTop from "../shared/PageTop";
-import blogImg from "../../assets/blog-thumb-1.jpg";
+
 import Image from "next/image";
-import { useRequestProcessor } from "@/hooks/useRequestProcessor";
 import { getBlog } from "@/apiRequestHandlers/blogs";
 import CustomSkeleton from "../shared/CustomSkeleton";
+import { useQuery } from "@tanstack/react-query";
 
 const Blog = ({ blogId }) => {
-  const { query } = useRequestProcessor();
   const {
     data: blog,
     isLoading,
     isError,
     error,
-  } = query(["blog", blogId], () => getBlog(blogId));
+  } = useQuery({ queryKey: ["blog", blogId], queryFn: () => getBlog(blogId) });
 
   return (
     <>

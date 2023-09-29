@@ -2,28 +2,29 @@
 import PageTop from "@/components/shared/PageTop";
 import React, { useState } from "react";
 import PdfCardContainer from "../shared/PdfCardContainer";
-import { useRequestProcessor } from "@/hooks/useRequestProcessor";
 import { getPublications } from "@/apiRequestHandlers/publications";
 import CustomPagination from "@/components/shared/paginator/CustomPagination";
 import RequestStatusUI from "@/components/shared/RequestStatus/RequestStatusUI";
 import CustomSkeleton from "@/components/shared/CustomSkeleton";
 import NoData from "../shared/NoData";
 import { useSearchParams } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
 
 const Jubodrishty = () => {
   const itemsPerPage = 6;
   const publicationType = "Jubodrishty";
 
   const [pageNumber, setPageNumber] = useState(0);
-  const { query } = useRequestProcessor();
+
   const {
     data: allPdf,
     isLoading,
     isError,
     error,
-  } = query(["publication", "jubodrishty", pageNumber], () =>
-    getPublications(pageNumber, itemsPerPage, publicationType)
-  );
+  } = useQuery({
+    queryKey: ["publication", "jubodrishty", pageNumber],
+    queryFn: () => getPublications(pageNumber, itemsPerPage, publicationType),
+  });
 
   const handlePageNumber = (pageNumber) => {
     setPageNumber(pageNumber);
