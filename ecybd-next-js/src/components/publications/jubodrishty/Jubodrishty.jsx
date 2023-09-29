@@ -8,6 +8,7 @@ import CustomPagination from "@/components/shared/paginator/CustomPagination";
 import RequestStatusUI from "@/components/shared/RequestStatus/RequestStatusUI";
 import CustomSkeleton from "@/components/shared/CustomSkeleton";
 import NoData from "../shared/NoData";
+import { useSearchParams } from "next/navigation";
 
 const Jubodrishty = () => {
   const itemsPerPage = 6;
@@ -26,6 +27,18 @@ const Jubodrishty = () => {
 
   const handlePageNumber = (pageNumber) => {
     setPageNumber(pageNumber);
+  };
+
+  const searchParams = useSearchParams();
+  const publicationId = searchParams.get("publicationId");
+
+  const getInitialPdfUrl = () => {
+    if (!publicationId && allPdf?.results?.length > 0) {
+      return allPdf?.results[0]?.pdf_file;
+    } else {
+      const pdf = allPdf?.results.find((pdf) => pdf.id == publicationId);
+      return pdf?.pdf_file;
+    }
   };
 
   return (
@@ -88,7 +101,7 @@ const Jubodrishty = () => {
       {!isError && !isLoading && allPdf?.count > 0 && (
         <PdfCardContainer
           allPdf={allPdf}
-          initialPdfUrl={allPdf?.results[0]?.pdf_file}
+          initialPdfUrl={getInitialPdfUrl()}
           containerFor={"Newsletters"}
         />
       )}
