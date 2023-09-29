@@ -7,6 +7,7 @@ const NoData = () => {
     <div>
       <Image
         src={noData}
+        alt="No Data Found"
         className=" w-full md:w-1/2 lg:w-5/12 2xl:w-4/12 mx-auto"
       />
     </div>

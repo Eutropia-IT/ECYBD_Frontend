@@ -23,6 +23,7 @@ import { useRequestProcessor } from "@/hooks/useRequestProcessor";
 import { getSlider } from "@/apiRequestHandlers/home";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import { sortArrayByKey } from "@/utils/helper";
+import shortid from "shortid";
 
 const generateSliders = (slider) => {
   let array = [];
@@ -32,31 +33,121 @@ const generateSliders = (slider) => {
   return array;
 };
 
-const HeroSlider = () => {
+const HeroSlider = ({ data, isLoading, isError, error }) => {
   return (
     <div>
-      {/* <RequestStatusUI isLoading={true} /> */}
-      <Swiper
-        pagination={{
-          clickable: true,
-        }}
-        navigation={{
-          clickable: true,
-        }}
-        modules={[Pagination, Navigation, Autoplay]}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: true,
-        }}
-        className="mySwiper"
-      >
-        {generateSliders(<Slider />)}
-      </Swiper>
+      <RequestStatusUI
+        isLoading={isLoading}
+        isError={isError}
+        error={error}
+        count={15}
+      />
+
+      {!isLoading && !isError && (
+        <Swiper
+          pagination={{
+            clickable: true,
+          }}
+          navigation={{
+            clickable: true,
+          }}
+          modules={[Pagination, Navigation, Autoplay]}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: true,
+          }}
+          className="mySwiper"
+        >
+          {data.map((slide) => {
+            return (
+              <SwiperSlide>
+                <Slider slide={slide} key={shortid.generate()} />
+              </SwiperSlide>
+            );
+          })}
+
+          {/* {generateSliders(<Slider />)} */}
+        </Swiper>
+      )}
     </div>
   );
 };
 
 export default HeroSlider;
+
+const Slider = ({ slide }) => {
+  const getRoute = () => {
+    if (slide?.Type == "Blog") return `/blogs/${slide?.Id}`;
+    else if (slide?.Type == "Publication") {
+      let subRoute = "";
+      if (slide?.Pub_type == "Newsletter") subRoute = "newsletters";
+      else if (slide?.Pub_type == "BCSM BARTA") subRoute = "bcsm-barta";
+      else subRoute = slide?.Pub_type.toLowerCase();
+
+      return `/resources/publications/${subRoute}?publicationId=${slide?.Id}`;
+    }
+  };
+
+  return (
+    <div className={styles.sliderRoot}>
+      {/* <div className="h-full">
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+        <CustomSkeleton height={100} />
+        <CustomSkeleton height={50} />
+      </div> */}
+      <Image
+        className="w-full"
+        width={400}
+        height={300}
+        src={slide?.Image || banner1}
+        // src={"https://ecybd.eutropia-it.com/media/slider_images/5616.webp"}
+        alt="banner image"
+      />
+
+      <div
+        // style={{ backgroundColor: "#efeeee42" }}
+        style={{ backgroundColor: "#3d3d3d47" }}
+        className="hidden sm:block absolute bottom-0 left-0 w-10/12 md:w-10/12 lg:w-7/12  px-8 text-left rounded  py-5 md:py-8 lg:py-12"
+      >
+        <p className="font-bold text-white drop-shadow-lg">
+          {slide?.Type == "Blog" ? "Latest Blog" : "Latest Publication"}
+        </p>
+        <h1 className="text-2xl md:text-4xl font-bold mt-1 md:mt-3 text-white mb-10 drop-shadow-lg">
+          {slide?.Title}
+        </h1>
+
+        <Link
+          href={getRoute()}
+          className=" px-8 md:px-12 py-2 md:py-3  md:mt-6 rounded-full bg-teal-700 shadow-xl text-white font-bold"
+        >
+          About Us
+        </Link>
+      </div>
+
+      {/* for small screen */}
+      <div className="block sm:hidden w-full px-8 text-left bg-teal-900  pb-12 pt-4 ">
+        <p className="font-bold text-base text-white">
+          {slide?.Type == "Blog" ? "Latest Blog" : "Latest Publication"}
+        </p>
+        <h1 className="text-lg font-bold mb-2 text-white">{slide?.Title}</h1>
+
+        <Link
+          href={getRoute()}
+          className=" px-8  py-2 rounded-full bg-teal-800 text-white font-bold text-base shadow-md cursor-pointer "
+        >
+          About Us
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 export const MissionSlider = ({ vissionSliderImages }) => {
   const sortedVissionSliderImages = sortArrayByKey(
@@ -85,67 +176,6 @@ export const MissionSlider = ({ vissionSliderImages }) => {
           );
         })}
       </Swiper>
-    </div>
-  );
-};
-
-const Slider = () => {
-  return (
-    <div className={styles.sliderRoot}>
-      {/* <div className="h-full">
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-      </div> */}
-      <Image
-        className="w-full"
-        width={400}
-        height={300}
-        src={banner1}
-        // src={"https://ecybd.eutropia-it.com/media/slider_images/5616.webp"}
-        alt="banner image"
-      />
-
-      <div
-        style={{ backgroundColor: "#efeeee42" }}
-        className="hidden sm:block absolute bottom-0 left-0 w-10/12 md:w-10/12 lg:w-7/12  px-8 text-left rounded-sm  py-5 md:py-8 lg:py-12"
-      >
-        <p className="font-bold text-white">Lorem, ipsum dolor</p>
-        <h1 className="text-2xl md:text-4xl font-bold mt-1 md:mt-3 text-white mb-10">
-          {" "}
-          Lorem, ipsum dolor{" "}
-        </h1>
-
-        <Link
-          href={"/about"}
-          className=" px-8 md:px-12 py-2 md:py-3  md:mt-6 rounded-full bg-teal-700 shadow-xl text-white font-bold"
-        >
-          About Us
-        </Link>
-      </div>
-
-      {/* for small screen */}
-      <div className="block sm:hidden w-full px-8 text-left bg-teal-900  py-6 pb-10 ">
-        <p className="font-bold text-base text-white">Lorem, ipsum dolor</p>
-        <h1 className="text-xl font-bold mb-3 text-white">
-          {" "}
-          Lorem, ipsum dolor{" "}
-        </h1>
-
-        <Link
-          href={"/about"}
-          className=" px-8  py-2 rounded-full bg-teal-800 text-white font-bold text-base shadow-md"
-        >
-          About Us
-        </Link>
-      </div>
     </div>
   );
 };

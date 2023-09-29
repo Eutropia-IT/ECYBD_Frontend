@@ -19,7 +19,11 @@ import shortid from "shortid";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRequestProcessor } from "@/hooks/useRequestProcessor";
-import { getVerses, getVissionSlider } from "@/apiRequestHandlers/home";
+import {
+  getHomeBannerSlider,
+  getVerses,
+  getVissionSlider,
+} from "@/apiRequestHandlers/home";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 
 const demoData = [1, 2, 3, 4, 5, 6];
@@ -97,16 +101,25 @@ const Home = () => {
     isLoading: isVissionLoading,
     isError: isVissionError,
     error: vissionError,
-  } = query(["homeBannerSlider"], getVissionSlider);
+  } = query(["vissionSliders"], getVissionSlider);
 
-  console.log(vissionSliderImages);
-  console.log("verses= ", verses?.active_verses);
+  const {
+    data: bannerSliders,
+    isLoading: isBannerLoading,
+    isError: isBannerError,
+    error: bannerError,
+  } = query(["homeBannerSliders"], getHomeBannerSlider);
 
   return (
     <div>
       {/* banner part */}
       <div>
-        <HeroSlider />
+        <HeroSlider
+          data={bannerSliders}
+          isLoading={isBannerLoading}
+          isError={isBannerError}
+          error={bannerError}
+        />
       </div>
 
       {/* slider for verses (second slider)*/}

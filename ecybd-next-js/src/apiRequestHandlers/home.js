@@ -1,8 +1,12 @@
 import api from "@/axios/axiosInstance";
 
+export const getHomeBannerSlider = async () => {
+  const res = await api.get("/home/slide/");
+  return res.data;
+};
+
 export const getVissionSlider = async () => {
   const res = await api.get("/home/sliderimage/");
-  // const res = await api.get("https://jsonplaceholder.typicode.com/posts");
   return res.data;
 };
 
