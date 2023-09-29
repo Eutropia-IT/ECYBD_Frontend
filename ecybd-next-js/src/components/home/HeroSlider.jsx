@@ -60,7 +60,7 @@ const HeroSlider = ({ data, isLoading, isError, error }) => {
         >
           {data.map((slide) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={Math.random()}>
                 <Slider slide={slide} key={shortid.generate()} />
               </SwiperSlide>
             );
@@ -170,7 +170,7 @@ export const MissionSlider = ({ vissionSliderImages }) => {
       >
         {sortedVissionSliderImages.map((slide) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={slide.id}>
               <MissionSlide key={slide.id} imageSrc={slide.image} />
             </SwiperSlide>
           );
