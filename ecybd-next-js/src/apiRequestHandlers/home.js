@@ -16,9 +16,7 @@ export const getVerses = async () => {
 };
 
 export const getRandomVerses = async () => {
-  const res = await api.get(
-    "https://labs.bible.org/api/?passage=votd&type=json"
-  );
+  const res = await api.get("https://labs.bible.org/api/?type=json");
 
   return res.data;
 };
