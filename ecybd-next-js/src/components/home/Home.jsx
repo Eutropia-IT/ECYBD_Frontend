@@ -21,6 +21,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 
 import {
   getHomeBannerSlider,
+  getRandomVerses,
   getVerses,
   getVissionSlider,
 } from "@/apiRequestHandlers/home";
@@ -97,6 +98,13 @@ const Home = () => {
   } = useQuery({ queryKey: ["verses"], queryFn: getVerses });
 
   const {
+    data: randomVerses,
+    isLoading: isRandomVersesLoading,
+    isError: isRandomVersesError,
+    error: randomVersesError,
+  } = useQuery({ queryKey: ["randomVerses"], queryFn: getRandomVerses });
+
+  const {
     data: vissionSliderImages,
     isLoading: isVissionLoading,
     isError: isVissionError,
@@ -139,12 +147,31 @@ const Home = () => {
           />
         }
 
-        {verses?.active_verses.length > 0 && (
+        {verses?.active_verses.length > 0 ? (
           <Slider
             className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
             {...settings}
           >
             {verses.active_verses.map((verse) => {
+              return (
+                <div
+                  key={shortid.generate()}
+                  className="p-5 sm:p-10 bg-white w-1/2 rounded-lg"
+                >
+                  <p className="text-center">{verse.text}</p>
+                  <h1 className="mt-8 font-semibold text-lg text-center ">
+                    {verse.bookname} {verse.chapter} : {verse.verse}
+                  </h1>
+                </div>
+              );
+            })}
+          </Slider>
+        ) : (
+          <Slider
+            className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
+            {...settings}
+          >
+            {randomVerses?.map((verse) => {
               return (
                 <div
                   key={shortid.generate()}
