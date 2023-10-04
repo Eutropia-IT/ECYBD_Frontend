@@ -147,7 +147,7 @@ const Home = () => {
           />
         }
 
-        {verses?.active_verses.length > 100 ? (
+        {verses?.active_verses.length > 0 ? (
           <Slider
             className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
             {...settings}
