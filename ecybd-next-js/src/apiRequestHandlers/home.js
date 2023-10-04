@@ -14,3 +14,11 @@ export const getVerses = async () => {
   const res = await api.get("/home/get_active_verses/");
   return res.data;
 };
+
+export const getRandomVerses = async () => {
+  const res = await api.get(
+    "https://labs.bible.org/api/?passage=votd&type=json"
+  );
+
+  return res.data;
+};
