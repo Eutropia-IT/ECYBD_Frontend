@@ -80,29 +80,15 @@ const Slider = ({ slide }) => {
 
   return (
     <div className={styles.sliderRoot}>
-      {/* <div className="h-full">
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-        <CustomSkeleton height={100} />
-        <CustomSkeleton height={50} />
-      </div> */}
       <Image
         className="w-full"
         width={400}
         height={300}
         src={slide?.Image || banner1}
-        // src={"https://ecybd.eutropia-it.com/media/slider_images/5616.webp"}
         alt="banner image"
       />
 
       <div
-        // style={{ backgroundColor: "#efeeee42" }}
         style={{ backgroundColor: "#3d3d3d47" }}
         className="hidden sm:block absolute bottom-0 left-0 w-10/12 md:w-10/12 lg:w-7/12  px-8 text-left rounded  py-5 md:py-8 lg:py-12"
       >
