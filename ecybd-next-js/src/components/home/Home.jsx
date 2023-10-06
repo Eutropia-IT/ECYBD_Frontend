@@ -242,11 +242,9 @@ const Home = () => {
       <motion.div
         ref={missionRef}
         style={{ scale: missionScaleProgress, opacity: missionScaleProgress }}
-        className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 "
+        className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16  place-items-center "
       >
-        <div>
-          {/* <Image className="w-full" src={collage} alt="collage" />
-           */}
+        <div className="w-full">
           {
             <RequestStatusUI
               isLoading={isVissionLoading}
@@ -286,7 +284,7 @@ const Home = () => {
             of mind and heart to bring transformation in themselves and in the
             community.
           </p>
-        </div>{" "}
+        </div>
       </motion.div>
 
       {/* aims and objective part */}
