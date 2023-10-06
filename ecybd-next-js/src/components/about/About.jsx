@@ -2,12 +2,21 @@
 
 import React from "react";
 import TeamCard from "./TeamCard";
-import { FaAngleRight } from "react-icons/fa6";
-import picture from "../../assets/banner1.jpg";
-import Image from "next/image";
+
 import PageTop from "../shared/PageTop";
+import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
+import { MissionSlider } from "../home/HeroSlider";
+import { useQuery } from "@tanstack/react-query";
+import { getVissionSlider } from "@/apiRequestHandlers/home";
 
 const About = () => {
+  const {
+    data: vissionSliderImages,
+    isLoading: isVissionLoading,
+    isError: isVissionError,
+    error: vissionError,
+  } = useQuery({ queryKey: ["vissionSliders"], queryFn: getVissionSlider });
+
   return (
     <>
       {/* header section */}
@@ -20,7 +29,7 @@ const About = () => {
 
       {/* content section */}
       <div className="container px-8 2xl:px-0 mx-auto grid gap-10 grid-cols-12">
-        <div className=" text-gray-700 mt-10 text-justify col-span-12 xl:col-span-9">
+        <div className=" text-gray-700 mt-10 text-justify col-span-12 xl:col-span-7">
           <p className="text-base">
             The youth apostolate of the Catholic Bishops’ Conference of
             Bangladesh (CBCB) was officially launched in 1977, under the name
@@ -102,8 +111,22 @@ const About = () => {
           </div> */}
         </div>
 
-        <div className="hidden xl:flex lg:mt-10 col-span-3">
-          <div className="w-full bg-teal-50 rounded-lg px-6">
+        <div className="hidden xl:flex lg:mt-10 col-span-5">
+          <div className="w-full">
+            {
+              <RequestStatusUI
+                isLoading={isVissionLoading}
+                isError={isVissionError}
+                error={vissionError}
+                count={10}
+              />
+            }
+            {vissionSliderImages?.length > 0 && (
+              <MissionSlider vissionSliderImages={vissionSliderImages} />
+            )}
+          </div>
+
+          {/* <div className="w-full bg-teal-50 rounded-lg px-6">
             <h1 className="text-center mt-8 text-xl font-bold text-gray-700">
               RECENT SERMONS
             </h1>
@@ -149,7 +172,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 

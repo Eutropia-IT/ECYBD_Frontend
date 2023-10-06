@@ -103,7 +103,7 @@ const Slider = ({ slide }) => {
           href={getRoute()}
           className=" px-8 md:px-12 py-2 md:py-3  md:mt-6 rounded-full bg-teal-700 shadow-xl text-white font-bold"
         >
-          About Us
+          Read Now
         </Link>
       </div>
 
@@ -118,7 +118,7 @@ const Slider = ({ slide }) => {
           href={getRoute()}
           className=" px-8  py-2 rounded-full bg-teal-800 text-white font-bold text-base shadow-md cursor-pointer "
         >
-          About Us
+          Read Now
         </Link>
       </div>
     </div>
