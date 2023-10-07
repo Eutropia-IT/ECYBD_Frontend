@@ -121,9 +121,31 @@
     height: auto;
 }
 
+.thumbnailClass {
+    width: auto;
+    height: 60px;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 620px) {
+    .imageGalleryImageHeight {
+        height: 70vh;
+    }
+}
+
 @media only screen and (min-width: 1220px) {
     .imageGalleryImageHeight {
         height: 80vh;
+    }
+
+    .thumbnailClass {
+        width: auto;
+        height: 70px;
+        object-fit: cover;
+        overflow: hidden;
+        cursor: pointer;
     }
 }
 
