@@ -12,7 +12,8 @@ const ImageCard = ({ data }) => {
 
   const handleModal = () => {
     MySwal.fire({
-      html: <ImageSlider sliderImages={data.insideImages} />,
+      // html: <ImageSlider sliderImages={data.insideImages} />,
+      html: <ImageSlider sliderImages={data?.inside_images} />,
       showConfirmButton: false,
       showCloseButton: false,
       width: "90%",
@@ -25,8 +26,11 @@ const ImageCard = ({ data }) => {
       <div className={`${styles.imageParent}`}>
         <Image
           className="h-60 object-cover w-full cursor-pointer"
-          src={data.frontImage}
-          alt={data.title}
+          src={data?.front_img}
+          // src={data.frontImage}
+          alt={data?.image_title}
+          height={240}
+          width={360}
         />
 
         <div onClick={handleModal} className={`${styles.imageChild}`}>
@@ -34,10 +38,10 @@ const ImageCard = ({ data }) => {
             <h1
               className={`text-xl font-semibold text-gray-700 ${styles.imageTitle}`}
             >
-              {data.title}
+              {data?.image_title}
             </h1>
             <h2 className={`text-base text-teal-950   ${styles.imageCategory}`}>
-              {data.category}
+              {data?.short_description}
             </h2>
           </div>
         </div>
