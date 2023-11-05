@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["ecybd.eutropia-it.com"],
+    domains: ["api.ecybd.org"],
   },
 
   webpack: (config) => {
