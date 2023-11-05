@@ -1,10 +1,10 @@
-import Dhaka from "@/components/dicocesen/Dhaka";
+import Secretariat from "@/components/secretariat/Secretariat";
 import React from "react";
 
 const page = () => {
   return (
     <>
-      <Dhaka />
+      <Secretariat />
     </>
   );
 };

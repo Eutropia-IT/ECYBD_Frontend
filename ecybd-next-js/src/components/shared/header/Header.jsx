@@ -22,6 +22,18 @@ const linkData = [
     id: shortid.generate(),
     text: "ABOUT",
     path: "/about",
+    subRoutes: [
+      {
+        id: shortid.generate(),
+        text: "ABOUT US",
+        path: "/about",
+      },
+      {
+        id: shortid.generate(),
+        text: "SECRETARIAT",
+        path: "/about/secretariat",
+      },
+    ],
   },
   {
     id: shortid.generate(),
@@ -45,7 +57,7 @@ const linkData = [
       },
       {
         id: shortid.generate(),
-        text: "DINJAPUR",
+        text: "DINAJPUR",
         path: "/diocesen-commissions/dinajpur",
       },
       {

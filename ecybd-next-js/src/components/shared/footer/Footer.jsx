@@ -38,19 +38,11 @@ const Footer = () => {
           <div className="flex flex-col items-center lg:items-end mt-8 lg:mt-0">
             <div>
               <h2 className="text-lg font-semibold mb-3 text-center lg:text-left">
-                Watch This Video
+                We Are Recognised By
               </h2>
 
               <div>
-                <iframe
-                  width="380"
-                  height="220"
-                  src="https://www.youtube.com/embed/-ph4mykFp9I?si=2W8i5Gaoj4rcaA2I"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
+                <Image className="w-full" src={logo} alt="sponsor1" />
               </div>
             </div>
           </div>
