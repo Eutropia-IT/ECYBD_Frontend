@@ -25,9 +25,7 @@ const About = () => {
       {/* header section */}
       <PageTop
         title={"About us"}
-        description={
-          "Write something about your church here. Keep it simple though."
-        }
+        description={"Discover Our Church's Rich Heritage and Mission"}
       />
 
       {/* content section */}

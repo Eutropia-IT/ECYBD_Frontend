@@ -3,15 +3,15 @@
 import React from "react";
 import PageTop from "../shared/PageTop";
 import { useQuery } from "@tanstack/react-query";
-
+import { getBarishal, getDhaka } from "@/apiRequestHandlers/dicocesen";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import Sidebar from "../blogs/Sidebar";
-import { getBcsm } from "@/apiRequestHandlers/movements";
+import { getYcs } from "@/apiRequestHandlers/movements";
 
-const Movements = () => {
+const Ycs = () => {
   const { data, isLoading, isError, error } = useQuery({
-    queryFn: getBcsm,
-    queryKey: ["bcsm"],
+    queryFn: getYcs,
+    queryKey: ["ycs"],
   });
 
   return (
@@ -55,4 +55,4 @@ const Movements = () => {
   );
 };
 
-export default Movements;
+export default Ycs;

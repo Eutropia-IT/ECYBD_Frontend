@@ -372,14 +372,14 @@ const Home = () => {
       </div>
 
       {/* watch this video */}
-      <div className="flex flex-col items-center  mt-12">
+      <div className="flex flex-col items-center  mt-12 mb-6">
         <div>
           <h2 className="text-lg font-semibold mb-3 text-center ">
             Watch This Video
           </h2>
 
           <div className="hidden md:block">
-            <iframe
+            {/* <iframe
               width="720"
               height="360"
               src="https://www.youtube.com/embed/-ph4mykFp9I?si=2W8i5Gaoj4rcaA2I"
@@ -387,10 +387,19 @@ const Home = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+            ></iframe> */}
+            <iframe
+              width="720"
+              height="360"
+              src="https://www.youtube.com/embed/0RvhwWxFHI8?si=RPjgX1Ufkc1r_MGk"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
             ></iframe>
           </div>
           <div className="block md:hidden">
-            <iframe
+            {/* <iframe
               width="360"
               height="220"
               src="https://www.youtube.com/embed/-ph4mykFp9I?si=2W8i5Gaoj4rcaA2I"
@@ -398,6 +407,15 @@ const Home = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+            ></iframe> */}
+            <iframe
+              width="360"
+              height="220"
+              src="https://www.youtube.com/embed/0RvhwWxFHI8?si=RPjgX1Ufkc1r_MGk"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
             ></iframe>
           </div>
         </div>

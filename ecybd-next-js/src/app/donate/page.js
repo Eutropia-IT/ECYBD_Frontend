@@ -7,7 +7,7 @@ const page = () => {
         className="text-red-700 font-semibold 
       text-3xl sm:text-5xl text-center"
       >
-        Donate <br /> Under Development
+        Support <br /> Coming Soon
       </h1>
     </div>
   );

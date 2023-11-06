@@ -84,6 +84,26 @@ const linkData = [
     id: shortid.generate(),
     text: "MOVEMENTS",
     path: "/movements",
+
+    subRoutes: [
+      {
+        id: shortid.generate(),
+        // text: "Bangladesh Catholic Students Movement (BCSM)",
+        text: "BCSM",
+        path: "/movements",
+      },
+      {
+        id: shortid.generate(),
+        // text: "Young Christian Students (YCS) & Young Students Movement (YSM)",
+        text: "YCS & YSM",
+        path: "/movements/ycs-ysm",
+      },
+      {
+        id: shortid.generate(),
+        text: "Jesus Youth",
+        path: "/movements/jesus-youth",
+      },
+    ],
   },
   {
     id: shortid.generate(),

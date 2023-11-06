@@ -17,3 +17,8 @@ export const getBlog = async (id) => {
   const res = await api.get(`/blog/${id}/`);
   return res.data;
 };
+
+export const getBlogFilters = async () => {
+  const res = await api.get(`/filter_blog/`);
+  return res.data;
+};

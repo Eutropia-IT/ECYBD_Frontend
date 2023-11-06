@@ -13,11 +13,29 @@ import Sidebar from "./Sidebar";
 import { useSearchStore } from "@/hooks/useSearchStore";
 import NoData from "../shared/NoData";
 
+const monthList = {
+  1: "January",
+  2: "February",
+  3: "March",
+  4: "April",
+  5: "May",
+  6: "June",
+  7: "July",
+  8: "August",
+  9: "September",
+  10: "October",
+  11: "November",
+  // 11: "March",
+  12: "December",
+};
+
 const Blogs = () => {
   const itemsPerPage = 10;
   const [pageNumber, setPageNumber] = useState(0);
 
-  const { search, month, year } = useSearchStore((state) => state);
+  const { search, month, year, setMonth, setYear } = useSearchStore(
+    (state) => state
+  );
 
   const {
     data: blogs,
@@ -64,6 +82,40 @@ const Blogs = () => {
               count={5}
             />
           </div>
+
+          {/* chip start */}
+          {month && year && (
+            <div>
+              <div class="rounded-full border text-[#0f766d] flex items-center justify-between  px-2 py-1 text-sm w-40 ">
+                <span className="ps-2 font-bold">
+                  {monthList[month]} {year}
+                </span>
+                <button
+                  class="text-white hover:bg-[#22454221] rounded-full p-1 float-right "
+                  onClick={() => {
+                    setMonth("");
+                    setYear("");
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="#0f766e"
+                    class="h-4 w-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
+          {/* chip end */}
 
           {blogs?.results?.length > 0 &&
             blogs?.results?.map((item) => {

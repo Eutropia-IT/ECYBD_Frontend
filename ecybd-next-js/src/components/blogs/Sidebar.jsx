@@ -3,11 +3,34 @@ import { useRouter } from "next/navigation";
 
 import React from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
+import { useQuery } from "@tanstack/react-query";
+import { getBlogFilters, getBlogs } from "@/apiRequestHandlers/blogs";
+
+const monthList = {
+  January: 1,
+  February: 2,
+  March: 3,
+  April: 4,
+  May: 5,
+  June: 6,
+  July: 7,
+  August: 8,
+  September: 9,
+  October: 10,
+  November: 11,
+  December: 12,
+};
 
 const Sidebar = () => {
-  const { search, month, year, setSearch, setMonth, setYear } = useSearchStore(
-    (state) => state
-  );
+  const {
+    search,
+    month: stateMonth,
+    year: stateYear,
+    setSearch,
+    setMonth,
+    setYear,
+  } = useSearchStore((state) => state);
 
   const router = useRouter();
 
@@ -19,6 +42,13 @@ const Sidebar = () => {
     e.preventDefault();
     router.push(`/blogs`);
   };
+
+  const { data, isLoading, isError, error } = useQuery({
+    queryFn: getBlogFilters,
+    queryKey: ["filters"],
+  });
+
+  console.log("data from sidebar = ", data);
 
   return (
     <div className="">
@@ -42,21 +72,90 @@ const Sidebar = () => {
         </div>
       </form>
 
-      {/* about */}
-      {/* <div className="text-gray-700 rounded bg-teal-50  px-8 lg:px-4 2xl:px-8 mt-8 py-8">
-            <h1 className="text-gray-800 font-bold text-xl">About</h1>
-            <p className="mt-3 text-justify text-sm">
-              Etiam porta sem malesuada magna mollis euismod. Cras mattis
-              consectetur purus sit amet fermentum. Aenean lacinia bibendum
-              nulla sed consectetur.
-            </p>
-          </div> */}
+      {isLoading && (
+        <div>
+          <RequestStatusUI
+            isError={isError}
+            error={error}
+            isLoading={isLoading}
+            count={5}
+          />
+
+          <RequestStatusUI
+            isError={isError}
+            error={error}
+            isLoading={isLoading}
+            count={5}
+          />
+        </div>
+      )}
 
       {/* blog archives */}
       <div className="text-gray-700 mt-5">
-        <h1 className="text-xl font-bold text-gray-800 mb-3">Blog Archives</h1>
+        {!isError && !isLoading && (
+          <h1 className="text-xl font-bold text-gray-800 mb-3">
+            Blog Archives
+          </h1>
+        )}
         <div>
-          {[1, 2, 3, 4, 5].map((item) => {
+          {data &&
+            Object?.keys(data)?.map((year) => {
+              return Object?.keys(data[year])?.map((month) => {
+                return (
+                  <div
+                    key={month}
+                    className="mb-3 cursor-pointer hover:font-semibold duration-100"
+                    onClick={() => {
+                      setMonth(monthList[month]);
+
+                      setYear(year);
+                      router.push(`/blogs`);
+                    }}
+                  >
+                    <div className="flex justify-between mb-2">
+                      <p
+                        className={`text-sm ${
+                          stateMonth == monthList[month] && stateYear == year
+                            ? "font-bold text-[#0F766E]"
+                            : ""
+                        }`}
+                      >
+                        {month} {year}{" "}
+                      </p>{" "}
+                      <span className="px-2 py-1 rounded-full bg-teal-100 font-bold text-xs">
+                        {data[year][month]}
+                      </span>
+                    </div>
+                    <hr />
+                  </div>
+                );
+              });
+            })}
+          {/* {Object?.keys(data)?.map((year) => {
+            Object?.keys(data[year])?.map((month) => {
+              return (
+                <div
+                  key={month}
+                  className="mb-3 cursor-pointer hover:font-semibold duration-100"
+                  onClick={() => {
+                    setMonth(month);
+                    setYear(year);
+                    router.push(`/blogs`);
+                  }}
+                >
+                  <div className="flex justify-between mb-2">
+                    <p className="text-sm">{month}</p>{" "}
+                    <span className="px-2 py-1 rounded-full bg-teal-100 font-bold text-xs">
+                      {data[year][month]}
+                    </span>
+                  </div>
+                  <hr />
+                </div>
+              );
+            });
+          })} */}
+
+          {/* {[1, 2, 3, 4, 5].map((item) => {
             return (
               <div
                 key={item}
@@ -71,7 +170,7 @@ const Sidebar = () => {
                 <hr />
               </div>
             );
-          })}
+          })} */}
         </div>
       </div>
     </div>

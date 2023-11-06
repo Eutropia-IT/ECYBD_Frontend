@@ -47,9 +47,7 @@ const BcsmBarta = () => {
     <div>
       <PageTop
         title="Bcsm Barta"
-        description={
-          "  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, sunt!"
-        }
+        description={" Explore Our Publications - Bcsm Barta"}
       />
 
       <div className="container px-8 2xl:px-0 mx-auto pb-4">
