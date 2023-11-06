@@ -8,6 +8,9 @@ import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import { MissionSlider } from "../home/HeroSlider";
 import { useQuery } from "@tanstack/react-query";
 import { getVissionSlider } from "@/apiRequestHandlers/home";
+import committe1 from "../../assets/committe1.jpeg";
+import committe2 from "../../assets/committe2.png";
+import Image from "next/image";
 
 const About = () => {
   const {
@@ -22,9 +25,7 @@ const About = () => {
       {/* header section */}
       <PageTop
         title={"About us"}
-        description={
-          "Write something about your church here. Keep it simple though."
-        }
+        description={"Discover Our Church's Rich Heritage and Mission"}
       />
 
       {/* content section */}
@@ -182,10 +183,41 @@ const About = () => {
           Our Team
         </h1>
 
-        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-12">
+        {/* <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-12">
           <TeamCard />
           <TeamCard />
           <TeamCard />
+        </div> */}
+
+        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-x-20 gap-8 my-8">
+          <div className=" flex justify-center flex-col items-center rounded-2xl">
+            <Image
+              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              src={committe1}
+              alt="men"
+            />
+            <h3 className="font-semibold px-5 mt-2 text-lg text-center">
+              Most Rev. Archbishop Lawrence Subrata Howlader
+            </h3>
+            <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
+              C.S.C. Chairman, Episcopal Commission for Youth & Archbishop of
+              Chattogram
+            </p>
+          </div>
+          <div className=" flex justify-center flex-col items-center rounded-2xl">
+            <Image
+              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              src={committe2}
+              alt="men"
+            />
+            <h3 className="font-semibold px-5 mt-2 text-lg text-center">
+              Fr. Bikash James Rebeiro
+            </h3>
+            <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
+              C.S.C. Executive Secretary & National Youth Coordinator, Episcopal
+              Commission for Youth
+            </p>
+          </div>
         </div>
       </div>
     </>

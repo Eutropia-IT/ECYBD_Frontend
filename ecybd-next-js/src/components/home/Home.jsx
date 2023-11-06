@@ -18,6 +18,8 @@ import HeroSlider, { MissionSlider } from "./HeroSlider";
 import shortid from "shortid";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
+import committe1 from "../../assets/committe1.jpeg";
+import committe2 from "../../assets/committe2.png";
 
 import {
   getHomeBannerSlider,
@@ -290,9 +292,7 @@ const Home = () => {
       {/* aims and objective part */}
       <div className=" mt-12">
         <div>
-          <h1 className="text-3xl text-center font-semibold">
-            Our Objectives{" "}
-          </h1>
+          <h1 className="text-3xl text-center font-semibold">Our Objectives</h1>
 
           {/* slider for objectives (third slider)*/}
 
@@ -330,33 +330,100 @@ const Home = () => {
           Executive & Commision Members
         </h1>
 
-        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-20 gap-8">
-          {demoData.map((data) => {
-            return (
-              <div key={data}>
-                <Image className="w-full" src={menImage} alt="men" />
-                <h3 className="font-semibold px-5 mt-2 text-lg text-center">
-                  {" "}
-                  John Doe
-                </h3>
-                <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
-                  Pastor
-                </p>
-              </div>
-            );
-          })}
+        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-x-20 gap-8">
+          <div className=" flex justify-center flex-col items-center rounded-2xl">
+            <Image
+              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              src={committe1}
+              alt="men"
+            />
+            <h3 className="font-semibold px-5 mt-2 text-lg text-center">
+              Most Rev. Archbishop Lawrence Subrata Howlader
+            </h3>
+            <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
+              C.S.C. Chairman, Episcopal Commission for Youth & Archbishop of
+              Chattogram
+            </p>
+          </div>
+          <div className=" flex justify-center flex-col items-center rounded-2xl">
+            <Image
+              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              src={committe2}
+              alt="men"
+            />
+            <h3 className="font-semibold px-5 mt-2 text-lg text-center">
+              Fr. Bikash James Rebeiro
+            </h3>
+            <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
+              C.S.C. Executive Secretary & National Youth Coordinator, Episcopal
+              Commission for Youth
+            </p>
+          </div>
         </div>
 
-        <div className="text-center">
-          <button className="px-8 py-2 text-teal-800 rounded-full border border-teal-700 mt-8">
-            View Full Committie
-          </button>
+        <div className="text-center mt-8">
+          <Link
+            href="/about/secretariat"
+            className="px-8 py-2 text-teal-800 rounded-full border border-teal-700 mt-8"
+          >
+            Secretariat
+          </Link>
+        </div>
+      </div>
+
+      {/* watch this video */}
+      <div className="flex flex-col items-center  mt-12 mb-6">
+        <div>
+          <h2 className="text-lg font-semibold mb-3 text-center ">
+            Watch This Video
+          </h2>
+
+          <div className="hidden md:block">
+            {/* <iframe
+              width="720"
+              height="360"
+              src="https://www.youtube.com/embed/-ph4mykFp9I?si=2W8i5Gaoj4rcaA2I"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe> */}
+            <iframe
+              width="720"
+              height="360"
+              src="https://www.youtube.com/embed/0RvhwWxFHI8?si=RPjgX1Ufkc1r_MGk"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div className="block md:hidden">
+            {/* <iframe
+              width="360"
+              height="220"
+              src="https://www.youtube.com/embed/-ph4mykFp9I?si=2W8i5Gaoj4rcaA2I"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe> */}
+            <iframe
+              width="360"
+              height="220"
+              src="https://www.youtube.com/embed/0RvhwWxFHI8?si=RPjgX1Ufkc1r_MGk"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
 
       {/* we are recognised by */}
 
-      <div className="w-full bg-gray-100 py-8 ">
+      {/* <div className="w-full bg-gray-100 py-8 ">
         <h1 className="text-3xl  text-center font-semibold py-8">
           We Are Recognised By
         </h1>
@@ -378,7 +445,7 @@ const Home = () => {
             <Image className="w-full" src={sponsor1} alt="sponsor1" />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

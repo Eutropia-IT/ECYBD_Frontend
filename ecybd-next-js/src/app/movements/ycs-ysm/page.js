@@ -1,10 +1,10 @@
-import Dhaka from "@/components/dicocesen/Dhaka";
+import Ycs from "@/components/movements/Ycs";
 import React from "react";
 
 const page = () => {
   return (
     <>
-      <Dhaka />
+      <Ycs />
     </>
   );
 };

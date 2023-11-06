@@ -3,20 +3,19 @@
 import React from "react";
 import PageTop from "../shared/PageTop";
 import { useQuery } from "@tanstack/react-query";
-
+import { getBarishal, getDhaka } from "@/apiRequestHandlers/dicocesen";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import Sidebar from "../blogs/Sidebar";
-import { getBcsm } from "@/apiRequestHandlers/movements";
 
-const Movements = () => {
+const Barishal = () => {
   const { data, isLoading, isError, error } = useQuery({
-    queryFn: getBcsm,
-    queryKey: ["bcsm"],
+    queryFn: getBarishal,
+    queryKey: ["barishal"],
   });
 
   return (
     <div>
-      <PageTop title={data?.title} description={"Movements"} />
+      <PageTop title={data?.title} description={"Dicocesen Commission"} />
 
       <div className="block sm:pb-8   lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
         <div className="col-span-12 grid gap-5 overflow-hidden w-full text-justify lg:col-span-9">
@@ -55,4 +54,4 @@ const Movements = () => {
   );
 };
 
-export default Movements;
+export default Barishal;

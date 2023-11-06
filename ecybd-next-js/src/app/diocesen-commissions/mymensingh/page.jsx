@@ -1,15 +1,11 @@
+import Maymensingh from "@/components/dicocesen/Mymensingh";
 import React from "react";
 
 const page = () => {
   return (
-    <div className="h-96 grid place-items-center">
-      <h1
-        className="text-red-700 font-semibold 
-      text-3xl sm:text-5xl text-center"
-      >
-        Maymensingh <br /> Under Development
-      </h1>
-    </div>
+    <>
+      <Maymensingh />
+    </>
   );
 };
 

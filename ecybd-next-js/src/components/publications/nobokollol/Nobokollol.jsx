@@ -48,9 +48,7 @@ const Nobokollol = () => {
     <div>
       <PageTop
         title="Nobokollol"
-        description={
-          "  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui, sunt!"
-        }
+        description={" Explore Our Publications - Nobokollol"}
       />
 
       <div className="container px-8 2xl:px-0 mx-auto pb-4">

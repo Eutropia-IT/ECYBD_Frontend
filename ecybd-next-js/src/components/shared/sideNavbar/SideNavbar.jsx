@@ -18,6 +18,18 @@ const linkData = [
     id: shortid.generate(),
     text: "ABOUT",
     path: "/about",
+    subRoutes: [
+      {
+        id: shortid.generate(),
+        text: "ABOUT US",
+        path: "/about",
+      },
+      {
+        id: shortid.generate(),
+        text: "SECRETARIAT",
+        path: "/about/secretariat",
+      },
+    ],
   },
   {
     id: shortid.generate(),
@@ -26,8 +38,8 @@ const linkData = [
     subRoutes: [
       {
         id: shortid.generate(),
-        text: "BARISHAL",
-        path: "/diocesen-commissions/barishal",
+        text: "DHAKA",
+        path: "/diocesen-commissions/dhaka",
       },
       {
         id: shortid.generate(),
@@ -36,12 +48,12 @@ const linkData = [
       },
       {
         id: shortid.generate(),
-        text: "DHAKA",
-        path: "/diocesen-commissions/dhaka",
+        text: "RAJSHAHI",
+        path: "/diocesen-commissions/rajshahi",
       },
       {
         id: shortid.generate(),
-        text: "DINJAPUR",
+        text: "DINAJPUR",
         path: "/diocesen-commissions/dinajpur",
       },
       {
@@ -54,15 +66,16 @@ const linkData = [
         text: "MYMENSINGH",
         path: "/diocesen-commissions/mymensingh",
       },
-      {
-        id: shortid.generate(),
-        text: "RAJSHAHI",
-        path: "/diocesen-commissions/rajshahi",
-      },
+
       {
         id: shortid.generate(),
         text: "SYLHET",
         path: "/diocesen-commissions/sylhet",
+      },
+      {
+        id: shortid.generate(),
+        text: "BARISHAL",
+        path: "/diocesen-commissions/barishal",
       },
     ],
   },
@@ -71,6 +84,26 @@ const linkData = [
     id: shortid.generate(),
     text: "MOVEMENTS",
     path: "/movements",
+
+    subRoutes: [
+      {
+        id: shortid.generate(),
+        // text: "Bangladesh Catholic Students Movement (BCSM)",
+        text: "BCSM",
+        path: "/movements",
+      },
+      {
+        id: shortid.generate(),
+        // text: "Young Christian Students (YCS) & Young Students Movement (YSM)",
+        text: "YCS & YSM",
+        path: "/movements/ycs-ysm",
+      },
+      {
+        id: shortid.generate(),
+        text: "Jesus Youth",
+        path: "/movements/jesus-youth",
+      },
+    ],
   },
   {
     id: shortid.generate(),

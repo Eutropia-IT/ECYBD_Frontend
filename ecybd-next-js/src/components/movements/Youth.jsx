@@ -3,16 +3,18 @@
 import React from "react";
 import PageTop from "../shared/PageTop";
 import { useQuery } from "@tanstack/react-query";
-
+import { getBarishal, getDhaka } from "@/apiRequestHandlers/dicocesen";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import Sidebar from "../blogs/Sidebar";
-import { getBcsm } from "@/apiRequestHandlers/movements";
+import { getYouth } from "@/apiRequestHandlers/movements";
 
-const Movements = () => {
+const Youth = () => {
   const { data, isLoading, isError, error } = useQuery({
-    queryFn: getBcsm,
-    queryKey: ["bcsm"],
+    queryFn: getYouth,
+    queryKey: ["youth"],
   });
+
+
 
   return (
     <div>
@@ -55,4 +57,4 @@ const Movements = () => {
   );
 };
 
-export default Movements;
+export default Youth;
