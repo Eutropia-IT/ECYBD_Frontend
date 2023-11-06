@@ -38,8 +38,8 @@ const linkData = [
     subRoutes: [
       {
         id: shortid.generate(),
-        text: "BARISHAL",
-        path: "/diocesen-commissions/barishal",
+        text: "DHAKA",
+        path: "/diocesen-commissions/dhaka",
       },
       {
         id: shortid.generate(),
@@ -48,8 +48,8 @@ const linkData = [
       },
       {
         id: shortid.generate(),
-        text: "DHAKA",
-        path: "/diocesen-commissions/dhaka",
+        text: "RAJSHAHI",
+        path: "/diocesen-commissions/rajshahi",
       },
       {
         id: shortid.generate(),
@@ -66,15 +66,16 @@ const linkData = [
         text: "MYMENSINGH",
         path: "/diocesen-commissions/mymensingh",
       },
-      {
-        id: shortid.generate(),
-        text: "RAJSHAHI",
-        path: "/diocesen-commissions/rajshahi",
-      },
+
       {
         id: shortid.generate(),
         text: "SYLHET",
         path: "/diocesen-commissions/sylhet",
+      },
+      {
+        id: shortid.generate(),
+        text: "BARISHAL",
+        path: "/diocesen-commissions/barishal",
       },
     ],
   },

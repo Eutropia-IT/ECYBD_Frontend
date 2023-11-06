@@ -3,17 +3,15 @@
 import React from "react";
 import PageTop from "../shared/PageTop";
 import { useQuery } from "@tanstack/react-query";
-import { getDhaka } from "@/apiRequestHandlers/dicocesen";
+import { getDhaka, getDinajpur } from "@/apiRequestHandlers/dicocesen";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import Sidebar from "../blogs/Sidebar";
 
-const Dhaka = () => {
+const Dinajpur = () => {
   const { data, isLoading, isError, error } = useQuery({
-    queryFn: getDhaka,
-    queryKey: ["dhaka"],
+    queryFn: getDinajpur,
+    queryKey: ["dinajpur"],
   });
-
-
 
   return (
     <div>
@@ -56,4 +54,4 @@ const Dhaka = () => {
   );
 };
 
-export default Dhaka;
+export default Dinajpur;
