@@ -33,7 +33,7 @@ const About = () => {
       <div className="px-8 2xl:px-0 mx-auto gap-10 block md:grid grid-cols-12">
         <div className=" text-gray-700 mt-10 text-justify col-span-12 md:col-span-7">
           <p className="text-base">
-            The youth apostolate of the Catholic Bishops' Conference of
+            The youth apostolate of the Catholic Bishops&apos; Conference of
             Bangladesh (CBCB) was officially launched in 1977, under the name
             “Catholic Jubo Sebadol” and later on officially, Episcopal
             Commission for Youth (ECY). Its function was to direct and

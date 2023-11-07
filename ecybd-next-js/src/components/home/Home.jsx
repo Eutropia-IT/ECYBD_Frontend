@@ -14,7 +14,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import committe1 from "../../assets/committe1.jpeg";
 import committe2 from "../../assets/committe2.png";
 import missionVissionImage from "../../assets/mission_vision_objectives.jpg";
-import aboutUs from "../../assets/aboutUs.JPG";
+import aboutUs from "../../assets/aboutUs.jpg";
 import ScrollToTop from "react-scroll-to-top";
 
 import {
@@ -201,7 +201,7 @@ const Home = () => {
               About ECY Bangladesh
             </h1>
             <p className="text-justify text-base">
-              The youth apostolate of the Catholic Bishops' Conference of
+              The youth apostolate of the Catholic Bishops&apos; Conference of
               Bangladesh (CBCB) was officially launched in 1977, under the name
               “Catholic Jubo Sebadol” and later on officially, Episcopal
               Commission for Youth (ECY). Its function was to direct and
@@ -287,7 +287,7 @@ const Home = () => {
             Mission of the National Youth Commission, according to its
             <span className="font-bold"> Constitution: </span>
             With openness to the uniqueness of persons created in the image of
-            God and docility (to) God's movements in the life of persons, the
+            God and docility (to) God&apos;s movements in the life of persons, the
             CBCB Commission for youth commits itself to the holistic human
             growth and maturity of the youth imbued with living faith to witness
             the Gospel values of life service and with knowledge and competence
