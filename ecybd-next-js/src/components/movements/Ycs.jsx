@@ -3,7 +3,7 @@
 import React from "react";
 import PageTop from "../shared/PageTop";
 import { useQuery } from "@tanstack/react-query";
-import { getBarishal, getDhaka } from "@/apiRequestHandlers/dicocesen";
+import { getBarishal, getDhaka } from "@/apiRequestHandlers/DIOCESAN";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import Sidebar from "../blogs/Sidebar";
 import { getYcs } from "@/apiRequestHandlers/movements";
