@@ -128,7 +128,7 @@ const Blogs = () => {
             itemsPerPage={itemsPerPage}
           />
 
-          {blogs?.results?.length == 0 && <NoData />}
+          {(blogs?.results?.length == 0 || !blogs) && <NoData />}
         </div>
 
         <div className="col-span-12 lg:col-span-3">

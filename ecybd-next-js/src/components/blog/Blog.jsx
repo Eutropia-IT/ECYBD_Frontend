@@ -34,8 +34,8 @@ const Blog = ({ blogId }) => {
             ) : (
               <Image
                 src={blog?.feature_img}
-                width={400}
-                height={300}
+                width={6000}
+                height={3000}
                 className="w-full object-cover h-full"
                 alt="blog image"
               />
@@ -57,7 +57,7 @@ const Blog = ({ blogId }) => {
               <CustomSkeleton height={40} borderRadius={5} />
             </div>
           ) : (
-            <p dangerouslySetInnerHTML={{ __html: blog?.content }}></p>
+            <div dangerouslySetInnerHTML={{ __html: blog?.content }}></div>
           )}
 
           {isError && (

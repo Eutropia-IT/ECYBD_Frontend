@@ -63,8 +63,8 @@ const Secretariat = () => {
                           >
                             <Image
                               className="w-full h-96 object-contain rounded"
-                              width={300}
-                              height={300}
+                              width={4000}
+                              height={4000}
                               src={img?.image_url || ""}
                               alt="secretariat"
                             />

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./gallery.module.scss";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -29,8 +29,8 @@ const ImageCard = ({ data }) => {
           src={data?.front_img}
           // src={data.frontImage}
           alt={data?.image_title}
-          height={240}
-          width={360}
+          height={4000}
+          width={4000}
         />
 
         <div onClick={handleModal} className={`${styles.imageChild}`}>

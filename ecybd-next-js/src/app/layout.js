@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className={poppins.className}>
         <Header />
 
-        <div className="pt-20">
+        <div className="pt-[69px] lg:pt-[72px] xl:pt-[88px]">
           <QueryProvider>{children}</QueryProvider>
         </div>
         <ScrollTop />

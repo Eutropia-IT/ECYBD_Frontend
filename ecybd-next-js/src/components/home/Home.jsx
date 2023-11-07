@@ -343,6 +343,8 @@ const Home = () => {
             <Image
               className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
               src={committe1}
+              height={4000}
+              width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">
@@ -357,6 +359,8 @@ const Home = () => {
             <Image
               className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
               src={committe2}
+              height={4000}
+              width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">

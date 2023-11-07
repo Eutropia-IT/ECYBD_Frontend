@@ -113,7 +113,7 @@ const About = () => {
           </div> */}
         </div>
 
-        <div className="hidden xl:flex lg:mt-10 col-span-5">
+        <div className="col-span-12 xl:col-span-5  xl:flex lg:mt-10 ">
           <div className="w-full">
             {
               <RequestStatusUI
@@ -127,54 +127,6 @@ const About = () => {
               <MissionSlider vissionSliderImages={vissionSliderImages} />
             )}
           </div>
-
-          {/* <div className="w-full bg-teal-50 rounded-lg px-6">
-            <h1 className="text-center mt-8 text-xl font-bold text-gray-700">
-              RECENT SERMONS
-            </h1>
-
-            <div className="mt-5">
-              <Image src={picture} alt="top image" className="w-full" />
-            </div>
-
-            <div className="mt-5">
-              <div className="flex gap-2 mt-3">
-                <div className="grid place-items-center text-gray-600">
-                  <FaAngleRight />
-                </div>
-                <div>
-                  <a href="#" className="text-gray-700 text-sm">
-                    Heavens and the Earth
-                  </a>
-                  <p className="text-gray-700 text-sm">24:15 mins</p>
-                </div>
-              </div>
-
-              <div className="flex gap-2 mt-3">
-                <div className="grid place-items-center text-gray-600">
-                  <FaAngleRight />
-                </div>
-                <div>
-                  <a href="#" className="text-gray-700 text-sm">
-                    Heavens and the Earth
-                  </a>
-                  <p className="text-gray-700 text-sm">24:15 mins</p>
-                </div>
-              </div>
-
-              <div className="flex gap-2 mt-3">
-                <div className="grid place-items-center text-gray-600">
-                  <FaAngleRight />
-                </div>
-                <div>
-                  <a href="#" className="text-gray-700 text-sm">
-                    Heavens and the Earth
-                  </a>
-                  <p className="text-gray-700 text-sm">24:15 mins</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
 
