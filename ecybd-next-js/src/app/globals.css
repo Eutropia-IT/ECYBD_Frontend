@@ -3,154 +3,137 @@
 @tailwind utilities;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-
-
-
 
 /* Custom styles for carousel arrows */
 .slick-prev,
 .slick-next {
-    font-size: 0;
-    /* Hide default arrow content */
-    line-height: 0;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(128, 128, 128, 0.207) !important;
-    /* Arrow background color */
-    /* color: #fff; */
-    color: black !important;
-    /* Arrow color */
-    border-radius: 50%;
-    /* Make it circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    transition: background-color 0.3s;
+  font-size: 0;
+  /* Hide default arrow content */
+  line-height: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(128, 128, 128, 0.207) !important;
+  /* Arrow background color */
+  /* color: #fff; */
+  color: black !important;
+  /* Arrow color */
+  border-radius: 50%;
+  /* Make it circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .slick-next:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .slick-prev:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .slick-prev {
-    left: -20px;
-    z-index: 5;
-
+  left: -20px;
+  z-index: 5;
 }
 
 .slick-next {
-    right: -20px;
+  right: -20px;
 }
-
 
 @media only screen and (min-width: 640px) {
-    .slick-prev {
-        left: -100px;
+  .slick-prev {
+    left: -100px;
+  }
 
-    }
-
-    .slick-next {
-        right: -100px;
-    }
+  .slick-next {
+    right: -100px;
+  }
 }
 
-
 .objectivesOption {
-    list-style: none;
-    position: relative;
-    margin-left: 22px;
-
-
+  list-style: none;
+  position: relative;
+  margin-left: 22px;
 }
 
 .objectivesOption::before {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #4c8488;
-
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4c8488;
 }
-
-
 
 /* swiper slider classes */
 .swiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
 
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* image gallery from gallery */
 .imageGalleryImageHeight {
-    height: auto;
+  height: auto;
 }
 
 .thumbnailClass {
-    width: auto;
-    height: 60px;
-    object-fit: cover;
-    overflow: hidden;
-    cursor: pointer;
+  width: auto;
+  height: 60px;
+  object-fit: cover;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 620px) {
-    .imageGalleryImageHeight {
-        height: 70vh;
-    }
+  .imageGalleryImageHeight {
+    height: 70vh;
+  }
 }
 
 @media only screen and (min-width: 1220px) {
-    .imageGalleryImageHeight {
-        height: 80vh;
-    }
+  .imageGalleryImageHeight {
+    height: 80vh;
+  }
 
-    .thumbnailClass {
-        width: auto;
-        height: 70px;
-        object-fit: cover;
-        overflow: hidden;
-        cursor: pointer;
-    }
+  .thumbnailClass {
+    width: auto;
+    height: 70px;
+    object-fit: cover;
+    overflow: hidden;
+    cursor: pointer;
+  }
 }
-
-
-
 
 /* react pdf css */
 /* body {
@@ -161,83 +144,76 @@
 
 .Example input,
 .Example button {
-    font: inherit;
+  font: inherit;
 }
 
 .Example header {
-    background-color: #323639;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    /* color: white; */
+  background-color: #323639;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  /* color: white; */
 }
 
 .Example header h1 {
-    font-size: inherit;
-    margin: 0;
+  font-size: inherit;
+  margin: 0;
 }
 
 .Example__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px 0;
-    padding: 10px;
-
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
 }
 
 .Example__container__load {
-    margin-top: 1em;
-    /* color: white; */
-
+  margin-top: 1em;
+  /* color: white; */
 }
 
 .Example__container__document {
-    margin: 1em 0;
-
+  margin: 1em 0;
 }
 
 .Example__container__document .react-pdf__Document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-bottom: 4rem; */
+  /* min-height: 50vh; */
+  margin: 0 auto;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .Example__container__document .react-pdf__Document {
     display: flex;
     flex-direction: column;
     align-items: center;
     /* padding-bottom: 4rem; */
-    /* min-height: 50vh; */
+    /* height: 100vh; */
+
     margin: 0 auto;
     width: 100% !important;
     height: 100% !important;
+  }
 }
-
-@media only screen and (min-width: 768px) {
-    .Example__container__document .react-pdf__Document {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* padding-bottom: 4rem; */
-        /* height: 100vh; */
-
-        margin: 0 auto;
-        width: 100% !important;
-        height: 100% !important;
-    }
-}
-
-
-
 
 .Example__container__document .react-pdf__Page {
-    max-width: 100%;
-    margin: 1em;
+  max-width: 100%;
+  margin: 1em;
 }
 
 .Example__container__document .react-pdf__Page canvas {
-    max-width: 100%;
-    /* height: auto !important; */
+  max-width: 100%;
+  /* height: auto !important; */
 }
 
 .Example__container__document .react-pdf__message {
-    padding: 20px;
-    /* color: white; */
+  padding: 20px;
+  /* color: white; */
 }
 
 /* .textLayer {
@@ -248,11 +224,71 @@
 } */
 
 .react-pdf__Page__textContent {
-    display: none;
+  display: none;
 }
 
 .react-pdf__Page__canvas {
-    margin: 0 auto;
-    width: 100% !important;
-    height: 100% !important;
+  margin: 0 auto;
+  width: 100% !important;
+  height: 100% !important;
 }
+
+/* single blog style */
+.single-blog-content p,
+.single-blog-content ul,
+.single-blog-content ol,
+.single-blog-content blockquote,
+/* .single-blog-content pre, */
+.single-blog-content hr,
+.single-blog-content i,
+.single-blog-content em,
+.single-blog-content strong,
+.single-blog-content a,
+.single-blog-content pre,
+.single-blog-content code,
+.single-blog-content img,
+.single-blog-content iframe,
+.single-blog-content h1,
+.single-blog-content h2,
+.single-blog-content h3,
+.single-blog-content h4,
+.single-blog-content h5,
+.single-blog-content address,
+.single-blog-content div {
+  padding-bottom: 1rem;
+}
+
+.single-blog-content h1,
+.single-blog-content h2,
+.single-blog-content h3,
+.single-blog-content h4,
+.single-blog-content h5,
+.single-blog-content h6,
+.single-blog-content strong,
+.single-blog-content i {
+  font-weight: bold;
+}
+
+/* Additional styles for specific elements within single-blog-content */
+.single-blog-content a {
+  color: #0070f3; /* Change link color to blue */
+  text-decoration: underline; /* Underline links */
+}
+
+.single-blog-content ul,
+.single-blog-content ol {
+  list-style-type: disc; /* Change bullet points for lists to discs */
+}
+
+.single-blog-content blockquote {
+  border-left: 4px solid #333; /* Add a left border to blockquotes */
+  padding: 10px; /* Add padding to blockquotes */
+}
+
+.single-blog-content pre {
+  background-color: #f3f4f6; /* Add a background color to code blocks */
+  padding: 10px; /* Add padding to code blocks */
+  border: 1px solid #d1d5db; /* Add a border to code blocks */
+}
+
+/* Extend the styles as needed for other elements */
