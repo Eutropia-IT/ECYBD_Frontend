@@ -173,7 +173,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="fixed z-50 bg-white w-full">
       <SideNavbar handleSidebar={handleSidebar} isOpen={isOpen} />
       <div>
         <div className="px-5 py-1 2xl:px-0 container mx-auto grid grid-cols-12 items-center">

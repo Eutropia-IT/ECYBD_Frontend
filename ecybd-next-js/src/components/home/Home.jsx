@@ -15,6 +15,7 @@ import committe1 from "../../assets/committe1.jpeg";
 import committe2 from "../../assets/committe2.png";
 import missionVissionImage from "../../assets/mission_vision_objectives.jpg";
 import aboutUs from "../../assets/aboutUs.JPG";
+import ScrollToTop from "react-scroll-to-top";
 
 import {
   getHomeBannerSlider,
@@ -453,6 +454,21 @@ const Home = () => {
           </div>
         </div>
       </div> */}
+
+      {/* <ScrollToTop
+        style={{
+          height: "50px",
+          width: "50px",
+          backgroundColor: "white",
+          borderRadius: "50%",
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "1.5rem",
+        }}
+        smooth
+      /> */}
     </div>
   );
 };
