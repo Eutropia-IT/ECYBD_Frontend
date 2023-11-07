@@ -3,7 +3,7 @@
 import React from "react";
 import PageTop from "../shared/PageTop";
 import { useQuery } from "@tanstack/react-query";
-import { getBarishal, getDhaka } from "@/apiRequestHandlers/dicocesen";
+
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import Sidebar from "../blogs/Sidebar";
 import { getYouth } from "@/apiRequestHandlers/movements";
@@ -13,8 +13,6 @@ const Youth = () => {
     queryFn: getYouth,
     queryKey: ["youth"],
   });
-
-
 
   return (
     <div>

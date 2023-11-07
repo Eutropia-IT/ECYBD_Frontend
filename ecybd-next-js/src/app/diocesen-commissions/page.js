@@ -7,7 +7,7 @@ const page = () => {
         className="text-red-700 font-semibold 
       text-3xl sm:text-5xl text-center"
       >
-        DICOCESEN COMMISSIONS <br /> Under Development
+        DIOCESAN COMMISSIONS <br /> Under Development
       </h1>
     </div>
   );

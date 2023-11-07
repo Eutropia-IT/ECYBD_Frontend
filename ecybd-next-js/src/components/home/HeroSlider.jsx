@@ -79,14 +79,12 @@ const Slider = ({ slide }) => {
     }
   };
 
-  console.log(slide);
-
   return (
     <div className={styles.sliderRoot}>
       <Image
         className="w-full"
-        width={400}
-        height={300}
+        width={6000}
+        height={5000}
         src={slide?.Image || banner1}
         alt="banner image"
       />
@@ -165,8 +163,8 @@ const MissionSlide = ({ imageSrc }) => {
   return (
     <div className="h-72 sm:h-96 rounded">
       <Image
-        height={200}
-        width={200}
+        height={3000}
+        width={3000}
         className="rounded w-full"
         src={imageSrc || banner1}
         alt="banner image"

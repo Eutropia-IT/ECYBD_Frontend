@@ -5,7 +5,7 @@ import PageTop from "../shared/PageTop";
 import { useQuery } from "@tanstack/react-query";
 import RequestStatusUI from "../shared/RequestStatus/RequestStatusUI";
 import Sidebar from "../blogs/Sidebar";
-import { getBarishal } from "@/apiRequestHandlers/dicocesen";
+
 import { getSEcretariat } from "@/apiRequestHandlers/secretariat";
 import Image from "next/image";
 import NoData from "../shared/NoData";
@@ -63,11 +63,15 @@ const Secretariat = () => {
                           >
                             <Image
                               className="w-full h-96 object-contain rounded"
-                              width={300}
-                              height={300}
+                              width={4000}
+                              height={4000}
                               src={img?.image_url || ""}
                               alt="secretariat"
                             />
+                            <h1 className="text-lg font-bold text-[#0f766e]">
+                              Mr. Name
+                            </h1>
+                            <p className="text-base"> Designation </p>
                           </div>
                         );
                       })}

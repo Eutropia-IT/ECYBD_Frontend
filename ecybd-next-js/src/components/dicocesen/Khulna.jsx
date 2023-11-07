@@ -15,7 +15,7 @@ const Khulna = () => {
 
   return (
     <div>
-      <PageTop title={data?.title} description={"Dicocesen Commission"} />
+      <PageTop title={data?.title} description={"DIOCESAN Commission"} />
 
       <div className="block sm:pb-8   lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
         <div className="col-span-12 grid gap-5 overflow-hidden w-full text-justify lg:col-span-9">

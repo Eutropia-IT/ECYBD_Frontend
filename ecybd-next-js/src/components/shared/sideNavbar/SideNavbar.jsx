@@ -33,24 +33,26 @@ const linkData = [
   },
   {
     id: shortid.generate(),
-    text: "DICOCESEN COMMISSIONS",
+    text: "DIOCESAN COMMISSIONS",
     path: "/diocesen-commissions",
     subRoutes: [
+      {
+        id: shortid.generate(),
+        text: "BARISHAL",
+        path: "/diocesen-commissions/barishal",
+      },
+
+      {
+        id: shortid.generate(),
+        text: "CHATTOGRAM",
+        path: "/diocesen-commissions/chittagong",
+      },
       {
         id: shortid.generate(),
         text: "DHAKA",
         path: "/diocesen-commissions/dhaka",
       },
-      {
-        id: shortid.generate(),
-        text: "CHITTAGONG",
-        path: "/diocesen-commissions/chittagong",
-      },
-      {
-        id: shortid.generate(),
-        text: "RAJSHAHI",
-        path: "/diocesen-commissions/rajshahi",
-      },
+
       {
         id: shortid.generate(),
         text: "DINAJPUR",
@@ -61,21 +63,22 @@ const linkData = [
         text: "KHULNA",
         path: "/diocesen-commissions/khulna",
       },
+
       {
         id: shortid.generate(),
         text: "MYMENSINGH",
         path: "/diocesen-commissions/mymensingh",
+      },
+      {
+        id: shortid.generate(),
+        text: "RAJSHAHI",
+        path: "/diocesen-commissions/rajshahi",
       },
 
       {
         id: shortid.generate(),
         text: "SYLHET",
         path: "/diocesen-commissions/sylhet",
-      },
-      {
-        id: shortid.generate(),
-        text: "BARISHAL",
-        path: "/diocesen-commissions/barishal",
       },
     ],
   },
@@ -94,14 +97,14 @@ const linkData = [
       },
       {
         id: shortid.generate(),
-        // text: "Young Christian Students (YCS) & Young Students Movement (YSM)",
-        text: "YCS & YSM",
-        path: "/movements/ycs-ysm",
+        text: "Jesus Youth",
+        path: "/movements/jesus-youth",
       },
       {
         id: shortid.generate(),
-        text: "Jesus Youth",
-        path: "/movements/jesus-youth",
+        // text: "Young Christian Students (YCS) & Young Students Movement (YSM)",
+        text: "YCS & YSM",
+        path: "/movements/ycs-ysm",
       },
     ],
   },
@@ -149,11 +152,11 @@ const linkData = [
       },
     ],
   },
-  {
-    id: shortid.generate(),
-    text: "CONTACT",
-    path: "/contact",
-  },
+  // {
+  //   id: shortid.generate(),
+  //   text: "CONTACT",
+  //   path: "/contact",
+  // },
 ];
 
 const SideNavbar = ({ isOpen, handleSidebar }) => {

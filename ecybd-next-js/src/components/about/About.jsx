@@ -11,6 +11,7 @@ import { getVissionSlider } from "@/apiRequestHandlers/home";
 import committe1 from "../../assets/committe1.jpeg";
 import committe2 from "../../assets/committe2.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const About = () => {
   const {
@@ -112,7 +113,7 @@ const About = () => {
           </div> */}
         </div>
 
-        <div className="hidden xl:flex lg:mt-10 col-span-5">
+        <div className="col-span-12 xl:col-span-5  xl:flex lg:mt-10 ">
           <div className="w-full">
             {
               <RequestStatusUI
@@ -126,68 +127,14 @@ const About = () => {
               <MissionSlider vissionSliderImages={vissionSliderImages} />
             )}
           </div>
-
-          {/* <div className="w-full bg-teal-50 rounded-lg px-6">
-            <h1 className="text-center mt-8 text-xl font-bold text-gray-700">
-              RECENT SERMONS
-            </h1>
-
-            <div className="mt-5">
-              <Image src={picture} alt="top image" className="w-full" />
-            </div>
-
-            <div className="mt-5">
-              <div className="flex gap-2 mt-3">
-                <div className="grid place-items-center text-gray-600">
-                  <FaAngleRight />
-                </div>
-                <div>
-                  <a href="#" className="text-gray-700 text-sm">
-                    Heavens and the Earth
-                  </a>
-                  <p className="text-gray-700 text-sm">24:15 mins</p>
-                </div>
-              </div>
-
-              <div className="flex gap-2 mt-3">
-                <div className="grid place-items-center text-gray-600">
-                  <FaAngleRight />
-                </div>
-                <div>
-                  <a href="#" className="text-gray-700 text-sm">
-                    Heavens and the Earth
-                  </a>
-                  <p className="text-gray-700 text-sm">24:15 mins</p>
-                </div>
-              </div>
-
-              <div className="flex gap-2 mt-3">
-                <div className="grid place-items-center text-gray-600">
-                  <FaAngleRight />
-                </div>
-                <div>
-                  <a href="#" className="text-gray-700 text-sm">
-                    Heavens and the Earth
-                  </a>
-                  <p className="text-gray-700 text-sm">24:15 mins</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
 
       {/* our team section */}
       <div className="mt-12">
-        <h1 className="text-center text-gray-700 text-2xl font-bold">
+        {/* <h1 className="text-center text-gray-700 text-2xl font-bold">
           Our Team
-        </h1>
-
-        {/* <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-12">
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
-        </div> */}
+        </h1> */}
 
         <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-x-20 gap-8 my-8">
           <div className=" flex justify-center flex-col items-center rounded-2xl">
@@ -218,6 +165,15 @@ const About = () => {
               Commission for Youth
             </p>
           </div>
+        </div>
+
+        <div className="text-center my-8">
+          <Link
+            href="/about/secretariat"
+            className="px-8 py-2 text-teal-800 rounded-full border border-teal-700 mt-8 hover:bg-[#0F766E] hover:text-white duration-200"
+          >
+            Secretariat
+          </Link>
         </div>
       </div>
     </>

@@ -84,7 +84,7 @@ const Gallery = () => {
         </div>
       )}
 
-      {isGalleryError && <NoData />}
+      {(isGalleryError || galleryData?.length == 0) && <NoData />}
     </div>
   );
 };

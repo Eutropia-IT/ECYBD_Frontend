@@ -1,25 +1,21 @@
 "use client";
 
 import React, { useRef } from "react";
-import banner from "../../assets/banner.png";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import "../../app/globals.css";
 import mensImage from "../../assets/mens.png";
-import menImage from "../../assets/men.png";
-import collage from "../../assets/collage.png";
-import sponsor1 from "../../assets/sponsors/sponsor1.png";
-import sponsor2 from "../../assets/sponsors/sponsor2.png";
-import sponsor3 from "../../assets/sponsors/sponsor3.png";
-import sponsor4 from "../../assets/sponsors/sponsor4.png";
 import HeroSlider, { MissionSlider } from "./HeroSlider";
 import shortid from "shortid";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import committe1 from "../../assets/committe1.jpeg";
 import committe2 from "../../assets/committe2.png";
+import missionVissionImage from "../../assets/mission_vision_objectives.jpg";
+import aboutUs from "../../assets/aboutUs.JPG";
+import ScrollToTop from "react-scroll-to-top";
 
 import {
   getHomeBannerSlider,
@@ -75,6 +71,8 @@ const Home = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true, // Add this line to enable autoplay
+    autoplaySpeed: 2000, // Optionally, you can set the autoplay speed in milliseconds (default is 3000)
   };
 
   const aboutRef = useRef(null);
@@ -149,7 +147,7 @@ const Home = () => {
           />
         }
 
-        {verses?.active_verses.length > 0 ? (
+        {verses?.active_verses?.length > 0 ? (
           <Slider
             className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto py-5 mb-10"
             {...settings}
@@ -192,7 +190,7 @@ const Home = () => {
 
       {/* first content part */}
 
-      <motion.div
+      <div
         ref={aboutRef}
         style={{ scale: scaleProgress, opacity: scaleProgress }}
         className="container px-8 2xl:px-0 mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-16"
@@ -235,19 +233,23 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className=" flex justify-end">
-          <Image className="w-full object-contain" src={mensImage} alt="mens" />
+        <div className=" w-full ">
+          <Image
+            className="w-full object-contain rounded-lg"
+            src={aboutUs}
+            alt="mens"
+          />
         </div>
-      </motion.div>
+      </div>
 
       {/* mission and vission part */}
-      <motion.div
+      <div
         ref={missionRef}
         style={{ scale: missionScaleProgress, opacity: missionScaleProgress }}
         className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16  place-items-center "
       >
         <div className="w-full">
-          {
+          {/* {
             <RequestStatusUI
               isLoading={isVissionLoading}
               isError={isVissionError}
@@ -257,7 +259,13 @@ const Home = () => {
           }
           {vissionSliderImages?.length > 0 && (
             <MissionSlider vissionSliderImages={vissionSliderImages} />
-          )}
+          )} */}
+
+          <Image
+            className="w-full object-contain rounded-lg"
+            src={missionVissionImage}
+            alt="mens"
+          />
         </div>
         <div>
           <h1 className="text-3xl  font-semibold mb-3">
@@ -287,7 +295,7 @@ const Home = () => {
             community.
           </p>
         </div>
-      </motion.div>
+      </div>
 
       {/* aims and objective part */}
       <div className=" mt-12">
@@ -316,7 +324,7 @@ const Home = () => {
           <div className="text-center">
             <Link
               href={"/resources/gallery"}
-              className="px-8 py-2  text-teal-800 rounded-full border border-teal-700 "
+              className="px-8 py-2  text-teal-800 rounded-full border border-teal-700  hover:bg-[#0F766E] hover:text-white duration-200"
             >
               View Gallery
             </Link>
@@ -326,15 +334,17 @@ const Home = () => {
 
       {/* ececutive & commmision members part */}
       <div className="w-full bg-gray-100 py-8 mt-12">
-        <h1 className="text-3xl  text-center font-semibold py-8">
+        {/* <h1 className="text-3xl  text-center font-semibold py-8">
           Executive & Commision Members
-        </h1>
+        </h1> */}
 
-        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-x-20 gap-8">
+        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-x-20 gap-8 mt-6">
           <div className=" flex justify-center flex-col items-center rounded-2xl">
             <Image
               className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
               src={committe1}
+              height={4000}
+              width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">
@@ -349,6 +359,8 @@ const Home = () => {
             <Image
               className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
               src={committe2}
+              height={4000}
+              width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">
@@ -364,7 +376,7 @@ const Home = () => {
         <div className="text-center mt-8">
           <Link
             href="/about/secretariat"
-            className="px-8 py-2 text-teal-800 rounded-full border border-teal-700 mt-8"
+            className="px-8 py-2 text-teal-800 rounded-full border border-teal-700 mt-8 hover:bg-[#0F766E] hover:text-white duration-200"
           >
             Secretariat
           </Link>
@@ -446,6 +458,21 @@ const Home = () => {
           </div>
         </div>
       </div> */}
+
+      {/* <ScrollToTop
+        style={{
+          height: "50px",
+          width: "50px",
+          backgroundColor: "white",
+          borderRadius: "50%",
+          color: "#fff",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "1.5rem",
+        }}
+        smooth
+      /> */}
     </div>
   );
 };

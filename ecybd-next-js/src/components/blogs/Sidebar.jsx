@@ -48,8 +48,6 @@ const Sidebar = () => {
     queryKey: ["filters"],
   });
 
-  console.log("data from sidebar = ", data);
-
   return (
     <div className="">
       {/* search bar */}
@@ -92,7 +90,7 @@ const Sidebar = () => {
 
       {/* blog archives */}
       <div className="text-gray-700 mt-5">
-        {!isError && !isLoading && (
+        {!isError && !isLoading && data?.length > 0 && (
           <h1 className="text-xl font-bold text-gray-800 mb-3">
             Blog Archives
           </h1>

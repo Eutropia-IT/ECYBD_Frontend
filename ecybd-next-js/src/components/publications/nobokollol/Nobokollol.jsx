@@ -107,7 +107,7 @@ const Nobokollol = () => {
         />
       )}
 
-      {allPdf?.count === 0 && <NoData />}
+      {(allPdf?.count === 0 || !allPdf) && <NoData />}
       <div className="pb-12">
         <CustomPagination
           handlePageNumber={handlePageNumber}
