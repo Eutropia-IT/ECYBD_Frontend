@@ -26,14 +26,14 @@ const About = () => {
       {/* header section */}
       <PageTop
         title={"About us"}
-        description={"Discover Our Church's Rich Heritage and Mission"}
+        description={"Episcopal Commission for Youth, Bangladesh"}
       />
 
       {/* content section */}
-      <div className="container px-8 2xl:px-0 mx-auto grid gap-10 grid-cols-12">
-        <div className=" text-gray-700 mt-10 text-justify col-span-12 xl:col-span-7">
+      <div className="px-8 2xl:px-0 mx-auto gap-10 block md:grid grid-cols-12">
+        <div className=" text-gray-700 mt-10 text-justify col-span-12 md:col-span-7">
           <p className="text-base">
-            The youth apostolate of the Catholic Bishops’ Conference of
+            The youth apostolate of the Catholic Bishops' Conference of
             Bangladesh (CBCB) was officially launched in 1977, under the name
             “Catholic Jubo Sebadol” and later on officially, Episcopal
             Commission for Youth (ECY). Its function was to direct and
@@ -113,7 +113,7 @@ const About = () => {
           </div> */}
         </div>
 
-        <div className="col-span-12 xl:col-span-5  xl:flex lg:mt-10 ">
+        <div className="col-span-12 md:col-span-5 md:flex lg:mt-10">
           <div className="w-full">
             {
               <RequestStatusUI
@@ -136,32 +136,36 @@ const About = () => {
           Our Team
         </h1> */}
 
-        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-x-20 gap-8 my-8">
-          <div className=" flex justify-center flex-col items-center rounded-2xl">
+        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-x-20 lg:gap-8 mt-6">
+          <div className=" flex flex-col items-center rounded-2xl">
             <Image
-              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              className="w-full h-64 lg:h-[60vh] overflow-hidden  object-contain rounded-2xl"
               src={committe1}
+              height={4000}
+              width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">
-              Most Rev. Archbishop Lawrence Subrata Howlader
+              Most Rev. Archbishop Lawrence Subrata Howlader C.S.C.
             </h3>
             <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
-              C.S.C. Chairman, Episcopal Commission for Youth & Archbishop of
+              Chairman, Episcopal Commission for Youth & Archbishop of
               Chattogram
             </p>
           </div>
-          <div className=" flex justify-center flex-col items-center rounded-2xl">
+          <div className=" flex flex-col items-center rounded-2xl">
             <Image
-              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              className="w-full h-64 lg:h-[60vh] overflow-hidden  object-contain rounded-2xl"
               src={committe2}
+              height={4000}
+              width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">
-              Fr. Bikash James Rebeiro
+              Fr. Bikash James Rebeiro C.S.C.
             </h3>
             <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
-              C.S.C. Executive Secretary & National Youth Coordinator, Episcopal
+              Executive Secretary & National Youth Coordinator, Episcopal
               Commission for Youth
             </p>
           </div>

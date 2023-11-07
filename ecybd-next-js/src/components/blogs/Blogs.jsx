@@ -54,9 +54,9 @@ const Blogs = () => {
   return (
     <>
       <PageTop
-        title={"Our Blog"}
+        title={"Blogs"}
         description={
-          "Articles and latest bulletins related to our catholic church"
+          "Articles and latest bulletins"
         }
       />
 

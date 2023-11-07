@@ -20,11 +20,11 @@ const Secretariat = () => {
     <div>
       <PageTop
         title={"Secretariat"}
-        description={"Unveiling Our Secretariat Team"}
+        description={"Secretariat Archive of ECY Bangladesh"}
       />
 
       <div className="block sm:pb-8   lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
-        <div className="col-span-12 grid gap-5 overflow-hidden w-full text-justify lg:col-span-9">
+        <div className="col-span-12 grid gap-5 overflow-hidden w-full text-justify">
           <div className={`${isLoading ? "grid gap-5" : "hidden"}`}>
             <RequestStatusUI
               isError={isError}
@@ -50,11 +50,11 @@ const Secretariat = () => {
             {data?.length > 0 ? (
               data.map((s) => {
                 return (
-                  <section key={s.id}>
-                    <h1 className="text-3xl opacity-70 font-bold mb-5 text-center">
-                      {s.year}
+                  <section className="mb-5" key={s.id}>
+                    <h1 className="text-3xl opacity-70 font-bold mb-5 text-left">
+                      Year: {s.year}
                     </h1>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+                    <div className="mb-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                       {s?.secretariat_images?.map((img) => {
                         return (
                           <div key={img.id}>
@@ -78,6 +78,7 @@ const Secretariat = () => {
                         );
                       })}
                     </div>
+                    <hr/>
                   </section>
                 );
               })
@@ -89,9 +90,9 @@ const Secretariat = () => {
           </div>
         </div>
 
-        <div className="col-span-12 mt-8  lg:mt-0 lg:col-span-3">
+        {/* <div className="col-span-12 mt-8  lg:mt-0 lg:col-span-3">
           <Sidebar />
-        </div>
+        </div> */}
       </div>
     </div>
   );

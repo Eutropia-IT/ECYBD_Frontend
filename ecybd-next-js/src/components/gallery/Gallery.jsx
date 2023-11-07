@@ -64,7 +64,7 @@ const Gallery = () => {
     <div>
       <PageTop
         title={"Gallery"}
-        description={"Curated images of our church programs and events."}
+        description={"See Our Albums"}
       />
 
       <RequestStatusUI

@@ -8,17 +8,17 @@ import { AiFillYoutube } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className=" ">
+    <div className="border-t-2 border-gray-300">
       <div className="w-11/12 mx-auto border-b border-gray-800 pb-8 ">
-        <div className="px-8 sm:px-0 container mx-auto grid  grid-cols-1 lg:grid-cols-3 py-0 pt-8">
-          <div className="">
-            <div className="flex lg:justify-start justify-center">
+        <div className="items-center px-8 sm:px-0 container mx-auto grid  grid-cols-1 md:grid-cols-3 py-0 pt-8">
+          <div className="text-center">
+            <div className="flex justify-center">
               <Link className="flex w-28" href="/">
                 <Image className="w-28 mx-auto lg:ml-0" src={logo} alt="logo" />
               </Link>
             </div>
-            <div className="mt-3 flex flex-col gap-1 items-center lg:items-start mb-3 lg:mb-0">
-              <a href="telto:0174345800">Phone: 01743452800</a>
+            <div className="mt-3 flex flex-col gap-1 items-center mb-3 lg:mb-0">
+              <a href="tel:0174345800">Phone: 01743452800</a>
 
               <a href="mailto:ex_y2009@yahoo.com">
                 {" "}
@@ -26,7 +26,7 @@ const Footer = () => {
               </a>
             </div>
 
-            <div className="lg:justify-start flex gap-3 justify-center ">
+            <div className="flex gap-3 justify-center ">
               <a
                 target="_blank"
                 href="https://www.facebook.com/EpiscopalCommissionforYouthBangladesh "
@@ -53,10 +53,9 @@ const Footer = () => {
             <div className="flex flex-col gap-1">
               <Link href="/about">About Us </Link>
               <Link href="/resources/gallery">Gallery </Link>
-              <Link href="/movements">Movements </Link>
               <Link href="/contact">Contact Us </Link>
               <Link href="/resources/publications/newsletters">
-                Publications{" "}
+                Newsletters{" "}
               </Link>
               {/* <Link href="/donate">Support Us </Link> */}
             </div>

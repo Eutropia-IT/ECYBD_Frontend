@@ -104,14 +104,14 @@ const Slider = ({ slide }) => {
 
         <Link
           href={getRoute() || "/"}
-          className=" px-8 md:px-12 py-2 md:py-3  md:mt-6 rounded-full bg-teal-700 shadow-xl text-white font-bold"
+          className=" px-8 md:px-12 py-2 md:py-3  md:mt-6 rounded-full bg-teal-700 hover:border-2 hover:border-white shadow-xl shadow-gray-700 text-white font-bold"
         >
           Read Now
         </Link>
       </div>
 
       {/* for small screen */}
-      <div className="block sm:hidden w-full px-8 text-left bg-teal-900  pb-12 pt-4 ">
+      <div className="flex flex-col justify-between text-center sm:hidden px-8 bg-teal-900  pb-12 pt-4 h-[12rem]">
         <p className="font-bold text-base text-white">
           {slide?.Type == "blog" ? "Latest Blog" : "Latest Publication"}
         </p>
@@ -119,7 +119,7 @@ const Slider = ({ slide }) => {
 
         <Link
           href={getRoute() || "/"}
-          className=" px-8  py-2 rounded-full bg-teal-800 text-white font-bold text-base shadow-md cursor-pointer "
+          className=" px-8  py-2 rounded-full bg-transparent border-2 border-white lg:bg-teal-800 text-white font-bold text-base shadow-md cursor-pointer "
         >
           Read Now
         </Link>
@@ -142,10 +142,10 @@ export const MissionSlider = ({ vissionSliderImages }) => {
         navigation={false}
         modules={[Pagination, Navigation, Autoplay]}
         autoplay={{
-          delay: 2000,
+          delay: 3000,
           disableOnInteraction: true,
         }}
-        className="mySwiper "
+        className="mySwiper"
       >
         {sortedVissionSliderImages.map((slide) => {
           return (

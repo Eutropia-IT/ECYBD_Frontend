@@ -173,16 +173,16 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed z-50 bg-white w-full">
+    <div className="fixed z-50 bg-white w-full shadow-md shadow-gray-600">
       <SideNavbar handleSidebar={handleSidebar} isOpen={isOpen} />
       <div>
         <div className="px-5 py-1 2xl:px-0 container mx-auto grid grid-cols-12 items-center">
-          <div className="lg:col-span-1 xl:col-span-2 ">
+          <div className="col-span-3 lg:col-span-2 xl:col-span-2 ">
             <Link href="/">
-              <Image className="w-20 lg:w-16 xl:w-20" src={logo} alt="logo" />
+              <Image className="w-24 lg:w-17 xl:w-24" src={logo} alt="logo" />
             </Link>
           </div>
-          <div className="lg:col-span-9 xl:col-span-8  gap-0 2xl:gap-3 hidden lg:flex justify-between 2xl:justify-start z-10">
+          <div className="lg:col-span-8 xl:col-span-8 gap-0 2xl:gap-3 hidden lg:flex justify-between 2xl:justify-start z-10">
             {linkData.map((link) => {
               return (
                 <div key={link.id} className={styles.rootLinks1}>
@@ -207,7 +207,7 @@ const Header = () => {
                     <Link
                       className={`
                  px-2 2xl:px-3 py-2  rounded
-                font-semibold text-base
+                font-semibold text-sm 2xl:text-base
                 transition duration-200 ease-in-
                 flex items-center justify-center
                 
@@ -360,9 +360,9 @@ const Header = () => {
               );
             })}
           </div>
-          <div className="col-span-11 lg:col-span-2 xl:col-span-2 flex justify-end  items-center ">
+          <div className="col-span-9 lg:col-span-2 xl:col-span-2 flex justify-end  items-center ">
             <Link
-              className="font-semibold bg-teal-700 px-7 py-2 text-white text-base
+              className="font-semibold bg-teal-700 hover:border-2 hover:border-teal-700 hover:bg-transparent hover:text-teal-700 hover:font-bold hover:shadow-md hover:shadow-teal-700 px-7 py-2 text-white text-base
             "
               href={"/contact"}
             >

@@ -60,7 +60,7 @@ const Contact = () => {
       <ToastContainer />
       <PageTop
         title={"Contact us"}
-        description={"Our Church address and contact details"}
+        description={"For Any Queries, Connect with Us"}
       />
 
       <div className=" container mx-auto px-8 2xl:px-0 mt-12 grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -163,56 +163,24 @@ const Contact = () => {
               <p>
                 Email:{" "}
                 <a
-                  href="mailto: ec_y2009@yahoo.com
-"
+                  href="mailto: ec_y2009@yahoo.com"
                 >
                   ec_y2009@yahoo.com
                 </a>
               </p>
             </div>
           </div>
-          {/* <hr className="my-8" /> */}
+          <hr className="my-4" />
 
-          {/* <h1 className="text-gray-700 text-xl mb-5 font-bold">
-            ANOTHER ADDRESS
-          </h1>
-          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2">
-            <div className="text-base text-gray-600">
-              <p>Catholic Church</p>
-              <p>121 King Street, Melbourne</p>
-              <p>Victoria 3000 Australia</p>
-            </div>
-            <div className="text-base text-gray-600">
-              <p>
-                Phone: <a href="tel:+6138766284">+6138766284</a>
-              </p>
-              <p>Fax: +6138766284</p>
-              <p>
-                Email:{" "}
-                <a href="mailto: mail@catholicwebsite.com">
-                  mail@catholicwebsite.com
-                </a>
-              </p>
-            </div>
-          </div> */}
-        </div>
-      </div>
-
-      <div>
-        {/* <iframe
-          className="w-full h-96 my-10"
-          frameBorder="0"
-          src="https://maps.google.com/maps?q=United+Hospital+Limited,+Road+No+71,+Dhaka,+Bangladesh&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-        ></iframe> */}
-
-        <iframe
+      
+          <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.664616155194!2d90.3693084!3d23.759336400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf568d878835%3A0x348553983366710!2sCBCB%20Auditorium!5e0!3m2!1sen!2sbd!4v1699295502639!5m2!1sen!2sbd"
           className="w-full h-96 my-10"
-          frameBorder="0"
-          allowfullscreen=""
+          allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
+        </div>
       </div>
     </div>
   );

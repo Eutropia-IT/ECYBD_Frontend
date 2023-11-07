@@ -55,7 +55,7 @@ const Sidebar = () => {
         <div className="flex">
           <input
             className="h-12 outline-none rounded rounded-r-none border-r-0 border border-gray-400 px-4 w-full"
-            placeholder="Search.."
+            placeholder="Search Blogs"
             type="search"
             value={search}
             onChange={handleSearch}
@@ -90,7 +90,7 @@ const Sidebar = () => {
 
       {/* blog archives */}
       <div className="text-gray-700 mt-5">
-        {!isError && !isLoading && data?.length > 0 && (
+        {!isError && !isLoading && data && (
           <h1 className="text-xl font-bold text-gray-800 mb-3">
             Blog Archives
           </h1>

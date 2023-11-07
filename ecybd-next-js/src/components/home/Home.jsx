@@ -72,7 +72,7 @@ const Home = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true, // Add this line to enable autoplay
-    autoplaySpeed: 2000, // Optionally, you can set the autoplay speed in milliseconds (default is 3000)
+    autoplaySpeed: 5000, // Optionally, you can set the autoplay speed in milliseconds (default is 3000)
   };
 
   const aboutRef = useRef(null);
@@ -137,7 +137,7 @@ const Home = () => {
 
       <div
         style={{ minHeight: "200px" }}
-        className="relative  w-full mx-auto   bg-gray-100"
+        className="relative  w-full mx-auto bg-gray-100"
       >
         {
           <RequestStatusUI
@@ -156,7 +156,7 @@ const Home = () => {
               return (
                 <div
                   key={shortid.generate()}
-                  className="p-5 sm:p-10 bg-white w-1/2 rounded-lg"
+                  className="p-5 sm:p-10 bg-white w-1/2 rounded-lg h-48"
                 >
                   <p className="text-center">{verse.text}</p>
                   <h1 className="mt-8 font-semibold text-lg text-center ">
@@ -175,7 +175,7 @@ const Home = () => {
               return (
                 <div
                   key={shortid.generate()}
-                  className="p-5 sm:p-10 bg-white w-1/2 rounded-lg"
+                  className="p-5 sm:p-10 bg-white w-1/2 rounded-lg  h-48"
                 >
                   <p className="text-center">{verse.text}</p>
                   <h1 className="mt-8 font-semibold text-lg text-center ">
@@ -193,7 +193,7 @@ const Home = () => {
       <div
         ref={aboutRef}
         style={{ scale: scaleProgress, opacity: scaleProgress }}
-        className="container px-8 2xl:px-0 mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-16"
+        className="container px-8 2xl:px-0 mx-auto mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 xl:gap-10"
       >
         <div className="flex flex-col justify-between gap-10">
           <div>
@@ -201,7 +201,7 @@ const Home = () => {
               About ECY Bangladesh
             </h1>
             <p className="text-justify text-base">
-              The youth apostolate of the Catholic Bishops’ Conference of
+              The youth apostolate of the Catholic Bishops' Conference of
               Bangladesh (CBCB) was officially launched in 1977, under the name
               “Catholic Jubo Sebadol” and later on officially, Episcopal
               Commission for Youth (ECY). Its function was to direct and
@@ -233,7 +233,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className=" w-full ">
+        <div className="my-auto w-full ">
           <Image
             className="w-full object-contain rounded-lg"
             src={aboutUs}
@@ -287,7 +287,7 @@ const Home = () => {
             Mission of the National Youth Commission, according to its
             <span className="font-bold"> Constitution: </span>
             With openness to the uniqueness of persons created in the image of
-            God and docility (to) God’s movements in the life of persons, the
+            God and docility (to) God's movements in the life of persons, the
             CBCB Commission for youth commits itself to the holistic human
             growth and maturity of the youth imbued with living faith to witness
             the Gospel values of life service and with knowledge and competence
@@ -306,7 +306,7 @@ const Home = () => {
 
           <div className="relative  w-full mx-auto  ">
             <Slider
-              className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto  shadow-md bg-white mb-8 mt-5 rounded-lg"
+              className=" w-10/12 sm:w-2/3 lg:w-1/2 mx-auto  shadow-lg shadow-gray-300 bg-white mb-8 mt-5 rounded-lg"
               {...settings}
             >
               {aimObjective.map((aim) => {
@@ -338,36 +338,36 @@ const Home = () => {
           Executive & Commision Members
         </h1> */}
 
-        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1  lg:grid-cols-2 gap-x-20 gap-8 mt-6">
-          <div className=" flex justify-center flex-col items-center rounded-2xl">
+        <div className="container px-8 2xl:px-0 mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2 lg:gap-x-20 lg:gap-8 mt-6">
+          <div className=" flex flex-col items-center rounded-2xl">
             <Image
-              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              className="w-full h-64 lg:h-[60vh] overflow-hidden  object-contain rounded-2xl"
               src={committe1}
               height={4000}
               width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">
-              Most Rev. Archbishop Lawrence Subrata Howlader
+              Most Rev. Archbishop Lawrence Subrata Howlader C.S.C.
             </h3>
             <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
-              C.S.C. Chairman, Episcopal Commission for Youth & Archbishop of
+              Chairman, Episcopal Commission for Youth & Archbishop of
               Chattogram
             </p>
           </div>
-          <div className=" flex justify-center flex-col items-center rounded-2xl">
+          <div className=" flex flex-col items-center rounded-2xl">
             <Image
-              className="w-full h-auto md:h-[80vh] lg:h-[70vh] overflow-hidden  object-cover rounded-2xl"
+              className="w-full h-64 lg:h-[60vh] overflow-hidden  object-contain rounded-2xl"
               src={committe2}
               height={4000}
               width={4000}
               alt="men"
             />
             <h3 className="font-semibold px-5 mt-2 text-lg text-center">
-              Fr. Bikash James Rebeiro
+              Fr. Bikash James Rebeiro C.S.C.
             </h3>
             <p className="text-center mt-1 text-sm opacity-80 text-teal-700">
-              C.S.C. Executive Secretary & National Youth Coordinator, Episcopal
+              Executive Secretary & National Youth Coordinator, Episcopal
               Commission for Youth
             </p>
           </div>

@@ -186,7 +186,7 @@ const SideNavbar = ({ isOpen, handleSidebar }) => {
       <div className="flex justify-between px-5">
         <div>
           <Link onClick={handleSidebar} href="/">
-            <Image className="w-12" src={logo} alt="logo" />
+            <Image className="w-18" src={logo} alt="logo" />
           </Link>
         </div>
         <div className=" grid place-items-center">

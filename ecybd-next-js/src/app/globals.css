@@ -255,7 +255,8 @@
 .single-blog-content h5,
 .single-blog-content address,
 .single-blog-content div {
-  padding-bottom: 1rem;
+  padding-bottom: 1rem !important;
+  font-family: inherit;
 }
 
 .single-blog-content h1,
@@ -266,29 +267,35 @@
 .single-blog-content h6,
 .single-blog-content strong,
 .single-blog-content i {
-  font-weight: bold;
+  font-weight: bold !important;
 }
-
+.single-blog-content li {
+  padding-left: 2rem !important;
+}
+.single-blog-content img {
+  margin: auto !important;
+  max-width: 550px !important;
+}
 /* Additional styles for specific elements within single-blog-content */
 .single-blog-content a {
-  color: #0070f3; /* Change link color to blue */
-  text-decoration: underline; /* Underline links */
+  color: rgb(15, 118, 110) !important; /* Change link color to blue */
+  text-decoration: underline !important; /* Underline links */
 }
 
 .single-blog-content ul,
 .single-blog-content ol {
-  list-style-type: disc; /* Change bullet points for lists to discs */
+  list-style-type: disc !important; /* Change bullet points for lists to discs */
 }
 
 .single-blog-content blockquote {
-  border-left: 4px solid #333; /* Add a left border to blockquotes */
-  padding: 10px; /* Add padding to blockquotes */
+  border-left: 4px solid #333 !important; /* Add a left border to blockquotes */
+  padding: 10px !important; /* Add padding to blockquotes */
 }
 
 .single-blog-content pre {
-  background-color: #f3f4f6; /* Add a background color to code blocks */
-  padding: 10px; /* Add padding to code blocks */
-  border: 1px solid #d1d5db; /* Add a border to code blocks */
+  background-color: #f3f4f6 !important; /* Add a background color to code blocks */
+  padding: 10px !important; /* Add padding to code blocks */
+  border: 1px solid #d1d5db !important; /* Add a border to code blocks */
 }
 
 /* Extend the styles as needed for other elements */
