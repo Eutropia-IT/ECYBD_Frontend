@@ -57,21 +57,23 @@ const Secretariat = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
                       {s?.secretariat_images?.map((img) => {
                         return (
-                          <div
-                            key={img.id}
-                            className="bg-gray-50 rounded flex justify-center"
-                          >
-                            <Image
-                              className="w-full h-96 object-contain rounded"
-                              width={4000}
-                              height={4000}
-                              src={img?.image_url || ""}
-                              alt="secretariat"
-                            />
-                            <h1 className="text-lg font-bold text-[#0f766e]">
-                              Mr. Name
-                            </h1>
-                            <p className="text-base"> Designation </p>
+                          <div key={img.id}>
+                            <div className="bg-gray-50 rounded flex justify-center">
+                              <Image
+                                className="w-full h-96 object-contain rounded"
+                                width={4000}
+                                height={4000}
+                                src={img?.image_url || ""}
+                                alt="secretariat"
+                              />
+                            </div>
+
+                            <div className="text-center mt-1">
+                              <h1 className="text-base font-bold text-[#0f766e]">
+                                {img?.name}
+                              </h1>
+                              <p className="text-sm"> {img?.designation} </p>
+                            </div>
                           </div>
                         );
                       })}

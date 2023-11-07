@@ -28,17 +28,17 @@ const ImageCard = ({ data }) => {
           className="h-60 object-cover w-full cursor-pointer"
           src={data?.front_img}
           // src={data.frontImage}
-          alt={data?.image_title}
+          alt={data?.album_title}
           height={4000}
           width={4000}
         />
 
         <div onClick={handleModal} className={`${styles.imageChild}`}>
-          <div>
+          <div className="text-center">
             <h1
               className={`text-xl font-semibold text-gray-700 ${styles.imageTitle}`}
             >
-              {data?.image_title}
+              {data?.album_title}
             </h1>
             <h2 className={`text-base text-teal-950   ${styles.imageCategory}`}>
               {data?.short_description}
