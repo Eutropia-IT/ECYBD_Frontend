@@ -14,7 +14,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import committe1 from "../../assets/committe1.jpeg";
 import committe2 from "../../assets/committe2.png";
 import missionVissionImage from "../../assets/mission_vision_objectives.jpg";
-import aboutUs from "../../assets/aboutUs.jpg";
+import aboutUs from "../../assets/about_us.jpg";
 import ScrollToTop from "react-scroll-to-top";
 
 import {
