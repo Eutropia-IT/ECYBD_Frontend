@@ -256,7 +256,7 @@
 .single-blog-content address,
 .single-blog-content div {
   padding-bottom: 1rem !important;
-  font-family: inherit;
+  font-family: __Poppins_d60787,__Poppins_Fallback_d60787 !important;
 }
 
 .single-blog-content h1,
