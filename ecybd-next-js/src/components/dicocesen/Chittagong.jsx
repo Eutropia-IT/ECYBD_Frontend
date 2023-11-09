@@ -41,7 +41,7 @@ const Chittagong = () => {
           </div>
 
           <div
-            className="text-justify w-full overflow-x-auto sm:overflow-hidden"
+            className="single-blog-content text-justify w-full overflow-x-auto sm:overflow-hidden"
             dangerouslySetInnerHTML={{ __html: data?.content }}
           ></div>
         </div>

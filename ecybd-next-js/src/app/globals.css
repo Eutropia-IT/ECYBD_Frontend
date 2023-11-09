@@ -271,6 +271,7 @@
 }
 .single-blog-content li {
   padding-left: 2rem !important;
+  list-style-position: inside !important;
 }
 .single-blog-content img {
   margin: auto !important;
