@@ -362,7 +362,7 @@ const Header = () => {
           </div>
           <div className="col-span-9 lg:col-span-2 xl:col-span-2 flex justify-end  items-center ">
             <Link
-              className="font-semibold  bg-teal-700 border-teal-700 border-2 hover:border-teal-700 hover:bg-transparent hover:text-teal-700 hover:font-bold hover:shadow-md hover:shadow-teal-400 px-7 py-2 text-white text-base duration-150
+              className="font-semibold  bg-teal-700 border-teal-700 border-2 hover:border-teal-700 hover:bg-transparent hover:text-teal-700 hover:font-bold hover:shadow hover:shadow-gray-300 px-7 py-2 text-white text-base duration-150
             "
               href={"/contact"}
             >
