@@ -9,7 +9,7 @@ import { MissionSlider } from "../home/HeroSlider";
 import { useQuery } from "@tanstack/react-query";
 import { getVissionSlider } from "@/apiRequestHandlers/home";
 import committe1 from "../../assets/committe1.jpeg";
-import committe2 from "../../assets/committe2.png";
+import committe2 from "../../assets/committe2.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,8 +30,8 @@ const About = () => {
       />
 
       {/* content section */}
-      <div className="px-8 2xl:px-0 mx-auto gap-10 block md:grid grid-cols-12">
-        <div className=" text-gray-700 mt-10 text-justify col-span-12 md:col-span-7">
+      <div className="px-8 2xl:px-0 container mx-auto gap-10 block md:grid grid-cols-12">
+        <div className=" text-gray-700 mt-10 text-justify col-span-12 lg:col-span-7">
           <p className="text-base">
             The youth apostolate of the Catholic Bishops&apos; Conference of
             Bangladesh (CBCB) was officially launched in 1977, under the name
@@ -113,7 +113,7 @@ const About = () => {
           </div> */}
         </div>
 
-        <div className="col-span-12 md:col-span-5 md:flex lg:mt-10">
+        <div className="col-span-12 lg:col-span-5 md:flex lg:mt-10">
           <div className="w-full">
             {
               <RequestStatusUI

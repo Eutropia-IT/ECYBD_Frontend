@@ -12,7 +12,7 @@ import shortid from "shortid";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import committe1 from "../../assets/committe1.jpeg";
-import committe2 from "../../assets/committe2.png";
+import committe2 from "../../assets/committe2.jpeg";
 import missionVissionImage from "../../assets/mission_vision_objectives.jpg";
 import aboutUs from "../../assets/about_us.jpg";
 import ScrollToTop from "react-scroll-to-top";
@@ -287,8 +287,8 @@ const Home = () => {
             Mission of the National Youth Commission, according to its
             <span className="font-bold"> Constitution: </span>
             With openness to the uniqueness of persons created in the image of
-            God and docility (to) God&apos;s movements in the life of persons, the
-            CBCB Commission for youth commits itself to the holistic human
+            God and docility (to) God&apos;s movements in the life of persons,
+            the CBCB Commission for youth commits itself to the holistic human
             growth and maturity of the youth imbued with living faith to witness
             the Gospel values of life service and with knowledge and competence
             of mind and heart to bring transformation in themselves and in the

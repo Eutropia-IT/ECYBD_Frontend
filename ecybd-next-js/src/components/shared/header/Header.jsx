@@ -173,7 +173,7 @@ const Header = () => {
   };
 
   return (
-    <div className="fixed z-50 bg-white w-full shadow-md shadow-gray-600">
+    <div className="fixed z-50 bg-white w-full shadow-md shadow-gray-400">
       <SideNavbar handleSidebar={handleSidebar} isOpen={isOpen} />
       <div>
         <div className="px-5 py-1 2xl:px-0 container mx-auto grid grid-cols-12 items-center">
@@ -362,7 +362,7 @@ const Header = () => {
           </div>
           <div className="col-span-9 lg:col-span-2 xl:col-span-2 flex justify-end  items-center ">
             <Link
-              className="font-semibold bg-teal-700 hover:border-2 hover:border-teal-700 hover:bg-transparent hover:text-teal-700 hover:font-bold hover:shadow-md hover:shadow-teal-700 px-7 py-2 text-white text-base
+              className="font-semibold  bg-teal-700 border-teal-700 border-2 hover:border-teal-700 hover:bg-transparent hover:text-teal-700 hover:font-bold hover:shadow-md hover:shadow-teal-400 px-7 py-2 text-white text-base duration-150
             "
               href={"/contact"}
             >

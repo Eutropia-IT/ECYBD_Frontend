@@ -22,7 +22,7 @@ const Secretariat = () => {
         title={"Secretariat"}
         description={"Secretariat Archive of ECY Bangladesh"}
       />
-
+      {/* 
       <div className="block sm:pb-8   lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
         <div className="col-span-12 grid gap-5 overflow-hidden w-full text-justify">
           <div className={`${isLoading ? "grid gap-5" : "hidden"}`}>
@@ -90,9 +90,45 @@ const Secretariat = () => {
           </div>
         </div>
 
-        {/* <div className="col-span-12 mt-8  lg:mt-0 lg:col-span-3">
+     
+      </div> */}
+
+      <div className="block sm:pb-8   lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
+        <div className="col-span-12 grid gap-5 overflow-hidden w-full text-justify lg:col-span-9">
+          <div className={`${isLoading ? "grid gap-5" : "hidden"}`}>
+            <RequestStatusUI
+              isError={isError}
+              error={error}
+              isLoading={isLoading}
+              count={5}
+            />
+            <RequestStatusUI
+              isError={isError}
+              error={error}
+              isLoading={isLoading}
+              count={5}
+            />
+            <RequestStatusUI
+              isError={isError}
+              error={error}
+              isLoading={isLoading}
+              count={5}
+            />
+          </div>
+
+          {data?.content ? (
+            <div
+              className="single-blog-content text-justify w-full overflow-x-auto sm:overflow-hidden"
+              dangerouslySetInnerHTML={{ __html: data?.content }}
+            ></div>
+          ) : (
+            <NoData />
+          )}
+        </div>
+
+        <div className="col-span-12 mt-8  lg:mt-0 lg:col-span-3">
           <Sidebar />
-        </div> */}
+        </div>
       </div>
     </div>
   );
