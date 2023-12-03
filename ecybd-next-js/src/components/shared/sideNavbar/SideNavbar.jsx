@@ -145,8 +145,8 @@ const linkData = [
           },
           {
             id: shortid.generate(),
-            text: "BCSM BARTA",
-            path: "/resources/publications/bcsm-barta",
+            text: "SPECIAL EDITION",
+            path: "/resources/publications/special-edition",
           },
         ],
       },

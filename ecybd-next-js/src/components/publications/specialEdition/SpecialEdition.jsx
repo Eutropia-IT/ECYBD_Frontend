@@ -1,4 +1,7 @@
 "use client";
+
+
+
 import PageTop from "@/components/shared/PageTop";
 import React, { useState } from "react";
 import PdfCardContainer from "../shared/PdfCardContainer";
@@ -11,9 +14,9 @@ import NoData from "../shared/NoData";
 import { useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 
-const BcsmBarta = () => {
+const SpecialEdition = () => {
   const itemsPerPage = 6;
-  const publicationType = "BCSM BARTA";
+  const publicationType = "Special Edition";
 
   const [pageNumber, setPageNumber] = useState(0);
 
@@ -46,8 +49,8 @@ const BcsmBarta = () => {
   return (
     <div>
       <PageTop
-        title="Bcsm Barta"
-        description={" Explore Our Publications - Bcsm Barta"}
+        title="Special Edition"
+        description={" Explore Our  - Special Publication"}
       />
 
       <div className="container px-8 2xl:px-0 mx-auto pb-4">
@@ -61,7 +64,7 @@ const BcsmBarta = () => {
         <div className={`mt-12 ${isLoading ? "block" : "hidden"}`}>
           {isLoading && (
             <h1 className="mb-8 text-xl md:text-3xl text-gray-700 font-bold text-center">
-              All Bcsm Barta
+              All Special Edition
             </h1>
           )}
 
@@ -102,7 +105,7 @@ const BcsmBarta = () => {
         <PdfCardContainer
           allPdf={allPdf}
           initialPdfUrl={getInitialPdfUrl()}
-          containerFor={"Newsletters"}
+          containerFor={"Special Publication"}
         />
       )}
 
@@ -119,4 +122,4 @@ const BcsmBarta = () => {
   );
 };
 
-export default BcsmBarta;
+export default SpecialEdition;

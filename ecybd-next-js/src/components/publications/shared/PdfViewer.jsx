@@ -81,7 +81,12 @@ export default function PdfViewer({ pdfUrl }) {
                       the page
                     </h1>
                   }
-                  loading={<h1 className="text-2xl text-center">Loading</h1>}
+                  loading={
+                    <span class="relative flex h-5 w-5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0D9488] opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-5 w-5 bg-[#0D9488]"></span>
+                    </span>
+                  }
                 >
                   <Page className="pdf-page" pageNumber={pageNumber} />
                 </Document>
