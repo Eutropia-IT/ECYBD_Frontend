@@ -73,7 +73,7 @@ const Slider = ({ slide }) => {
       if (slide?.Pub_type == "Newsletter") subRoute = "newsletters";
       else if (slide?.Pub_type == "BCSM BARTA") subRoute = "bcsm-barta";
       // else if (slide?.Pub_type == "Nobokollol") subRoute = "nobokollol";
-      else subRoute = slide?.Pub_type.toLowerCase();
+      else subRoute = slide?.Pub_type.toLowerCase().replaceAll(' ','-');
 
       return `/resources/publications/${subRoute}?publicationId=${slide?.Id}`;
     }
