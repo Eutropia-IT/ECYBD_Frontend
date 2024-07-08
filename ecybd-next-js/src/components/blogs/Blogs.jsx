@@ -53,12 +53,7 @@ const Blogs = () => {
 
   return (
     <>
-      <PageTop
-        title={"Blogs"}
-        description={
-          "Articles and latest bulletins"
-        }
-      />
+      <PageTop title={"Blogs"} description={"Articles and latest bulletins"} />
 
       <div className="block  lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8">
         <div className="col-span-12 grid gap-5 lg:col-span-9">

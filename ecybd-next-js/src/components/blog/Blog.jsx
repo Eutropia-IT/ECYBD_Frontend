@@ -8,6 +8,8 @@ import { useQuery } from "@tanstack/react-query";
 
 import Sidebar from "../blogs/Sidebar";
 
+import noData from "../../assets/no-data.png";
+
 const Blog = ({ blogId }) => {
   const {
     data: blog,
@@ -33,10 +35,10 @@ const Blog = ({ blogId }) => {
               <CustomSkeleton height={350} borderRadius={7} />
             ) : (
               <Image
-                src={blog?.feature_img}
+                src={blog?.feature_img || noData}
                 width={6000}
                 height={3000}
-                className="w-full object-cover h-full"
+                className="w-full object-contain h-full"
                 alt="blog image"
               />
             )}
