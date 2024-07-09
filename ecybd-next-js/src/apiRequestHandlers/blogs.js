@@ -8,7 +8,7 @@ export const getBlogs = async (
   year = ""
 ) => {
   const res = await api.get(
-    `/blog/?offset=${pageNumber}&limit=${limit}&ordering=publication_date&title=${search}&month=${month}&year=${year}`
+    `/blog/?offset=${pageNumber}&limit=${limit}&ordering=-publication_date&title=${search}&month=${month}&year=${year}`
   );
   return res.data;
 };
