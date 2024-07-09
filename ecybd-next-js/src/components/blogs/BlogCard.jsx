@@ -27,7 +27,7 @@ const BlogCard = ({ blog }) => {
           {blog?.upload_date}
           <span className="text-teal-900 font-bold ms-2">{blog?.author} </span>
         </p>
-        <p
+        {/* <p
           dangerouslySetInnerHTML={{
             __html:
               blog.content?.length > 200
@@ -35,7 +35,7 @@ const BlogCard = ({ blog }) => {
                 : blog?.content,
           }}
           className="text-sm text-justify"
-        ></p>
+        ></p> */}
 
         <Link
           className="
