@@ -83,6 +83,16 @@ const Footer = () => {
           {" "}
           © Copyright 2023, All Rights Reserved by ECYBD.ORG{" "}
         </p>
+        <p className="text-center">
+          Developed by{" "}
+          <Link
+            className="text-blue-950 font-bold"
+            target="_blank"
+            href="https://www.facebook.com/eutropia.it"
+          >
+            Eutropia-IT Solution{" "}
+          </Link>
+        </p>
       </div>
     </div>
   );
