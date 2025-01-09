@@ -30,19 +30,21 @@ const Blog = ({ blogId }) => {
       )}
       <div className="block lg:grid grid-cols-12 container px-8 2xl:px-0 mx-auto gap-12 mt-8 pb-12">
         <div className="col-span-12   text-gray-800 lg:col-span-9 text-justify">
-          <div className="w-full h-72 sm:h-96 mb-5">
-            {isLoading || isError ? (
-              <CustomSkeleton height={350} borderRadius={7} />
-            ) : (
-              <Image
-                src={blog?.feature_img || noData}
-                width={6000}
-                height={3000}
-                className="w-full object-contain h-full"
-                alt="blog image"
-              />
-            )}
-          </div>
+          {blog?.feature_img && (
+            <div className="w-full h-72 sm:h-96 mb-5">
+              {isLoading || isError ? (
+                <CustomSkeleton height={350} borderRadius={7} />
+              ) : (
+                <Image
+                  src={blog?.feature_img || noData}
+                  width={6000}
+                  height={3000}
+                  className="w-full object-contain h-full"
+                  alt="blog image"
+                />
+              )}
+            </div>
+          )}
           {/* {isLoading ? (
             <div>
               <CustomSkeleton height={30} borderRadius={5} />

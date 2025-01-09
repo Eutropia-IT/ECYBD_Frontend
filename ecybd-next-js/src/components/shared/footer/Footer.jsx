@@ -7,6 +7,7 @@ import { BsFacebook } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <div className="border-t-2 border-gray-300">
       <div className="w-11/12 mx-auto border-b border-gray-800 pb-8 ">
@@ -79,16 +80,15 @@ const Footer = () => {
         </div>
       </div>
       <div className="my-2 sm:my-4">
-        <p className="text-center text-sm sm:text-base font-semibold  text-blue-950">
-          {" "}
-          © Copyright 2023, All Rights Reserved by ECYBD.ORG{" "}
+        <p className="text-center text-sm sm:text-base font-semibold text-blue-950">
+          © Copyright {currentYear}, All Rights Reserved by ECYBD.ORG
         </p>
         <p className="text-center">
           Developed by{" "}
           <Link
             className="text-blue-950 font-bold"
             target="_blank"
-            href="https://www.facebook.com/eutropia.it"
+            href="https://eutropia-it.com"
           >
             Eutropia-IT Solution{" "}
           </Link>
