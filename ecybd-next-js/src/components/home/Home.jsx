@@ -234,11 +234,25 @@ const Home = () => {
           </div>
         </div>
         <div className="my-auto w-full ">
-          <Image
+          {/* <Image
             className="w-full object-contain rounded-lg"
             src={aboutUs}
             alt="mens"
-          />
+          /> */}
+
+          <div className="w-full">
+            {
+              <RequestStatusUI
+                isLoading={isVissionLoading}
+                isError={isVissionError}
+                error={vissionError}
+                count={10}
+              />
+            }
+            {vissionSliderImages?.length > 0 && (
+              <MissionSlider vissionSliderImages={vissionSliderImages} />
+            )}
+          </div>
         </div>
       </div>
 
@@ -249,7 +263,7 @@ const Home = () => {
         className="container px-8 2xl:px-0 mx-auto mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16  place-items-center "
       >
         <div className="w-full">
-          {/* {
+          {
             <RequestStatusUI
               isLoading={isVissionLoading}
               isError={isVissionError}
@@ -259,13 +273,13 @@ const Home = () => {
           }
           {vissionSliderImages?.length > 0 && (
             <MissionSlider vissionSliderImages={vissionSliderImages} />
-          )} */}
-
+          )}
+          {/* 
           <Image
             className="w-full object-contain rounded-lg"
             src={missionVissionImage}
             alt="mens"
-          />
+          /> */}
         </div>
         <div>
           <h1 className="text-3xl  font-semibold mb-3">

@@ -12,14 +12,15 @@ import committe1 from "../../assets/committe1.jpeg";
 import committe2 from "../../assets/committe2.jpeg";
 import Image from "next/image";
 import Link from "next/link";
+import aboutUs from "../../assets/about_us.jpg";
 
 const About = () => {
-  const {
-    data: vissionSliderImages,
-    isLoading: isVissionLoading,
-    isError: isVissionError,
-    error: vissionError,
-  } = useQuery({ queryKey: ["vissionSliders"], queryFn: getVissionSlider });
+  // const {
+  //   data: vissionSliderImages,
+  //   isLoading: isVissionLoading,
+  //   isError: isVissionError,
+  //   error: vissionError,
+  // } = useQuery({ queryKey: ["vissionSliders"], queryFn: getVissionSlider });
 
   return (
     <>
@@ -115,7 +116,7 @@ const About = () => {
 
         <div className="col-span-12 lg:col-span-5 md:flex lg:mt-10">
           <div className="w-full">
-            {
+            {/* {
               <RequestStatusUI
                 isLoading={isVissionLoading}
                 isError={isVissionError}
@@ -125,7 +126,12 @@ const About = () => {
             }
             {vissionSliderImages?.length > 0 && (
               <MissionSlider vissionSliderImages={vissionSliderImages} />
-            )}
+            )} */}
+            <Image
+              className="w-full object-contain rounded-lg"
+              src={aboutUs}
+              alt="mens"
+            />
           </div>
         </div>
       </div>
