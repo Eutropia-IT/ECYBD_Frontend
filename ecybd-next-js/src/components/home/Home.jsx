@@ -271,15 +271,12 @@ const Home = () => {
               count={10}
             />
           }
-          {vissionSliderImages?.length > 0 && (
-            <MissionSlider vissionSliderImages={vissionSliderImages} />
-          )}
-          {/* 
+  
           <Image
             className="w-full object-contain rounded-lg"
             src={missionVissionImage}
             alt="mens"
-          /> */}
+          />
         </div>
         <div>
           <h1 className="text-3xl  font-semibold mb-3">

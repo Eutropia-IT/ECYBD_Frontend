@@ -81,12 +81,12 @@ const Blogs = () => {
           {/* chip start */}
           {month && year && (
             <div>
-              <div class="rounded-full border text-[#0f766d] flex items-center justify-between  px-2 py-1 text-sm w-40 ">
+              <div className="rounded-full border text-[#0f766d] flex items-center justify-between  px-2 py-1 text-sm w-40 ">
                 <span className="ps-2 font-bold">
                   {monthList[month]} {year}
                 </span>
                 <button
-                  class="text-white hover:bg-[#22454221] rounded-full p-1 float-right "
+                  className="text-white hover:bg-[#22454221] rounded-full p-1 float-right "
                   onClick={() => {
                     setMonth("");
                     setYear("");
@@ -97,7 +97,7 @@ const Blogs = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="#0f766e"
-                    class="h-4 w-4"
+                    className="h-4 w-4"
                   >
                     <path
                       stroke-linecap="round"

@@ -8,17 +8,17 @@ import noData from "../../assets/no-data.png";
 
 const BlogCard = ({ blog }) => {
   return (
-    <div className=" sm:grid grid-cols-12 gap-8">
+    <div className=" sm:grid grid-cols-12 gap-8 bg-gray-50 p-4 rounded-lg shadow">
       <div className="col-span-12 md:col-span-3">
         <Image
           src={blog?.feature_img || noData}
           width={200}
           height={200}
-          className="w-full h-full object-cover"
+          className="object-cover w-36 h-36 rounded-lg object-center mx-auto"
           alt="blog image"
         />
       </div>
-      <div className="col-span-12 md:col-span-9 text-gray-600">
+      <div className="col-span-12 md:col-span-9 text-gray-600 content-center">
         <h1 className="text-gray-700 font-bold text-xl mt-4 sm:mt-0">
           {blog?.title}
         </h1>
@@ -38,9 +38,9 @@ const BlogCard = ({ blog }) => {
         ></p> */}
 
         <Link
-          className="
+          className="w-full justify-center md:w-auto
         bg-teal-600 hover:bg-teal-700 duration-100 text-white font-bold py-2 text-sm px-3 rounded inline-flex items-center mt-2"
-          href={`/blogs/${blog?.id}`}
+          href={`/blogs/${blog?.slug}`}
         >
           READ ARTICLE
           <span className="ms-2">
